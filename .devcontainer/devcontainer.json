@@ -1,0 +1,10 @@
+{
+  "name": "AltaLex 营销预审原型",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "forwardPorts": [8765],
+  "portsAttributes": {
+    "8765": { "label": "AltaLex 原型", "onAutoForward": "openBrowser" }
+  },
+  "postStartCommand": "bash .devcontainer/start.sh",
+  "customizations": { "codespaces": { "openFiles": ["README.md"] } }
+}

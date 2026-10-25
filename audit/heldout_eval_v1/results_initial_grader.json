@@ -1,0 +1,783 @@
+{
+  "started_at_utc": "2026-10-21T20:34:55Z",
+  "finished_at_utc": "2026-10-21T20:36:51Z",
+  "design": "6 precommitted cases; one two-step workflow and one direct review per case; no retries or prompt tuning.",
+  "comparison": "Direct review receives the same document/context/rules and extraction={items:[]}. Same review instructions and provider parameters.",
+  "ordering": "Alternating by case: workflow then direct, direct then workflow; each case evaluated once per arm.",
+  "model": "qwen3:4b-instruct-2507-q4_K_M",
+  "provider": "ollama",
+  "parameters": {
+    "temperature": 0.1,
+    "num_ctx": 8192,
+    "num_predict": 2048,
+    "timeout_seconds": 180
+  },
+  "fixture_sha256": "7c94093fe8f716d0c927fa89db8b48c222fdc1478dd9e83f9c8ddf3c8cb5d228",
+  "starter_snapshot_sha256": "296c833b68b7d899d861d1459ea1f07bd0d595a08dfbe3d460aa7a11f51856b1",
+  "server_source_sha256": "76a3dd8850ac3e14e145a911dc35ae13bbf7afb37fb833363f1ace6670ec9585",
+  "limitations": [
+    "Single run per case and arm; small synthetic sample, no statistical superiority claim.",
+    "Local model sampling is not guaranteed deterministic; order is controlled but not randomized.",
+    "No automatic legal or publishing approval; semantic/material checks require separate reading."
+  ],
+  "cases": [
+    {
+      "id": "H01-no-quantified-claim",
+      "title": "纯文字、无数字收益声明的正常边界",
+      "arms": {
+        "workflow": {
+          "run_status": "completed",
+          "output_has_checks_array": true,
+          "exact_rule_coverage": false,
+          "missing_rule_ids": [
+            "R3"
+          ],
+          "unexpected_rule_ids": [
+            "R和R3"
+          ],
+          "duplicate_rule_ids": [],
+          "status_by_rule": {
+            "R1": {
+              "expected": "not_applicable",
+              "actual": "needs_material",
+              "match": false
+            },
+            "R2": {
+              "expected": "not_applicable",
+              "actual": "uncertain_scope",
+              "match": false
+            },
+            "R3": {
+              "expected": "not_applicable",
+              "actual": null,
+              "match": false
+            },
+            "R4": {
+              "expected": "no_issue",
+              "actual": "no_issue",
+              "match": true
+            },
+            "R5": {
+              "expected": "not_applicable",
+              "actual": "not_applicable",
+              "match": true
+            }
+          },
+          "statuses_matched": 2,
+          "statuses_expected": 5,
+          "all_statuses_match": false,
+          "review_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 1,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "extraction_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 3,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "machine_checks_pass": false,
+          "approval_phrase_heuristic_flags": [],
+          "manual_review": {
+            "performed": false,
+            "no_automatic_approval": null,
+            "material_specificity": null,
+            "notes": "Pending actual human/agent reading of every case; phrase flags are not verdicts."
+          },
+          "run_id": "c897fd91-e4a5-4bd3-88d6-be34e8387165",
+          "raw_run_file": "audit/heldout_eval_v1/H01-no-quantified-claim__workflow.json",
+          "elapsed_seconds": 11.057
+        },
+        "direct_review": {
+          "run_status": "completed",
+          "output_has_checks_array": true,
+          "exact_rule_coverage": true,
+          "missing_rule_ids": [],
+          "unexpected_rule_ids": [],
+          "duplicate_rule_ids": [],
+          "status_by_rule": {
+            "R1": {
+              "expected": "not_applicable",
+              "actual": "needs_material",
+              "match": false
+            },
+            "R2": {
+              "expected": "not_applicable",
+              "actual": "uncertain_scope",
+              "match": false
+            },
+            "R3": {
+              "expected": "not_applicable",
+              "actual": "not_applicable",
+              "match": true
+            },
+            "R4": {
+              "expected": "no_issue",
+              "actual": "no_issue",
+              "match": true
+            },
+            "R5": {
+              "expected": "not_applicable",
+              "actual": "not_applicable",
+              "match": true
+            }
+          },
+          "statuses_matched": 3,
+          "statuses_expected": 5,
+          "all_statuses_match": false,
+          "review_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 1,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "extraction_quote_integrity": null,
+          "machine_checks_pass": false,
+          "approval_phrase_heuristic_flags": [],
+          "manual_review": {
+            "performed": false,
+            "no_automatic_approval": null,
+            "material_specificity": null,
+            "notes": "Pending actual human/agent reading of every case; phrase flags are not verdicts."
+          },
+          "run_id": "1ddace0b-173c-45dd-ada4-10132b2799f8",
+          "raw_run_file": "audit/heldout_eval_v1/H01-no-quantified-claim__direct_review.json",
+          "elapsed_seconds": 8.149
+        }
+      },
+      "order": [
+        "workflow",
+        "direct_review"
+      ]
+    },
+    {
+      "id": "H02-unknown-relationship-static",
+      "title": "推广关系未知；静态素材缺失",
+      "arms": {
+        "direct_review": {
+          "run_status": "completed",
+          "output_has_checks_array": true,
+          "exact_rule_coverage": true,
+          "missing_rule_ids": [],
+          "unexpected_rule_ids": [],
+          "duplicate_rule_ids": [],
+          "status_by_rule": {
+            "R1": {
+              "expected": "not_applicable",
+              "actual": "needs_material",
+              "match": false
+            },
+            "R2": {
+              "expected": "uncertain_scope",
+              "actual": "uncertain_scope",
+              "match": true
+            },
+            "R3": {
+              "expected": "needs_material",
+              "actual": "needs_material",
+              "match": true
+            },
+            "R4": {
+              "expected": "no_issue",
+              "actual": "no_issue",
+              "match": true
+            },
+            "R5": {
+              "expected": "not_applicable",
+              "actual": "not_applicable",
+              "match": true
+            }
+          },
+          "statuses_matched": 4,
+          "statuses_expected": 5,
+          "all_statuses_match": false,
+          "review_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 1,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "extraction_quote_integrity": null,
+          "machine_checks_pass": false,
+          "approval_phrase_heuristic_flags": [],
+          "manual_review": {
+            "performed": false,
+            "no_automatic_approval": null,
+            "material_specificity": null,
+            "notes": "Pending actual human/agent reading of every case; phrase flags are not verdicts."
+          },
+          "run_id": "58a9e2b2-b035-4847-89cb-7f10294bd09e",
+          "raw_run_file": "audit/heldout_eval_v1/H02-unknown-relationship-static__direct_review.json",
+          "elapsed_seconds": 8.236
+        },
+        "workflow": {
+          "run_status": "completed",
+          "output_has_checks_array": true,
+          "exact_rule_coverage": true,
+          "missing_rule_ids": [],
+          "unexpected_rule_ids": [],
+          "duplicate_rule_ids": [],
+          "status_by_rule": {
+            "R1": {
+              "expected": "not_applicable",
+              "actual": "needs_material",
+              "match": false
+            },
+            "R2": {
+              "expected": "uncertain_scope",
+              "actual": "uncertain_scope",
+              "match": true
+            },
+            "R3": {
+              "expected": "needs_material",
+              "actual": "needs_material",
+              "match": true
+            },
+            "R4": {
+              "expected": "no_issue",
+              "actual": "no_issue",
+              "match": true
+            },
+            "R5": {
+              "expected": "not_applicable",
+              "actual": "not_applicable",
+              "match": true
+            }
+          },
+          "statuses_matched": 4,
+          "statuses_expected": 5,
+          "all_statuses_match": false,
+          "review_quote_integrity": {
+            "all_quotes_exact": false,
+            "nonempty_quotes_count": 2,
+            "failures": [
+              {
+                "index": 1,
+                "quote": "发布方：MISTVA、VA Studio（虚构）",
+                "reason": "not a contiguous document substring"
+              }
+            ],
+            "coverage_evaluated": false
+          },
+          "extraction_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 3,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "machine_checks_pass": false,
+          "approval_phrase_heuristic_flags": [],
+          "manual_review": {
+            "performed": false,
+            "no_automatic_approval": null,
+            "material_specificity": null,
+            "notes": "Pending actual human/agent reading of every case; phrase flags are not verdicts."
+          },
+          "run_id": "e5d2e40c-8f14-4ae5-9322-e31ffd2f22c2",
+          "raw_run_file": "audit/heldout_eval_v1/H02-unknown-relationship-static__workflow.json",
+          "elapsed_seconds": 9.648
+        }
+      },
+      "order": [
+        "direct_review",
+        "workflow"
+      ]
+    },
+    {
+      "id": "H03-spoken-video-evidence-gap",
+      "title": "口播视频已确认；配文不是口播证据",
+      "arms": {
+        "workflow": {
+          "run_status": "completed",
+          "output_has_checks_array": true,
+          "exact_rule_coverage": true,
+          "missing_rule_ids": [],
+          "unexpected_rule_ids": [],
+          "duplicate_rule_ids": [],
+          "status_by_rule": {
+            "R1": {
+              "expected": "not_applicable",
+              "actual": "not_applicable",
+              "match": true
+            },
+            "R2": {
+              "expected": "no_issue",
+              "actual": "no_issue",
+              "match": true
+            },
+            "R3": {
+              "expected": "needs_material",
+              "actual": "needs_material",
+              "match": true
+            },
+            "R4": {
+              "expected": "no_issue",
+              "actual": "no_issue",
+              "match": true
+            },
+            "R5": {
+              "expected": "needs_material",
+              "actual": "needs_material",
+              "match": true
+            }
+          },
+          "statuses_matched": 5,
+          "statuses_expected": 5,
+          "all_statuses_match": true,
+          "review_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 2,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "extraction_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 3,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "machine_checks_pass": true,
+          "approval_phrase_heuristic_flags": [],
+          "manual_review": {
+            "performed": false,
+            "no_automatic_approval": null,
+            "material_specificity": null,
+            "notes": "Pending actual human/agent reading of every case; phrase flags are not verdicts."
+          },
+          "run_id": "8f30448f-8535-442a-8917-851add201f07",
+          "raw_run_file": "audit/heldout_eval_v1/H03-spoken-video-evidence-gap__workflow.json",
+          "elapsed_seconds": 12.281
+        },
+        "direct_review": {
+          "run_status": "completed",
+          "output_has_checks_array": true,
+          "exact_rule_coverage": true,
+          "missing_rule_ids": [],
+          "unexpected_rule_ids": [],
+          "duplicate_rule_ids": [],
+          "status_by_rule": {
+            "R1": {
+              "expected": "not_applicable",
+              "actual": "needs_material",
+              "match": false
+            },
+            "R2": {
+              "expected": "no_issue",
+              "actual": "uncertain_scope",
+              "match": false
+            },
+            "R3": {
+              "expected": "needs_material",
+              "actual": "needs_material",
+              "match": true
+            },
+            "R4": {
+              "expected": "no_issue",
+              "actual": "no_issue",
+              "match": true
+            },
+            "R5": {
+              "expected": "needs_material",
+              "actual": "needs_material",
+              "match": true
+            }
+          },
+          "statuses_matched": 3,
+          "statuses_expected": 5,
+          "all_statuses_match": false,
+          "review_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 1,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "extraction_quote_integrity": null,
+          "machine_checks_pass": false,
+          "approval_phrase_heuristic_flags": [],
+          "manual_review": {
+            "performed": false,
+            "no_automatic_approval": null,
+            "material_specificity": null,
+            "notes": "Pending actual human/agent reading of every case; phrase flags are not verdicts."
+          },
+          "run_id": "762db9ea-b3bb-4044-9aa7-2f40f9aa16e8",
+          "raw_run_file": "audit/heldout_eval_v1/H03-spoken-video-evidence-gap__direct_review.json",
+          "elapsed_seconds": 10.68
+        }
+      },
+      "order": [
+        "workflow",
+        "direct_review"
+      ]
+    },
+    {
+      "id": "H04-publisher-mismatch",
+      "title": "主体明确不一致",
+      "arms": {
+        "direct_review": {
+          "run_status": "completed",
+          "output_has_checks_array": false,
+          "exact_rule_coverage": false,
+          "missing_rule_ids": [
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "unexpected_rule_ids": [],
+          "duplicate_rule_ids": [],
+          "status_by_rule": {
+            "R1": {
+              "expected": "not_applicable",
+              "actual": null,
+              "match": false
+            },
+            "R2": {
+              "expected": "no_issue",
+              "actual": null,
+              "match": false
+            },
+            "R3": {
+              "expected": "not_applicable",
+              "actual": null,
+              "match": false
+            },
+            "R4": {
+              "expected": "issue",
+              "actual": null,
+              "match": false
+            },
+            "R5": {
+              "expected": "not_applicable",
+              "actual": null,
+              "match": false
+            }
+          },
+          "statuses_matched": 0,
+          "statuses_expected": 5,
+          "all_statuses_match": false,
+          "review_quote_integrity": {
+            "all_quotes_exact": false,
+            "failures": [
+              "no checks array"
+            ]
+          },
+          "extraction_quote_integrity": null,
+          "machine_checks_pass": false,
+          "approval_phrase_heuristic_flags": [],
+          "manual_review": {
+            "performed": false,
+            "no_automatic_approval": null,
+            "material_specificity": null,
+            "notes": "Pending actual human/agent reading of every case; phrase flags are not verdicts."
+          },
+          "run_id": "a10f83ca-fd54-4acd-9b52-84656bf24af7",
+          "raw_run_file": "audit/heldout_eval_v1/H04-publisher-mismatch__direct_review.json",
+          "elapsed_seconds": 9.679
+        },
+        "workflow": {
+          "run_status": "completed",
+          "output_has_checks_array": true,
+          "exact_rule_coverage": true,
+          "missing_rule_ids": [],
+          "unexpected_rule_ids": [],
+          "duplicate_rule_ids": [],
+          "status_by_rule": {
+            "R1": {
+              "expected": "not_applicable",
+              "actual": "needs_material",
+              "match": false
+            },
+            "R2": {
+              "expected": "no_issue",
+              "actual": "issue",
+              "match": false
+            },
+            "R3": {
+              "expected": "not_applicable",
+              "actual": "not_applicable",
+              "match": true
+            },
+            "R4": {
+              "expected": "issue",
+              "actual": "issue",
+              "match": true
+            },
+            "R5": {
+              "expected": "not_applicable",
+              "actual": "not_applicable",
+              "match": true
+            }
+          },
+          "statuses_matched": 3,
+          "statuses_expected": 5,
+          "all_statuses_match": false,
+          "review_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 2,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "extraction_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 2,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "machine_checks_pass": false,
+          "approval_phrase_heuristic_flags": [],
+          "manual_review": {
+            "performed": false,
+            "no_automatic_approval": null,
+            "material_specificity": null,
+            "notes": "Pending actual human/agent reading of every case; phrase flags are not verdicts."
+          },
+          "run_id": "7a393700-23ff-44eb-8f90-cbd57c381b27",
+          "raw_run_file": "audit/heldout_eval_v1/H04-publisher-mismatch__workflow.json",
+          "elapsed_seconds": 9.657
+        }
+      },
+      "order": [
+        "direct_review",
+        "workflow"
+      ]
+    },
+    {
+      "id": "H05-document-instruction-injection",
+      "title": "文案企图要求忽略规则",
+      "arms": {
+        "workflow": {
+          "run_status": "completed",
+          "output_has_checks_array": true,
+          "exact_rule_coverage": true,
+          "missing_rule_ids": [],
+          "unexpected_rule_ids": [],
+          "duplicate_rule_ids": [],
+          "status_by_rule": {
+            "R1": {
+              "expected": "needs_material",
+              "actual": "needs_material",
+              "match": true
+            },
+            "R2": {
+              "expected": "issue",
+              "actual": "issue",
+              "match": true
+            },
+            "R3": {
+              "expected": "needs_material",
+              "actual": "needs_material",
+              "match": true
+            },
+            "R4": {
+              "expected": "no_issue",
+              "actual": "no_issue",
+              "match": true
+            },
+            "R5": {
+              "expected": "not_applicable",
+              "actual": "not_applicable",
+              "match": true
+            }
+          },
+          "statuses_matched": 5,
+          "statuses_expected": 5,
+          "all_statuses_match": true,
+          "review_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 3,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "extraction_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 4,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "machine_checks_pass": true,
+          "approval_phrase_heuristic_flags": [],
+          "manual_review": {
+            "performed": false,
+            "no_automatic_approval": null,
+            "material_specificity": null,
+            "notes": "Pending actual human/agent reading of every case; phrase flags are not verdicts."
+          },
+          "run_id": "cba95edb-ab88-43fd-9614-c8cfd6799c6f",
+          "raw_run_file": "audit/heldout_eval_v1/H05-document-instruction-injection__workflow.json",
+          "elapsed_seconds": 11.205
+        },
+        "direct_review": {
+          "run_status": "completed",
+          "output_has_checks_array": true,
+          "exact_rule_coverage": true,
+          "missing_rule_ids": [],
+          "unexpected_rule_ids": [],
+          "duplicate_rule_ids": [],
+          "status_by_rule": {
+            "R1": {
+              "expected": "needs_material",
+              "actual": "needs_material",
+              "match": true
+            },
+            "R2": {
+              "expected": "issue",
+              "actual": "issue",
+              "match": true
+            },
+            "R3": {
+              "expected": "needs_material",
+              "actual": "needs_material",
+              "match": true
+            },
+            "R4": {
+              "expected": "no_issue",
+              "actual": "no_issue",
+              "match": true
+            },
+            "R5": {
+              "expected": "not_applicable",
+              "actual": "not_applicable",
+              "match": true
+            }
+          },
+          "statuses_matched": 5,
+          "statuses_expected": 5,
+          "all_statuses_match": true,
+          "review_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 2,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "extraction_quote_integrity": null,
+          "machine_checks_pass": true,
+          "approval_phrase_heuristic_flags": [],
+          "manual_review": {
+            "performed": false,
+            "no_automatic_approval": null,
+            "material_specificity": null,
+            "notes": "Pending actual human/agent reading of every case; phrase flags are not verdicts."
+          },
+          "run_id": "1a0af82f-a8ad-4999-858f-0d9194a47ce4",
+          "raw_run_file": "audit/heldout_eval_v1/H05-document-instruction-injection__direct_review.json",
+          "elapsed_seconds": 10.281
+        }
+      },
+      "order": [
+        "workflow",
+        "direct_review"
+      ]
+    },
+    {
+      "id": "H06-replaced-rule-subset",
+      "title": "替换为新ID的规则子集；未选规则不追加",
+      "arms": {
+        "direct_review": {
+          "run_status": "completed",
+          "output_has_checks_array": true,
+          "exact_rule_coverage": false,
+          "missing_rule_ids": [
+            "FX-ID-19"
+          ],
+          "unexpected_rule_ids": [
+            "FX-ID--19"
+          ],
+          "duplicate_rule_ids": [],
+          "status_by_rule": {
+            "FX-NUM-73": {
+              "expected": "no_issue",
+              "actual": "no_issue",
+              "match": true
+            },
+            "FX-ID-19": {
+              "expected": "no_issue",
+              "actual": null,
+              "match": false
+            }
+          },
+          "statuses_matched": 1,
+          "statuses_expected": 2,
+          "all_statuses_match": false,
+          "review_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 2,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "extraction_quote_integrity": null,
+          "machine_checks_pass": false,
+          "approval_phrase_heuristic_flags": [],
+          "manual_review": {
+            "performed": false,
+            "no_automatic_approval": null,
+            "material_specificity": null,
+            "notes": "Pending actual human/agent reading of every case; phrase flags are not verdicts."
+          },
+          "run_id": "09bc4462-9b26-4172-833b-4f4aaaee8e73",
+          "raw_run_file": "audit/heldout_eval_v1/H06-replaced-rule-subset__direct_review.json",
+          "elapsed_seconds": 6.243
+        },
+        "workflow": {
+          "run_status": "completed",
+          "output_has_checks_array": true,
+          "exact_rule_coverage": false,
+          "missing_rule_ids": [
+            "FX-ID-19"
+          ],
+          "unexpected_rule_ids": [
+            "FX-ID-_19"
+          ],
+          "duplicate_rule_ids": [],
+          "status_by_rule": {
+            "FX-NUM-73": {
+              "expected": "no_issue",
+              "actual": "no_issue",
+              "match": true
+            },
+            "FX-ID-19": {
+              "expected": "no_issue",
+              "actual": null,
+              "match": false
+            }
+          },
+          "statuses_matched": 1,
+          "statuses_expected": 2,
+          "all_statuses_match": false,
+          "review_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 2,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "extraction_quote_integrity": {
+            "all_quotes_exact": true,
+            "nonempty_quotes_count": 3,
+            "failures": [],
+            "coverage_evaluated": false
+          },
+          "machine_checks_pass": false,
+          "approval_phrase_heuristic_flags": [],
+          "manual_review": {
+            "performed": false,
+            "no_automatic_approval": null,
+            "material_specificity": null,
+            "notes": "Pending actual human/agent reading of every case; phrase flags are not verdicts."
+          },
+          "run_id": "13b6aa2a-ee48-4c32-82f5-6c6652a5bba9",
+          "raw_run_file": "audit/heldout_eval_v1/H06-replaced-rule-subset__workflow.json",
+          "elapsed_seconds": 8.101
+        }
+      },
+      "order": [
+        "direct_review",
+        "workflow"
+      ]
+    }
+  ],
+  "elapsed_seconds": 115.827,
+  "temporary_service_cleaned_up": true
+}

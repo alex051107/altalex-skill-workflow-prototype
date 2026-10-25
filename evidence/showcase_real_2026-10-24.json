@@ -1,0 +1,1217 @@
+{
+  "model": "deepseek-flash",
+  "provider": "openai",
+  "cases": [
+    {
+      "id": "P1",
+      "title": "标题“最高 10%”只对应最高风险档，测试收益表述、风险分档与不保证提示是否相称，以及“best-in-class”等最高级用语的举证。",
+      "kind": "真实公开材料（去标识）",
+      "source_url": "新加坡某理财平台",
+      "channel": "静态图文",
+      "status": "completed",
+      "error": null,
+      "seconds": 121.6,
+      "step_seconds": [
+        13.2,
+        83.3,
+        24.9
+      ],
+      "intake": {
+        "product_type": "投资平台的托管投资组合，页面称由全球收益型基金组成，并写明不是银行储蓄或存款产品、不保本",
+        "audience": "页面按组合分档写明适合风险偏好较高、平衡和谨慎的投资者，是否面向零售投资者页面未说明",
+        "market": "新加坡",
+        "promotion_relationship": "平台自有账号推广自家产品，页面写明发布方持有资本市场服务牌照",
+        "publisher_identity": "平台自有账号（自有账号推广自有产品），页面写明发布方持有资本市场服务牌照",
+        "confirmed_entity_name": "未说明",
+        "materials_provided": [
+          "文字稿"
+        ],
+        "materials_missing": [
+          "页面截图或最终图片",
+          "各档目标月派息区间的计算依据与基金资料",
+          "产品说明文件"
+        ]
+      },
+      "claims": [
+        {
+          "type": "收益或数字",
+          "quote": "Earn up to 10% p.a.*",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "收益或数字",
+          "quote": "targeting up to 10% p.a.",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "比较或最高级",
+          "quote": "some of the best-in-class income funds",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "收益或数字",
+          "quote": "Target Monthly Payout: 8.0 - 10.0% p.a.",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "收益或数字",
+          "quote": "Target Monthly Payout: 5.5 - 6.0% p.a.",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "收益或数字",
+          "quote": "Target Monthly Payout: 5 - 5.5% p.a.",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "保本或稳健暗示",
+          "quote": "Moderately low risk",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "保本或稳健暗示",
+          "quote": "X 收益组合 C：Low risk",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "风险提示",
+          "quote": "Target monthly payout is not guaranteed, and is subject to market movements.",
+          "evidence_status": "无需"
+        },
+        {
+          "type": "风险提示",
+          "quote": "Past distributions are not necessarily indicative of future trends, which may be lower.",
+          "evidence_status": "无需"
+        },
+        {
+          "type": "风险提示",
+          "quote": "Investments involve risk and X 收益组合 does not provide any guarantee or assurance of returns.",
+          "evidence_status": "无需"
+        },
+        {
+          "type": "推广身份",
+          "quote": "This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "evidence_status": "未提供"
+        }
+      ],
+      "triage": {
+        "level": "red",
+        "label": "先确认前置条件，暂不看措辞",
+        "reasons": [
+          "前置条件未满足：R0 产品可以公开推广（前置条件）。先解决前置条件，再看措辞",
+          "阻断：R1 收益表述有依据",
+          "阻断：R3 风险提示在最终画面可读",
+          "R6 不暗示保本或稳赚",
+          "R7 单帖整体印象平衡",
+          "阻断：R8 集合投资计划广告必备声明"
+        ]
+      },
+      "gate_failed": [
+        "R0"
+      ],
+      "summary": "1 项与依据不一致；2 项引文核对不通过；6 项需要补充材料；6 处依据外条款需要人看。签署、发布或接受对方文本由负责人决定。",
+      "checks": [
+        {
+          "rule_id": "R0",
+          "title": "产品可以公开推广（前置条件）",
+          "status": "needs_material",
+          "quote": "",
+          "location": null,
+          "needed_material": "可向零售公众公开推广的依据（集合投资计划是否已获 MAS 认可或承认、招股说明书或简介说明书是否已注册，或其他产品是否不受发售限制）；以及是否面向零售公众。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R1",
+          "title": "收益表述有依据",
+          "status": "needs_material",
+          "quote": "Earn up to 10% p.a.* target monthly payouts.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 1,
+            "paragraph": 1,
+            "clause": "1",
+            "clause_kind": "段"
+          },
+          "needed_material": "各档目标月派息区间的计算依据（计算口径、统计期间、费用前后、出具人）及组合成分基金资料。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R2",
+          "title": "推广关系如实披露",
+          "status": "no_issue",
+          "quote": "This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 5,
+            "paragraph": 1,
+            "clause": "5",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R3",
+          "title": "风险提示在最终画面可读",
+          "status": "needs_material",
+          "quote": "Target monthly payout is not guaranteed, and is subject to market movements.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 4,
+            "paragraph": 1,
+            "clause": "4",
+            "clause_kind": "段"
+          },
+          "needed_material": "最终图片或页面截图，用于确认风险提示在最终画面中的位置、字号和可读性。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R4",
+          "title": "发布主体名称一致",
+          "status": "needs_material",
+          "quote": "",
+          "location": null,
+          "needed_material": "背景已确认的发布主体机构全称（含 Pte. Ltd. 等后缀）。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R6",
+          "title": "不暗示保本或稳赚",
+          "status": "unverified",
+          "quote": "Investments involve risk and X 收益组合 does not provide any guarantee or assurance of returns.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 5,
+            "paragraph": 1,
+            "clause": "5",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R7",
+          "title": "单帖整体印象平衡",
+          "status": "unverified",
+          "quote": "第1段：Earn up to 10% p.a.* target monthly payouts. Celebrate another payday each month while your money stays invested.\n第2段：Receive monthly payouts targeting up to 10% p.a., or reinvest automatically to compound returns. Access passive income opportunities with some of the best-in-class income funds across global markets. Access your money anytime, with no lock-in periods or withdrawal penalties.\n第3段：X 收益组合 A：Moderately high risk. Target Monthly Payout: 8.0 - 10.0% p.a. X 收益组合 B：Moderately low risk. Target Monthly Payout: 5.5 - 6.0% p.a. X 收益组合 C：Low risk. Target Monthly Payout: 5 - 5.5% p.a.\n第4段（页面脚注）：*X 收益组合 portfolio is built with an objective to achieve a target monthly payout range, in current market environment. Target monthly payout is not guaranteed, and is subject to market movements. Past distributions are not necessarily indicative of future trends, which may be lower. A positive monthly payout or distribution yield does not imply a positive return. Source: 某投资平台, fund factsheets. As of October 2026.\n第5段（页面底部）：Investments involve risk and X 收益组合 does not provide any guarantee or assurance of returns. It is not a savings or deposit product at a bank. This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 1,
+            "paragraph": 1,
+            "clause": "1",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R8",
+          "title": "集合投资计划广告必备声明",
+          "status": "needs_material",
+          "quote": "Investments involve risk and X 收益组合 does not provide any guarantee or assurance of returns. It is not a savings or deposit product at a bank. This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 5,
+            "paragraph": 1,
+            "clause": "5",
+            "clause_kind": "段"
+          },
+          "needed_material": "产品是否属于集合投资计划（基金），以及其招股说明书或简介说明书是否已注册。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R9",
+          "title": "推广人持牌身份披露",
+          "status": "no_issue",
+          "quote": "",
+          "location": null,
+          "needed_material": "",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R10",
+          "title": "披露位置靠前（图文与文字帖）",
+          "status": "issue",
+          "quote": "Investments involve risk and X 收益组合 does not provide any guarantee or assurance of returns. It is not a savings or deposit product at a bank. This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 5,
+            "paragraph": 1,
+            "clause": "5",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": "AI 起草，律师核对后才能发出",
+          "expected": null
+        },
+        {
+          "rule_id": "R11",
+          "title": "过往业绩、比较、获奖与排名有出处",
+          "status": "needs_material",
+          "quote": "Access passive income opportunities with some of the best-in-class income funds across global markets.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 2,
+            "paragraph": 1,
+            "clause": "2",
+            "clause_kind": "段"
+          },
+          "needed_material": "“best-in-class”的比较对象与同口径数据、评级或筛选方法及出具人；业务负责人已确认的记录。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R5",
+          "title": "视频内可见披露推广关系",
+          "status": "not_applicable",
+          "quote": "",
+          "location": null,
+          "needed_material": null,
+          "proposed_text_source": null,
+          "expected": null
+        }
+      ],
+      "uncovered": [
+        "Access your money anytime, with no lock-in periods or withdrawal penalties.",
+        "Celebrate another payday each month while your money stays invested.",
+        "reinvest automatically to compound returns",
+        "X 收益组合 C：Low risk",
+        "This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+        "As of October 2026."
+      ],
+      "reply": {
+        "reply_to_marketing": "本次为预审意见，不是发布批准。前置条件尚未满足：需先确认该产品在新加坡是否可向零售公众公开推广，包括产品是否属于集合投资计划（基金）及其招股说明书或简介说明书是否已获 MAS 认可或承认并注册，或其他产品是否不受发售限制，以及本次受众是否面向零售公众；请市场同事说明上述情况，由法务负责人核对确认。",
+        "internal_note": "高：R0 需补材料，缺可向零售公众公开推广的依据及是否面向零售公众；R1 需补材料，缺收益计算依据；R2 符合，自有账号推广自家产品、无外部推广人；R3 需补材料，缺最终图片或截图确认风险提示可读；R6 待人工核对，风险等级表述是否弱化风险；R7 待人工核对，收益与风险、费用的篇幅位置是否平衡；R8 需补材料，缺产品是否属于集合投资计划及招股说明书注册状态；R9 符合，机构自有账号、无外部个人推广人；R11 需补材料，缺“best-in-class”比较出处与口径。中：R4 需补材料，缺发布主体机构全称；R10 不一致，推广标示和风险提示只在页面底部、未在前三行；R5 不适用，本次为静态图文。低：无。需要负责人决定：无；R0 为前置条件，需法务负责人核对后重新检查，不属于措辞审阅的负责人决定条目。建议，由负责人决定：补件后再审；前置条件未满足时不进入措辞审阅，其他条目材料待前置条件确认后再汇总。",
+        "recommended_outcome": "补件后再审",
+        "needs_owner_decision": []
+      }
+    },
+    {
+      "id": "P2",
+      "title": "合作文章用博主第一人称推荐，测试合作标示位置、目标股息与指数历史股息率的举证，以及基金广告必备声明是否齐全。",
+      "kind": "真实公开材料（去标识）",
+      "source_url": "新加坡某理财资讯网站（与基金公司合作的文章）",
+      "channel": "纯文字帖",
+      "status": "completed",
+      "error": null,
+      "seconds": 106.5,
+      "step_seconds": [
+        13.6,
+        72.7,
+        20.0
+      ],
+      "intake": {
+        "product_type": "交易所交易基金（ETF），页面称跟踪东盟目标股息指数，由某基金公司推出",
+        "audience": "文章以新加坡个人投资者口吻写给想建立被动收入的读者，是否面向零售投资者页面未说明",
+        "market": "新加坡",
+        "promotion_relationship": "合作推广，文首写明与该基金公司合作制作，是否付费页面未说明",
+        "publisher_identity": "纯文字帖（理财网站文章，署名博主 A，署名带 CFA 头衔）；是否为机构自有账号及是否持牌未说明",
+        "confirmed_entity_name": "未说明",
+        "materials_provided": [
+          "文字稿"
+        ],
+        "materials_missing": [
+          "8.6% 与 4.4% 股息率的数据出处文件",
+          "6% 目标股息的依据",
+          "招股说明书",
+          "合作协议或付款记录"
+        ]
+      },
+      "claims": [
+        {
+          "type": "推广身份",
+          "quote": "This post was created in partnership with 某基金公司.",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "推广身份",
+          "quote": "All views and opinions expressed in this article are 理财网站 A's objective and professional opinions.",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "收益或数字",
+          "quote": "target dividend of at least 6%* per annum in 2026 and 2027",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "收益或数字",
+          "quote": "recorded a gross dividend yield of 8.6% p.a",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "比较或最高级",
+          "quote": "compared with 4.4% p.a. for the 某东盟基准指数",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "风险提示",
+          "quote": "distributions (in SGD) are not guaranteed",
+          "evidence_status": "无需"
+        },
+        {
+          "type": "风险提示",
+          "quote": "Distributions may be made out of income, capital gains and/or capital.",
+          "evidence_status": "无需"
+        },
+        {
+          "type": "风险提示",
+          "quote": "Investments in Units involve risks, including the possible loss of the principal amount invested.",
+          "evidence_status": "无需"
+        },
+        {
+          "type": "推广身份",
+          "quote": "This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "发布主体",
+          "quote": "某基金公司",
+          "evidence_status": "未提供"
+        }
+      ],
+      "triage": {
+        "level": "red",
+        "label": "先确认前置条件，暂不看措辞",
+        "reasons": [
+          "前置条件未满足：R0 产品可以公开推广（前置条件）。先解决前置条件，再看措辞",
+          "阻断：R1 收益表述有依据",
+          "R2 推广关系如实披露",
+          "R7 单帖整体印象平衡",
+          "R8 集合投资计划广告必备声明",
+          "阻断：R9 推广人持牌身份披露"
+        ]
+      },
+      "gate_failed": [
+        "R0"
+      ],
+      "summary": "3 项与依据不一致；1 项引文核对不通过；5 项需要补充材料；4 处依据外条款需要人看。签署、发布或接受对方文本由负责人决定。",
+      "checks": [
+        {
+          "rule_id": "R0",
+          "title": "产品可以公开推广（前置条件）",
+          "status": "needs_material",
+          "quote": "This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 5,
+            "paragraph": 1,
+            "clause": "5",
+            "clause_kind": "段"
+          },
+          "needed_material": "该 ETF 可向零售公众公开推广的依据：是否已获 MAS 认可或授权、招股说明书或简介说明书是否已注册，或写明该产品不受发售限制；以及本次推广是否仅面向认可投资者或机构投资者。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R1",
+          "title": "收益表述有依据",
+          "status": "needs_material",
+          "quote": "Recently, 某基金公司 launched the X 东盟股息指数 ETF, which has stated a target dividend of at least 6%* per annum in 2026 and 2027.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 2,
+            "paragraph": 1,
+            "clause": "2",
+            "clause_kind": "段"
+          },
+          "needed_material": "6%目标股息与8.6%／4.4%毛股息率的计算依据（口径、期间、费用前后、出具人）",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R2",
+          "title": "推广关系如实披露",
+          "status": "issue",
+          "quote": "This post was created in partnership with 某基金公司. All views and opinions expressed in this article are 理财网站 A's objective and professional opinions.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 1,
+            "paragraph": 1,
+            "clause": "1",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": "团队批准文本（首选立场）",
+          "expected": null
+        },
+        {
+          "rule_id": "R4",
+          "title": "发布主体名称一致",
+          "status": "needs_material",
+          "quote": "This post was created in partnership with 某基金公司.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 1,
+            "paragraph": 1,
+            "clause": "1",
+            "clause_kind": "段"
+          },
+          "needed_material": "背景未提供已确认的发布主体全称（当前仅以“某基金公司”指代），无法核对文案中的机构名称是否一致。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R6",
+          "title": "不暗示保本或稳赚",
+          "status": "no_issue",
+          "quote": "*Distributions (in SGD) are not guaranteed. Distributions may be made out of income, capital gains and/or capital. Investments in Units involve risks, including the possible loss of the principal amount invested.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 5,
+            "paragraph": 1,
+            "clause": "5",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R7",
+          "title": "单帖整体印象平衡",
+          "status": "issue",
+          "quote": "Recently, 某基金公司 launched the X 东盟股息指数 ETF, which has stated a target dividend of at least 6%* per annum in 2026 and 2027.\nAs of 28 November 2025, according to 某指数公司, the target dividend index recorded a gross dividend yield of 8.6% p.a compared with 4.4% p.a. for the 某东盟基准指数. However, do note that while there is a dividend target, distributions (in SGD) are not guaranteed.\nOverall, I would take a closer look at the ETF if I’m looking to balance income and longer-term growth potential through regional diversification beyond Singapore.\n*Distributions (in SGD) are not guaranteed. Distributions may be made out of income, capital gains and/or capital. Investments in Units involve risks, including the possible loss of the principal amount invested. This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "location": null,
+          "needed_material": "",
+          "proposed_text_source": "AI 起草，律师核对后才能发出",
+          "expected": null
+        },
+        {
+          "rule_id": "R8",
+          "title": "集合投资计划广告必备声明",
+          "status": "issue",
+          "quote": "Investments in Units involve risks, including the possible loss of the principal amount invested. This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 5,
+            "paragraph": 1,
+            "clause": "5",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": "团队批准文本（首选立场）",
+          "expected": null
+        },
+        {
+          "rule_id": "R9",
+          "title": "推广人持牌身份披露",
+          "status": "needs_material",
+          "quote": "This post was created in partnership with 某基金公司. All views and opinions expressed in this article are 理财网站 A's objective and professional opinions.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 1,
+            "paragraph": 1,
+            "clause": "1",
+            "clause_kind": "段"
+          },
+          "needed_material": "发布者是否为外部个人推广人并以其个人账号发布，以及博主 A 是否持牌或受委任提供受监管金融服务。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R10",
+          "title": "披露位置靠前（图文与文字帖）",
+          "status": "unverified",
+          "quote": "第1段（文首标示）：This post was created in partnership with 某基金公司. All views and opinions expressed in this article are 理财网站 A's objective and professional opinions.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 1,
+            "paragraph": 1,
+            "clause": "1",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R11",
+          "title": "过往业绩、比较、获奖与排名有出处",
+          "status": "needs_material",
+          "quote": "As of 28 November 2025, according to 某指数公司, the target dividend index recorded a gross dividend yield of 8.6% p.a compared with 4.4% p.a. for the 某东盟基准指数.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 3,
+            "paragraph": 1,
+            "clause": "3",
+            "clause_kind": "段"
+          },
+          "needed_material": "8.6% 与 4.4% 毛股息率的计算口径、统计期间、数据出处文件及出具方确认。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R3",
+          "title": "风险提示在最终画面可读",
+          "status": "not_applicable",
+          "quote": "",
+          "location": null,
+          "needed_material": null,
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R5",
+          "title": "视频内可见披露推广关系",
+          "status": "not_applicable",
+          "quote": "",
+          "location": null,
+          "needed_material": null,
+          "proposed_text_source": null,
+          "expected": null
+        }
+      ],
+      "uncovered": [
+        "All views and opinions expressed in this article are 理财网站 A's objective and professional opinions.",
+        "especially as interest rates decline and market volatility remains",
+        "most of my income exposure comes from Singapore REITs and blue-chip stocks",
+        "Overall, I would take a closer look at the ETF if I’m looking to balance income and longer-term growth potential through regional diversification beyond Singapore."
+      ],
+      "reply": {
+        "reply_to_marketing": "本次是预审意见，不是发布批准。\n\n前置条件：该 ETF 可向零售公众公开推广的依据尚未提供——需要说明是否已获 MAS 认可或授权、招股说明书或简介说明书是否已注册，或该产品不受发售限制；同时确认本次推广是否仅面向认可投资者或机构投资者。请市场同事补充上述依据，并由法务负责人核对确认。在该前置条件确认前，不进入措辞审阅，也不发布或签署。",
+        "internal_note": "内部备注（供合规负责人参考）\n高：\n- R0 需补材料：前置条件未满足——背景未写明该 ETF 可向零售公众公开推广的依据（MAS 认可或授权、招股说明书注册状态，或不受发售限制）及是否仅面向认可投资者或机构投资者；待市场同事补充、法务负责人核对。\n- R1 需补材料：6% 目标股息与 8.6%／4.4% 毛股息率缺计算口径、期间、费用前后及出具人。\n- R2 不一致：以“某基金公司”指代委托方、未写全称，且“客观专业意见”弱化推广标示。\n- R6 符合：未见保本、稳赚或零风险类表述。\n- R7 不一致：收益内容为主体，风险主要在内嵌提示和文末脚注，整体印象不相称。\n- R8 不一致：缺少招股说明书可获取及获取方式、投资前应阅读、单位价值与收益可升可跌等必备声明；MAS 声明未含“or publication”。\n- R9 需补材料：未确认发布账号归属及博主 A 是否持牌或受委任提供受监管金融服务。\n- R11 需补材料：8.6% 与 4.4% 毛股息率缺出处文件、口径、期间，且同段未写“过往业绩不代表未来表现”。\n- R3 不适用：纯文字帖不涉及最终画面可读性。\n中：\n- R4 需补材料：仅有“某基金公司”，无已确认发布主体全称可核对。\n- R10 待人工核对：推广标示在首行，但主要风险提示是否位于前三行需人工确认。\n- R5 不适用：纯文字帖不涉及视频内披露。\n低：无。\n\n需要负责人决定的条目：R2、R7、R8（升级对象为合规负责人且状态为不一致）。\n\n建议，由负责人决定：补件后再审。R0 前置条件未满足，当前不进入措辞审阅；待前置条件补齐并由法务负责人核对后，再按清单复核措辞与其他条目。",
+        "recommended_outcome": "补件后再审",
+        "needs_owner_decision": [
+          "R2",
+          "R7",
+          "R8"
+        ]
+      }
+    },
+    {
+      "id": "P3",
+      "title": "“保证回报”“100% 保本”与退保可能亏损的提示并存，测试保本暗示的举证要求和存款与保险的区分声明。",
+      "kind": "真实公开材料（去标识）",
+      "source_url": "新加坡某银行销售的储蓄型保险",
+      "channel": "静态图文",
+      "status": "completed",
+      "error": null,
+      "seconds": 120.1,
+      "step_seconds": [
+        23.1,
+        77.4,
+        19.2
+      ],
+      "intake": {
+        "product_type": "24 个月单次缴费的非分红型储蓄（endowment）保险，页面写明不是定期或储蓄存款",
+        "audience": "页面常见问题写明现金投保最低保费为 65 岁及以下 S$10,000、66 至 75 岁 S$20,000，其余页面未说明",
+        "market": "新加坡",
+        "promotion_relationship": "银行在自有网站推广同集团保险公司承保的产品，页面写明银行不为该计划提供担保",
+        "publisher_identity": "未说明",
+        "confirmed_entity_name": "未说明",
+        "materials_provided": [
+          "文字稿"
+        ],
+        "materials_missing": [
+          "页面截图或最终图片",
+          "0.60% 保证回报与 100% 保本的保单条款或产品摘要",
+          "利益说明书"
+        ]
+      },
+      "claims": [
+        {
+          "type": "收益或数字",
+          "quote": "Guaranteed return of 0.60% p.a. upon maturity in 24 months",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "保本或稳健暗示",
+          "quote": "100% capital guaranteed upon maturity",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "推广身份",
+          "quote": "This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "发布主体",
+          "quote": "X 储蓄计划 (24-month) is underwritten by 某保险公司, a wholly owned subsidiary of 某保险控股公司, part of 某银行集团",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "其他",
+          "quote": "Insurance coverage for Death and Total & Permanent Disability",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "其他",
+          "quote": "No medical check-up required",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "其他",
+          "quote": "This is not a fixed or savings deposit",
+          "evidence_status": "无需"
+        },
+        {
+          "type": "风险提示",
+          "quote": "an early termination of the policy usually involves high costs and the surrender value, if any, that is payable to you may be zero or less than the total premiums paid",
+          "evidence_status": "无需"
+        },
+        {
+          "type": "风险提示",
+          "quote": "You may not receive all your money back if you cancel your policy before the end of the policy term",
+          "evidence_status": "无需"
+        },
+        {
+          "type": "其他",
+          "quote": "This plan is not a bank deposit and 某银行 does not guarantee or have any obligations in connection with it",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "其他",
+          "quote": "This policy is protected under the Policy Owners' Protection Scheme which is administered by the Singapore Deposit Insurance Corporation (SDIC)",
+          "evidence_status": "未提供"
+        }
+      ],
+      "triage": {
+        "level": "red",
+        "label": "先确认前置条件，暂不看措辞",
+        "reasons": [
+          "前置条件未满足：R0 产品可以公开推广（前置条件）。先解决前置条件，再看措辞",
+          "阻断：R1 收益表述有依据",
+          "阻断：R3 风险提示在最终画面可读",
+          "R6 不暗示保本或稳赚"
+        ]
+      },
+      "gate_failed": [
+        "R0"
+      ],
+      "summary": "2 项与依据不一致；4 项需要补充材料；6 处依据外条款需要人看。签署、发布或接受对方文本由负责人决定。",
+      "checks": [
+        {
+          "rule_id": "R0",
+          "title": "产品可以公开推广（前置条件）",
+          "status": "needs_material",
+          "quote": "",
+          "location": null,
+          "needed_material": "可向零售公众公开推广的依据（该保险产品不受发售限制的说明）",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R1",
+          "title": "收益表述有依据",
+          "status": "needs_material",
+          "quote": "Guaranteed return of 0.60% p.a. upon maturity in 24 months",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 1,
+            "paragraph": 1,
+            "clause": "1",
+            "clause_kind": "段"
+          },
+          "needed_material": "0.60% 保证回报的计算依据（口径、期间、费用前后、出具人），以及业务负责人已书面确认该计算依据并在发布前交法务留档的说明。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R2",
+          "title": "推广关系如实披露",
+          "status": "no_issue",
+          "quote": "X 储蓄计划 (24-month) is underwritten by 某保险公司, a wholly owned subsidiary of 某保险控股公司, part of 某银行集团. This plan is not a bank deposit and 某银行 does not guarantee or have any obligations in connection with it.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 3,
+            "paragraph": 1,
+            "clause": "3",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R3",
+          "title": "风险提示在最终画面可读",
+          "status": "needs_material",
+          "quote": "As buying a life insurance policy is a long-term commitment, an early termination of the policy usually involves high costs and the surrender value, if any, that is payable to you may be zero or less than the total premiums paid. You may not receive all your money back if you cancel your policy before the end of the policy term.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 3,
+            "paragraph": 1,
+            "clause": "3",
+            "clause_kind": "段"
+          },
+          "needed_material": "缺少页面截图或最终图片，无法判断风险提示在最终画面中的可读性、位置和字号。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R4",
+          "title": "发布主体名称一致",
+          "status": "needs_material",
+          "quote": "X 储蓄计划 (24-month) is underwritten by 某保险公司, a wholly owned subsidiary of 某保险控股公司, part of 某银行集团",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 3,
+            "paragraph": 1,
+            "clause": "3",
+            "clause_kind": "段"
+          },
+          "needed_material": "背景中已确认的发布主体机构全称（含 Pte. Ltd. 等后缀），用于与文案中的名称比对。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R6",
+          "title": "不暗示保本或稳赚",
+          "status": "issue",
+          "quote": "Guaranteed return of 0.60% p.a. upon maturity in 24 months. 100% capital guaranteed upon maturity.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 1,
+            "paragraph": 1,
+            "clause": "1",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": "AI 起草，律师核对后才能发出",
+          "expected": null
+        },
+        {
+          "rule_id": "R7",
+          "title": "单帖整体印象平衡",
+          "status": "no_issue",
+          "quote": "As buying a life insurance policy is a long-term commitment, an early termination of the policy usually involves high costs and the surrender value, if any, that is payable to you may be zero or less than the total premiums paid. You may not receive all your money back if you cancel your policy before the end of the policy term.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 3,
+            "paragraph": 1,
+            "clause": "3",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R8",
+          "title": "集合投资计划广告必备声明",
+          "status": "no_issue",
+          "quote": "This is not a fixed or savings deposit. It is a non-participating endowment insurance plan.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 2,
+            "paragraph": 1,
+            "clause": "2",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R9",
+          "title": "推广人持牌身份披露",
+          "status": "no_issue",
+          "quote": "",
+          "location": null,
+          "needed_material": "",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R10",
+          "title": "披露位置靠前（图文与文字帖）",
+          "status": "issue",
+          "quote": "As buying a life insurance policy is a long-term commitment, an early termination of the policy usually involves high costs and the surrender value, if any, that is payable to you may be zero or less than the total premiums paid. You may not receive all your money back if you cancel your policy before the end of the policy term.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 3,
+            "paragraph": 1,
+            "clause": "3",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": "AI 起草，律师核对后才能发出",
+          "expected": null
+        },
+        {
+          "rule_id": "R11",
+          "title": "过往业绩、比较、获奖与排名有出处",
+          "status": "no_issue",
+          "quote": "Guaranteed return of 0.60% p.a. upon maturity in 24 months",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 1,
+            "paragraph": 1,
+            "clause": "1",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R5",
+          "title": "视频内可见披露推广关系",
+          "status": "not_applicable",
+          "quote": "",
+          "location": null,
+          "needed_material": null,
+          "proposed_text_source": null,
+          "expected": null
+        }
+      ],
+      "uncovered": [
+        "Pay using cash or your SRS funds.",
+        "Insurance coverage for Death and Total & Permanent Disability.",
+        "No medical check-up required.",
+        "This policy is protected under the Policy Owners' Protection Scheme which is administered by the Singapore Deposit Insurance Corporation (SDIC).",
+        "This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+        "This plan is not a bank deposit and 某银行 does not guarantee or have any obligations in connection with it."
+      ],
+      "reply": {
+        "reply_to_marketing": "本次为预审意见，不是发布批准。本次只核对前置条件：产品可向零售公众公开推广的依据尚未提供，需要市场同事向法务负责人提交该保险产品可向零售公众公开推广、不受发售限制的说明，并由法务负责人确认该依据。该前置条件确认前，不进入措辞审阅。",
+        "internal_note": "前置条件：R0 未通过，产品可向零售公众公开推广的依据尚未提供；该前置条件由法务负责人确认，确认前不进入措辞审阅。\n高：R0 需补材料（缺少可向零售公众公开推广、不受发售限制的说明）；R1 需补材料（0.60% 保证回报的计算依据及业务负责人书面确认未提供）；R2 无问题（机构自有网站发布、无外部推广人）；R3 需补材料（仅有文字稿，无法确认最终静态图片中风险提示的可读性、位置和字号）；R6 不一致（使用 Guaranteed return 和 100% capital guaranteed，且未写担保人名称）；R7 无问题（整体风险提示与收益、保障信息篇幅大致相称）；R8 无问题（产品非集合投资计划）；R9 无问题（无外部个人推广人）；R11 无问题（无过往业绩、比较、奖项或排名表述）。\n中：R4 需补材料（缺少已确认的发布主体全称）；R10 不一致（推广标示和主要风险提示位置靠后）；R5 不适用（本次为静态图文，非短视频或直播）。\n低：无。\n需要负责人决定：R6（升级对象为合规负责人，状态为不一致）。\n建议，由负责人决定：补件后再审。前置条件未满足时不进入措辞审阅。",
+        "recommended_outcome": "补件后再审",
+        "needs_owner_decision": [
+          "R6"
+        ]
+      }
+    },
+    {
+      "id": "P4",
+      "title": "未写颁奖方和年份的“Award-winning”、跑赢基准、“lowest achievable fees”和 264 人样本的满意度数字，测试获奖、比较、过往业绩和统计数字的举证需求。",
+      "kind": "真实公开材料（去标识）",
+      "source_url": "新加坡某理财平台",
+      "channel": "静态图文",
+      "status": "completed",
+      "error": null,
+      "seconds": 124.1,
+      "step_seconds": [
+        17.4,
+        91.4,
+        15.0
+      ],
+      "intake": {
+        "product_type": "数字投资平台首页，同时推广专家管理的投资组合（含月派息收益组合、现金管理组合）和 400 多只共同基金",
+        "audience": "页面写为从第一份薪水到退休的个人投资者，并提及现金、CPF 和 SRS 资金；是否面向零售投资者页面未说明",
+        "market": "新加坡",
+        "promotion_relationship": "平台自有账号推广自家服务",
+        "publisher_identity": "机构自有账号；页面写明发布方持有新加坡金融管理局发出的资本市场服务牌照",
+        "confirmed_entity_name": "未说明",
+        "materials_provided": [
+          "文字稿"
+        ],
+        "materials_missing": [
+          "页面截图或最终图片",
+          "“Award-winning”对应的奖项名称与年份",
+          "跑赢基准的具体业绩数据",
+          "3.5%-6.0% 与 2.3% 的计算依据",
+          "客户满意度调查原始资料"
+        ]
+      },
+      "claims": [
+        {
+          "type": "收益或数字",
+          "quote": "300,000+ Clients",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "收益或数字",
+          "quote": "S$16B+ Client assets",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "收益或数字",
+          "quote": "96%* of our clients say we make investing less stressful",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "比较或最高级",
+          "quote": "Backed by science, with a track record of outperformance*",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "收益或数字",
+          "quote": "Receive monthly payouts of 3.5%-6.0% p.a.",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "保本或稳健暗示",
+          "quote": "while growing or preserving your capital",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "收益或数字",
+          "quote": "Earn up to 2.3% p.a. on idle cash.",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "收益或数字",
+          "quote": "Access 400+ mutual funds from leading global managers.",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "比较或最高级",
+          "quote": "At the lowest achievable fees — the same rates usually reserved for large institutions.",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "获奖或排名",
+          "quote": "Award-winning platform.",
+          "evidence_status": "未提供"
+        },
+        {
+          "type": "风险提示",
+          "quote": "Past performance is not indicative of future results.",
+          "evidence_status": "无需"
+        },
+        {
+          "type": "推广身份",
+          "quote": "This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "evidence_status": "未提供"
+        }
+      ],
+      "triage": {
+        "level": "red",
+        "label": "先确认前置条件，暂不看措辞",
+        "reasons": [
+          "前置条件未满足：R0 产品可以公开推广（前置条件）。先解决前置条件，再看措辞",
+          "阻断：R1 收益表述有依据",
+          "阻断：R3 风险提示在最终画面可读",
+          "R6 不暗示保本或稳赚",
+          "R7 单帖整体印象平衡",
+          "阻断：R8 集合投资计划广告必备声明"
+        ]
+      },
+      "gate_failed": [
+        "R0"
+      ],
+      "summary": "3 项与依据不一致；6 项需要补充材料；6 处依据外条款需要人看。签署、发布或接受对方文本由负责人决定。",
+      "checks": [
+        {
+          "rule_id": "R0",
+          "title": "产品可以公开推广（前置条件）",
+          "status": "needs_material",
+          "quote": "",
+          "location": null,
+          "needed_material": "该平台所推广的基金或投资组合是否已获 MAS 认可或承认、招股说明书或简介说明书是否已注册（或其他产品不受发售限制的说明），以及推广对象是否为零售公众、是否仅限认可投资者或机构投资者。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R1",
+          "title": "收益表述有依据",
+          "status": "needs_material",
+          "quote": "收益组合：Receive monthly payouts of 3.5%-6.0% p.a. while growing or preserving your capital. 现金组合：Earn up to 2.3% p.a. on idle cash.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 3,
+            "paragraph": 1,
+            "clause": "3",
+            "clause_kind": "段"
+          },
+          "needed_material": "3.5%-6.0% p.a. 与 2.3% p.a. 的计算依据，包括口径、统计期间、费用前后、出具人。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R2",
+          "title": "推广关系如实披露",
+          "status": "no_issue",
+          "quote": "This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 5,
+            "paragraph": 1,
+            "clause": "5",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R3",
+          "title": "风险提示在最终画面可读",
+          "status": "needs_material",
+          "quote": "*Past performance is not indicative of future results.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 5,
+            "paragraph": 1,
+            "clause": "5",
+            "clause_kind": "段"
+          },
+          "needed_material": "最终图片或页面截图（用于确认风险提示在最终画面中是否清晰可读、位置是否显眼、字号是否与收益表述相称）",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R4",
+          "title": "发布主体名称一致",
+          "status": "needs_material",
+          "quote": "",
+          "location": null,
+          "needed_material": "背景已确认的发布主体机构全称（含 Pte. Ltd. 等后缀）。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R6",
+          "title": "不暗示保本或稳赚",
+          "status": "issue",
+          "quote": "收益组合：Receive monthly payouts of 3.5%-6.0% p.a. while growing or preserving your capital.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 3,
+            "paragraph": 1,
+            "clause": "3",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": "AI 起草，律师核对后才能发出",
+          "expected": null
+        },
+        {
+          "rule_id": "R7",
+          "title": "单帖整体印象平衡",
+          "status": "issue",
+          "quote": "第3段：Managed for you. Backed by science, with a track record of outperformance*. 收益组合：Receive monthly payouts of 3.5%-6.0% p.a. while growing or preserving your capital. 现金组合：Earn up to 2.3% p.a. on idle cash. Daily interest. No lock ups, no limits or tiers.\n第4段：Access 400+ mutual funds from leading global managers. At the lowest achievable fees — the same rates usually reserved for large institutions. Award-winning platform. Investing made simple.\n第5段（页面脚注）：*Data presented is derived from the 某理财平台 Client Satisfaction Survey 2025, based on a sample size of 264 clients. *Past performance is not indicative of future results. Outperformance refers to the 某理财平台核心 60/40 组合 vs the Global 60:40 Index, the 某理财平台收益组合 vs 某全球信用债指数, the 某理财平台现金组合 vs 某新元三个月存款基准 across 1Y, 3Y and 5Y annualised periods as of 31 May 2026. Portfolio returns are net of fund-level fees; index returns are without fees. This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 3,
+            "paragraph": 1,
+            "clause": "3",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": "AI 起草，律师核对后才能发出",
+          "expected": null
+        },
+        {
+          "rule_id": "R8",
+          "title": "集合投资计划广告必备声明",
+          "status": "needs_material",
+          "quote": "This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 5,
+            "paragraph": 1,
+            "clause": "5",
+            "clause_kind": "段"
+          },
+          "needed_material": "所推广的投资组合与共同基金是否属于集合投资计划（基金）；其招股说明书或简介说明书是否已注册。",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R9",
+          "title": "推广人持牌身份披露",
+          "status": "no_issue",
+          "quote": "",
+          "location": null,
+          "needed_material": "",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R10",
+          "title": "披露位置靠前（图文与文字帖）",
+          "status": "issue",
+          "quote": "*Data presented is derived from the 某理财平台 Client Satisfaction Survey 2025, based on a sample size of 264 clients. *Past performance is not indicative of future results. Outperformance refers to the 某理财平台核心 60/40 组合 vs the Global 60:40 Index, the 某理财平台收益组合 vs 某全球信用债指数, the 某理财平台现金组合 vs 某新元三个月存款基准 across 1Y, 3Y and 5Y annualised periods as of 31 May 2026. Portfolio returns are net of fund-level fees; index returns are without fees. This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 5,
+            "paragraph": 1,
+            "clause": "5",
+            "clause_kind": "段"
+          },
+          "needed_material": "",
+          "proposed_text_source": "AI 起草，律师核对后才能发出",
+          "expected": null
+        },
+        {
+          "rule_id": "R11",
+          "title": "过往业绩、比较、获奖与排名有出处",
+          "status": "needs_material",
+          "quote": "Access 400+ mutual funds from leading global managers. At the lowest achievable fees — the same rates usually reserved for large institutions. Award-winning platform. Investing made simple.",
+          "location": {
+            "input": "document",
+            "label": "营销文案正文",
+            "line": 4,
+            "paragraph": 1,
+            "clause": "4",
+            "clause_kind": "段"
+          },
+          "needed_material": "奖项颁发方与年份；最低费率的同口径比较数据与来源；跑赢基准的具体业绩数据（计算口径、期间、比较对象及同口径数据）",
+          "proposed_text_source": null,
+          "expected": null
+        },
+        {
+          "rule_id": "R5",
+          "title": "视频内可见披露推广关系",
+          "status": "not_applicable",
+          "quote": "",
+          "location": null,
+          "needed_material": null,
+          "proposed_text_source": null,
+          "expected": null
+        }
+      ],
+      "uncovered": [
+        "300,000+ Clients. S$16B+ Client assets.",
+        "96%* of our clients say we make investing less stressful.",
+        "94%* of our clients say we help them invest more confidently.",
+        "Managed for you.",
+        "No lock ups, no limits or tiers.",
+        "Portfolio returns are net of fund-level fees; index returns are without fees."
+      ],
+      "reply": {
+        "reply_to_marketing": "本次为预审意见，不是发布批准。\n\n本轮审阅只卡在一项前置条件（R0 产品可以公开推广）。在这项前置条件得到确认之前，暂不进入措辞修改和补件讨论。\n\n需要确认的是：该平台拟推广的专家管理组合与共同基金，是否已获得 MAS（新加坡金融管理局）认可或承认，其招股说明书或简介说明书是否已注册，或是否属于不受发售限制的其他产品；以及本次推广对象是零售公众，还是仅限认可投资者、机构投资者或私募。背景里已经写明产品类型（数字投资平台，含专家管理组合与共同基金）和拟发布市场（新加坡），这两项不用再提供。\n\n需要谁来确认：请市场同事提供上述依据，再由法务负责人核对确认。",
+        "internal_note": "建议，由负责人决定：补件后再审。\n\n说明：前置条件 R0 未满足；在它获得确认之前不进入措辞审阅，所以本轮只把各条状态列出来，措辞层面的问题留到前置条件满足后再逐条处理。\n\n高\n- R0 产品可以公开推广（前置条件）：需补材料。背景已写明产品类型和新加坡市场，只缺可向零售公众公开推广的依据（是否已获得 MAS 认可或承认、招股说明书或简介说明书是否已注册），以及推广对象范围。\n- R1 收益表述有依据：需补材料。3.5%-6.0% p.a. 与 2.3% p.a. 缺计算口径、统计期间、费用前后和出具人；即使补齐，同一段仍缺收益不保证和取决条件。\n- R2 推广关系如实披露：无问题。平台自有账号发布、没有外部推广人，符合本条列出的无问题情形。\n- R3 风险提示在最终画面可读：需补材料。缺最终图片或页面截图，暂时无法确认风险提示在画面中的位置、字号和可读性。\n- R6 不暗示保本或稳赚：不一致。原文中“preserving your capital”带有本金安全的暗示；这属于措辞层面的问题，待前置条件满足后再处理。\n- R7 单帖整体印象平衡：不一致。好处集中在第 3 至第 4 段，风险与条件只剩第 5 段脚注的一句，篇幅和位置与收益明显不相称；这属于措辞层面的问题，待前置条件满足后再处理。\n- R8 集合投资计划广告必备声明：需补材料。尚未确认所推广的投资组合与共同基金是否属于集合投资计划，也未确认招股说明书或简介说明书是否已注册，因此无法判断本条是否适用。\n- R9 推广人持牌身份披露：无问题。机构自有账号发布、不涉及外部个人推广人，本条不涉及持牌身份与“不构成财务建议”的披露。\n- R11 过往业绩、比较、获奖与排名有出处：需补材料。缺奖项颁发方与年份、最低费率的同口径比较数据与来源、跑赢基准的业绩数据。\n\n中\n- R4 发布主体名称一致：需补材料。缺已确认的发布主体机构全称（含 Pte. Ltd. 等后缀）。\n- R10 披露位置靠前（图文与文字帖）：不一致。推广标示与主要风险提示只出现在第 5 段脚注，未进入前三行；这属于措辞层面的问题，待前置条件满足后再处理。\n\n低\n- 无。\n\n需要负责人决定的条目：R6、R7（升级对象为合规负责人，且状态为不一致）。\n\n要补的材料：本轮只需补齐前置条件 R0 所述材料——基金��投资组合是否已获得 MAS 认可或承认、招股说明书或简介说明书是否已注册（或其他产品不受发售限制的说明），以及推广对象范围；该项由法务负责人核对。其余材料待前置条件确认后另行提出。",
+        "recommended_outcome": "补件后再审",
+        "needs_owner_decision": [
+          "R6",
+          "R7"
+        ]
+      }
+    }
+  ]
+}

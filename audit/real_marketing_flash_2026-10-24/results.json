@@ -1,0 +1,733 @@
+{
+  "started_at_utc": "2026-10-24T15:13:32+00:00",
+  "model": "deepseek-flash",
+  "provider": "openai",
+  "fixture_sha256": "4d6ad5d551fcf6fc387ef31595fc100f28034bb6eccddffce7953cebc306c016",
+  "example": "starter",
+  "example_sha256": "0dcc3533d711350d6914e65e2ee07d85dbc7afc6367ebe1cd61d1de9a07c6f0a",
+  "server_sha256": "8b7e004a714bbe8234df281e6d4cc38adc04fc8c1f9050441f497e940175a73e",
+  "repeats": 2,
+  "cases": [
+    {
+      "id": "R01-fund-etf-page",
+      "attempt": 1,
+      "run_status": "completed",
+      "error": null,
+      "seconds": 141.2,
+      "triage": {
+        "level": "red",
+        "label": "需要负责人决定",
+        "reasons": [
+          "R1 收益表述有依据",
+          "阻断：R3 风险提示在最终画面可读",
+          "R6 不暗示保本或稳赚",
+          "R7 单帖整体印象平衡",
+          "阻断：R11 过往业绩、比较、获奖与排名有出处"
+        ]
+      },
+      "gate_failed": [],
+      "rules": {
+        "R0": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本条要求只对照背景：背景已写明产品类型、MAS 认可及招股说明书注册、拟发布市场为新加坡（证据：招股说明书封面、招股说明书第 2 段），且未提仅限认可投资者、机构投资者或私募，因此已满足本条要求；材料原文没有就本条涉及的前置条件作出约定。",
+          "quote": ""
+        },
+        "R1": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在正文写“5% p.a. quarterly payouts”，但同一段未写明该收益取决于首次发售期/第三年起等条件及不保证，相关说明只出现在脚注。",
+          "quote": "The 某亚太金融股息 ETF is the world's first APAC Financials ETF, riding on APAC's financial strengths while providing investors with 5% p.a. quarterly payouts¹."
+        },
+        "R2": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文未提及推广关系；背景写明机构自有账号发布且无外部推广人，按本条属无问题。",
+          "quote": ""
+        },
+        "R3": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "页面文字含风险提示句，但未提供最终截图或横幅图片，无法确认风险提示在最终画面是否清晰可读、位置显眼、字号与收益表述相称。",
+          "quote": "Investments in the ETF are not obligations of, deposits in, guaranteed or insured by 某基金公司 or any of its affiliates and are subject to investment risks including the possible loss of the principal amount invested."
+        },
+        "R4": {
+          "expected": "no_issue|issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在免责声明中写明发布主体为“某基金公司 Limited”，与背景已确认主体全称一致。",
+          "quote": "available and may be obtained from 某基金公司 Limited (“某基金公司”) or any of the its distributors and appointed Participating Dealers (“PDs”)"
+        },
+        "R5": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次发布形式为“静态图文”，本条只适用于短视频或直播。",
+          "quote": ""
+        },
+        "R6": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文以“Earn stable dividends”和“Stable quarterly distribution”描述派息稳定性，带有收益稳定的暗示，而本条不允许这类暗示收益确定的表述。",
+          "quote": "Earn stable dividends."
+        },
+        "R7": {
+          "expected": "no_issue",
+          "actual": "unverified",
+          "bucket": "routed",
+          "model_status": "no_issue",
+          "reason": "复核发现可能的差距：原文在横幅、Fund Overview、Key Features 和 Within Your Reach 连续突出“Earn stable dividends.”、“5% p.a. quarterly payouts”、“world's first”及“S$1”起步等好处，风险与费用条件却主要落在脚注 1/4、脚注 5 和页尾免责声明，脚注 1 还让读者到公司网站看收入披露、免责声明让读者读招股书和 Product Highlights Sheet 了解风险因素，正文与脚注/页尾的篇幅和位置明显不相称。需人工确认。",
+          "quote": "Stable quarterly distribution⁴ (around 5% p.a. of the Net Asset Value per Unit of the Class) / Potential capital appreciation in the APAC Financials Sector\n⁴As set out in the prospectus, distribution payments shall, at the sole discretion of the Manager, be made out of either (a) distributable income; or (b) capital gains; or (c) capital of the Deposited Property or a combination of (a) and/or (b) and/or (c). Distributions are not guaranteed and may fluctuate. Past performance, yields, and payments are not necessarily indicative of future or likely performance, yields, and payments. Distribution payouts and its frequency might be changed at the Manager's discretion and can be made out of distributable income, capital or both. Any payment of distributions by the fund may result in an immediate reduction of the net asset"
+        },
+        "R8": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "页面免责声明同时写明招股说明书可获取及获取方式（基金经理、分销商及指定参与交易商）、投资前应阅读招股说明书、单位价值与收益（如有）可升可跌，并逐字载有指定英文原句，五项必备内容齐备。",
+          "quote": "This advertisement or publication has not been reviewed by the Monetary Authority of Singapore. …… You should read the prospectus and Product Highlights Sheet of the 某亚太金融股息 ETF (“ETF”), which is available and may be obtained from 某基金公司 Limited (“某基金公司”) or any of the its distributors and appointed Participating Dealers (“PDs”), for further details including the risk factors and consider if the ETF is suitable for you and seek such advice from a financial adviser if necessary, before deciding whether to purchase units in the ETF. Investments in the ETF are not obligations of, deposits in, guaranteed or insured by 某基金公司 or any of its affiliates and are subject to investment risks including the possible loss of the principal amount invested. The performance of the ETF is not guaranteed and, the value of its units and the income accruing to the units, if any, may rise or fall."
+        },
+        "R9": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本条只在有外部个人推广人于其个人账号发布时才要求披露持牌或受委任状态并加“不构成财务建议”，而背景写明由基金经理在自有官网以机构账号发布、无外部推广人，原文未提及持牌披露，符合本条的无问题情形。",
+          "quote": ""
+        },
+        "R10": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "横幅首行只有产品名和卖点，未见推广标示，主要风险提示与“未经 MAS 审阅”的标示分别落在紧邻简介的脚注 1 和页面下方免责声明节，不在文案前三行。",
+          "quote": "某亚太金融股息 ETF / Earn stable dividends. Invest in APAC's financial strengths. / The world's first APAC Financials ETF / Watch our video here >"
+        },
+        "R11": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文使用“The world's first APAC Financials ETF”这一“第一”表述，但背景未提供该表述的出处（认定方与年份、比较对象与同口径数据），文案同段也未注明出处及“过往业绩不代表未来表现”。",
+          "quote": "The 某亚太金融股息 ETF is the world's first APAC Financials ETF, riding on APAC's financial strengths while providing investors with 5% p.a. quarterly payouts¹."
+        }
+      },
+      "extraction_quotes_exact": true,
+      "extraction_items": 12
+    },
+    {
+      "id": "R01-fund-etf-page",
+      "attempt": 2,
+      "run_status": "completed",
+      "error": null,
+      "seconds": 157.8,
+      "triage": {
+        "level": "red",
+        "label": "需要负责人决定",
+        "reasons": [
+          "R1 收益表述有依据",
+          "阻断：R3 风险提示在最终画面可读",
+          "R6 不暗示保本或稳赚",
+          "R7 单帖整体印象平衡",
+          "阻断：R11 过往业绩、比较、获奖与排名有出处"
+        ]
+      },
+      "gate_failed": [],
+      "rules": {
+        "R0": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本条仅核对背景，背景已写明产品为获 MAS 认可的集合投资计划、招股说明书已注册、拟发布市场为新加坡，且未提及仅限认可投资者、机构投资者或私募，与首选立场一致。",
+          "quote": ""
+        },
+        "R1": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文的收益不保证说明仅放在脚注，未与“5% p.a. quarterly payouts”同段，且背景未写明业务负责人书面确认并交法务留档。",
+          "quote": "The 某亚太金融股息 ETF is the world's first APAC Financials ETF, riding on APAC's financial strengths while providing investors with 5% p.a. quarterly payouts¹. ¹We intend to declare quarterly distributions of around 5% per annum of the Net Asset Value per Unit of the Class. Distributions are not guaranteed. Please refer to 某基金公司 website for more information on the income disclosures."
+        },
+        "R2": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "背景写明为基金经理在自有官网发布、没有外部推广人，原文也没有出现否认推广关系的表述，符合本条无问题情形。",
+          "quote": ""
+        },
+        "R3": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在页面文字中列有本金损失等风险提示，但未提供最终图片或截图，无法确认其在最终画面中清晰可读、位置显眼且字号与收益表述相称。",
+          "quote": "Investments in the ETF are not obligations of, deposits in, guaranteed or insured by 某基金公司 or any of its affiliates and are subject to investment risks including the possible loss of the principal amount invested."
+        },
+        "R4": {
+          "expected": "no_issue|issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在免责声明中写明“某基金公司 Limited”，与背景已确认主体全称一致。",
+          "quote": "which is available and may be obtained from 某基金公司 Limited (“某基金公司”)"
+        },
+        "R5": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次发布形式为“静态图文”，本条只适用于短视频或直播。",
+          "quote": ""
+        },
+        "R6": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文以“Earn stable dividends.”（以及 Key Features 的“Stable quarterly distribution⁴”）把派息说成是稳定的，属于弱化风险的说法；同页脚注 1、4 已写明派息不保证、可由资本支付，所以这不是本条所说的“经法务确认的担保安排”下可以保留的表述。",
+          "quote": "Earn stable dividends."
+        },
+        "R7": {
+          "expected": "no_issue",
+          "actual": "issue",
+          "bucket": "silent",
+          "model_status": null,
+          "reason": "页面从横幅到 Key Features 主要突出收益、“稳定派息”和“全球首只”等卖点，并引导观看视频；派息条件与风险主要放在小字脚注中，并以“详见网站/招股说明书”带过，页面也完全未提费用。收益宣传与风险、费用、条件在篇幅和位置上不相称。",
+          "quote": "某亚太金融股息 ETF / Earn stable dividends. Invest in APAC's financial strengths. / The world's first APAC Financials ETF / Watch our video here >"
+        },
+        "R8": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文免责声明已同时写明招股说明书可获取及获取方式、投资前应阅读招股说明书、单位价值与收益（如有）可升可跌，以及未受新加坡金融管理局审阅的英文声明，与本条首选立场一致。",
+          "quote": "This advertisement or publication has not been reviewed by the Monetary Authority of Singapore. …… You should read the prospectus and Product Highlights Sheet of the 某亚太金融股息 ETF (“ETF”), which is available and may be obtained from 某基金公司 Limited (“某基金公司”) or any of the its distributors and appointed Participating Dealers (“PDs”), for further details including the risk factors and consider if the ETF is suitable for you and seek such advice from a financial adviser if necessary, before deciding whether to purchase units in the ETF. Investments in the ETF are not obligations of, deposits in, guaranteed or insured by 某基金公司 or any of its affiliates and are subject to investment risks including the possible loss of the principal amount invested. The performance of the ETF is not guaranteed and, the value of its units and the income accruing to the units, if any, may rise or fall."
+        },
+        "R9": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文没有写到任何外部个人推广人的持牌身份披露，而背景已写明这是基金经理在自有官网以机构账号发布、没有外部个人推广人参与，属于本条所指的无问题情形。",
+          "quote": "This advertisement or publication has not been reviewed by the Monetary Authority of Singapore."
+        },
+        "R10": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文的推广标示和主要风险提示只出现在页面下方免责声明节和脚注里，前三行的横幅和简介里都没有，读者不往下看就看不到。",
+          "quote": "This advertisement or publication has not been reviewed by the Monetary Authority of Singapore."
+        },
+        "R11": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文写有“The world's first APAC Financials ETF”这一最高级表述，但背景未提供该说法的出处，且该段未注明出处或“过往业绩不代表未来表现”。",
+          "quote": "The 某亚太金融股息 ETF is the world's first APAC Financials ETF, riding on APAC's financial strengths while providing investors with 5% p.a. quarterly payouts¹."
+        }
+      },
+      "extraction_quotes_exact": true,
+      "extraction_items": 12
+    },
+    {
+      "id": "R02-partnership-article",
+      "attempt": 1,
+      "run_status": "completed",
+      "error": null,
+      "seconds": 121.5,
+      "triage": {
+        "level": "red",
+        "label": "需要负责人决定",
+        "reasons": [
+          "阻断：R1 收益表述有依据",
+          "R2 推广关系如实披露",
+          "阻断：R3 风险提示在最终画面可读",
+          "R6 不暗示保本或稳赚",
+          "R7 单帖整体印象平衡",
+          "R8 集合投资计划广告必备声明"
+        ]
+      },
+      "gate_failed": [],
+      "rules": {
+        "R0": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本条只看背景，背景已写明产品类型、MAS 认可与招股说明书注册依据及拟发布市场为新加坡，且未提及仅限认可投资者、机构投资者或私募，符合首选立场。",
+          "quote": ""
+        },
+        "R1": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文出现“at least 6%”等收益目标表述，但背景未提供该目标派息的计算口径、费用前后和出具人，无法核对依据。",
+          "quote": "The ETF has also stated a target to pay dividends of at least 6%* per annum in 2026 and 2027. However, do note that while there is a dividend target, distributions (in SGD) are not guaranteed."
+        },
+        "R2": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文开头虽写明与某基金公司合作制作，但未在开头写出委托方全称“某基金公司 Ltd”。",
+          "quote": "This post was created in partnership with 某基金公司. All views and opinions expressed in this article are 某理财网站's objective and professional opinions."
+        },
+        "R3": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文文字中有分派不保证的提示，但材料未提供最终图片或截图，无法确认该提示在最终画面中清晰可读、位置显眼且字号与收益表述相称。",
+          "quote": "*Distributions (in SGD) are not guaranteed. Distributions may be made out of income, capital gains and/or capital. This relates to the disclosed distribution policy as set out in the Fund's prospectus."
+        },
+        "R4": {
+          "expected": "no_issue|issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "文首合作说明用简称“某基金公司”，与背景确认的机构全称“某基金公司 Ltd”不一致。",
+          "quote": "This post was created in partnership with 某基金公司."
+        },
+        "R5": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次发布形式为“静态图文”，本条只适用于短视频或直播。",
+          "quote": ""
+        },
+        "R6": {
+          "expected": "issue|no_issue",
+          "actual": "unverified",
+          "bucket": "routed",
+          "model_status": "no_issue",
+          "reason": "复核发现可能的差距：原文写“dividend-focused ASEAN strategies have historically been less volatile than several major global equity benchmarks over longer periods, as income can help cushion returns over time*”，用“less volatile”和“cushion returns”弱化波动与回撤风险，属于R6禁止的弱化风险说法。需人工确认。",
+          "quote": "However, do note that while there is a dividend target, distributions (in SGD) are not guaranteed."
+        },
+        "R7": {
+          "expected": "no_issue|issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文收益部分至少约1,300词并配12张图表，风险与费用部分仅约175词且集中在文末，篇幅和位置不相称。",
+          "quote": "The ETF has also stated a target to pay dividends of at least 6%* per annum in 2026 and 2027. However, do note that while there is a dividend target, distributions (in SGD) are not guaranteed."
+        },
+        "R8": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文文末仅写“This advertisement has not been reviewed by the Monetary Authority of Singapore.”，缺少本条要求的“or publication”字样，未完整使用指定英文句。",
+          "quote": "This advertisement has not been reviewed by the Monetary Authority of Singapore."
+        },
+        "R9": {
+          "expected": "needs_material",
+          "actual": "no_issue",
+          "bucket": "silent",
+          "model_status": null,
+          "reason": "原文仅有个人署名“博主 A, CFA”，未写明其是否持牌或受委任提供受监管金融服务，也未写明内容不构成财务建议；但背景写明该文发布在某理财网站的公司网站上，不是个人账号，因此本条针对个人账号推广人的披露要求不触发。",
+          "quote": "By 博主 A, CFA"
+        },
+        "R10": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文只在文首放置合作推广标示，分派不保证等主要风险提示出现在正文后段及脚注，不在前三行或已提供图片内。",
+          "quote": "This post was created in partnership with 某基金公司. All views and opinions expressed in this article are 某理财网站's objective and professional opinions."
+        },
+        "R11": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文用 8.6% 与 4.4% 的股息率作比较，但背景未提供该比较数据的出处和口径，文案也未在同一段写明完整出处及“过往业绩不代表未来表现”。",
+          "quote": "As of 28 November 2025, according to 某指数公司, the target dividend index recorded a gross dividend yield of 8.6% p.a*, compared with 4.4% p.a. for the 某东盟基准指数."
+        }
+      },
+      "extraction_quotes_exact": true,
+      "extraction_items": 12
+    },
+    {
+      "id": "R02-partnership-article",
+      "attempt": 2,
+      "run_status": "completed",
+      "error": null,
+      "seconds": 149.2,
+      "triage": {
+        "level": "red",
+        "label": "需要负责人决定",
+        "reasons": [
+          "阻断：R1 收益表述有依据",
+          "R2 推广关系如实披露",
+          "阻断：R3 风险提示在最终画面可读",
+          "R6 不暗示保本或稳赚",
+          "R7 单帖整体印象平衡",
+          "R8 集合投资计划广告必备声明"
+        ]
+      },
+      "gate_failed": [],
+      "rules": {
+        "R0": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文未提及本条（本条只看背景、不看文案措辞）；背景已同时写明产品类型为集合投资计划（ETF 子基金）、依《证券及期货法》2001 第 286 条获 MAS 认可且招股说明书 2025 年 12 月 15 日注册、拟发布市场为新加坡，并写明没有仅限认可投资者、机构投资者或私募。",
+          "quote": ""
+        },
+        "R1": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文出现“at least 6%”目标派息及8.6%/4.4%等收益率数字，但背景未提供这些数字的计算口径、期间、费用前后和出具人，无法核对计算依据。",
+          "quote": "The ETF has also stated a target to pay dividends of at least 6%* per annum in 2026 and 2027. However, do note that while there is a dividend target, distributions (in SGD) are not guaranteed."
+        },
+        "R2": {
+          "expected": "issue",
+          "actual": "unverified",
+          "bucket": "routed",
+          "model_status": "no_issue",
+          "reason": "复核发现可能的差距：文首标示只写“某基金公司”，未写委托方全称“某基金公司 Ltd”，不满足首选立场。需人工确认。",
+          "quote": "This post was created in partnership with 某基金公司."
+        },
+        "R3": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文虽有“distributions (in SGD) are not guaranteed”等风险提示，但只提供文字，未提供最终图片或截图，无法确认风险提示在最终画面中是否清晰可读、位置显眼。",
+          "quote": "However, do note that while there is a dividend target, distributions (in SGD) are not guaranteed."
+        },
+        "R4": {
+          "expected": "no_issue|issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文合作推广句只写“某基金公司”，未使用背景已确认的机构全称“某基金公司 Ltd”。",
+          "quote": "This post was created in partnership with 某基金公司."
+        },
+        "R5": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次发布形式为“静态图文”，本条只适用于短视频或直播。",
+          "quote": ""
+        },
+        "R6": {
+          "expected": "issue|no_issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文用“less volatile…cushion returns”弱化风险，与本条不得使用稳健暗示的要求不符。",
+          "quote": "That said, dividend-focused ASEAN strategies have historically been less volatile than several major global equity benchmarks over longer periods, as income can help cushion returns over time*."
+        },
+        "R7": {
+          "expected": "no_issue|issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文以四个好处小节（约1,300词、12张图表）和标题导语集中呈现收益，风险与费用仅有一段约175词并置于文末，篇幅和位置与收益不相称。",
+          "quote": "#1 – Sensitivity to global demand and commodity cycles: ASEAN economies are sensitive to global demand, commodity prices and market sentiment, which can cause short-term swings in earnings and returns. The financials sector makes up about 61.5% of the index as of 28 November 2025, so a sharp downturn in the sector could weigh on earnings across the index. That said, dividend-focused ASEAN strategies have historically been less volatile than several major global equity benchmarks over longer periods, as income can help cushion returns over time*. #2 – Currency fluctuations: because the ETF invests across regional markets, its returns in SGD can rise or fall with ASEAN currency movements against the Singapore dollar. #3 – Management fee: The ETF charges a management fee of 0.45% per annum, which investors should factor into overall return expectations, particularly for longer holding periods."
+        },
+        "R8": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文的 MAS 未审阅声明只写“This advertisement”，缺少本条要求的“or publication”，其余四项在免责声明中均有对应表述。",
+          "quote": "This advertisement has not been reviewed by the Monetary Authority of Singapore."
+        },
+        "R9": {
+          "expected": "needs_material",
+          "actual": "unverified",
+          "bucket": "routed",
+          "model_status": "no_issue",
+          "reason": "复核发现可能的差距：原文署名“博主 A, CFA”并以第一人称叙述，背景只说明发布网站不是个人账号，却未写明没有外部个人推广人，也未确认博主 A 是否持牌代表；原文亦未写明其是否持牌或受委任，未持牌时未写内容不构成财务建议。需人工确认。",
+          "quote": "By 博主 A, CFA • 20 Jan 2026"
+        },
+        "R10": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文开头三行只有推广标示，主要风险提示（分派不保证）直到第5段和文末才出现，未进入前三行或已提供的图片。",
+          "quote": "A simple way to diversify passive income beyond Singapore stocks / By 博主 A, CFA • 20 Jan 2026\nLooking beyond Singapore for passive income? Learn how the 某东盟股息指数 ETF offers ASEAN diversification and dividend potential.\nThis post was created in partnership with 某基金公司. All views and opinions expressed in this article are 某理财网站's objective and professional opinions."
+        },
+        "R11": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文出现“approximately double the dividend yield”及8.6%/4.4%等比较和历史股息率表述，但背景尚未提供这些数据的完整出处、计算口径与期间，无法核对本条要求的出处条件。",
+          "quote": "The ETF is listed on SGX and tracks 某东盟目标股息指数, which aims to deliver approximately double the dividend yield of the broader 某东盟基准指数. As of 28 November 2025, according to 某指数公司, the target dividend index recorded a gross dividend yield of 8.6% p.a*, compared with 4.4% p.a. for the 某东盟基准指数."
+        }
+      },
+      "extraction_quotes_exact": true,
+      "extraction_items": 12
+    },
+    {
+      "id": "R03-bank-endowment",
+      "attempt": 1,
+      "run_status": "completed",
+      "error": null,
+      "seconds": 101.4,
+      "triage": {
+        "level": "red",
+        "label": "需要负责人决定",
+        "reasons": [
+          "阻断：R1 收益表述有依据",
+          "阻断：R3 风险提示在最终画面可读",
+          "R6 不暗示保本或稳赚",
+          "阻断：R7 单帖整体印象平衡"
+        ]
+      },
+      "gate_failed": [],
+      "rules": {
+        "R0": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "背景已同时写明产品类型为保险、可向零售公众公开推广且不受发售限制、拟发布市场为新加坡，且未提及仅限认可投资者、机构投资者或私募。",
+          "quote": ""
+        },
+        "R1": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文出现 0.60% 保证回报及 3.00%/1.50% 示例利率和 S$50,604 等收益数字，背景只说明来自保单条款，未提供口径、期间、费用前后和出具人的计算依据。",
+          "quote": "Guaranteed return of 0.60% p.a. upon maturity in 24 months"
+        },
+        "R2": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "背景写明机构自有官网发布、无外部推广人，原文未提及推广关系，也未出现否认推广关系的句子，符合本条的机构自有渠道情形。",
+          "quote": ""
+        },
+        "R3": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文文字稿含风险提示，但未提供最终图片或截图，无法确认该提示在最终画面中清晰可读且位置显眼。",
+          "quote": "This plan is not a bank deposit and 某银行 does not guarantee or have any obligations in connection with it."
+        },
+        "R4": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文只出现简称“某银行”和“某银行集团”，没有写出背景已确认的机构全称“某银行 Corporation Limited”。",
+          "quote": "This plan is not a bank deposit and 某银行 does not guarantee or have any obligations in connection with it."
+        },
+        "R5": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次发布形式为“静态图文”，本条只适用于短视频或直播。",
+          "quote": ""
+        },
+        "R6": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在横幅和产品简介中直接使用“Guaranteed return”和“100% capital guaranteed”，且未在这些表述中写明担保人名称，与本条不得暗示本金安全或收益确定的要求不一致。",
+          "quote": "Guaranteed return of 0.60% p.a. upon maturity in 24 months / 100% capital guaranteed upon maturity"
+        },
+        "R7": {
+          "expected": "no_issue",
+          "actual": "needs_material",
+          "bucket": "silent",
+          "model_status": null,
+          "reason": "原文已列出提前退保等风险提示，但缺少最终页面截图，无法判断收益展示与风险、条件在版面上的篇幅和位置是否相称。",
+          "quote": "As buying a life insurance policy is a long-term commitment, an early termination of the policy usually involves high costs and the surrender value, if any, that is payable to you may be zero or less than the total premiums paid."
+        },
+        "R8": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文明确产品为非分红型储蓄寿险，背景也确认其不是集合投资计划，因此不涉及本条要求的集合投资计划声明。",
+          "quote": "This is not a fixed or savings deposit. It is a non-participating endowment insurance plan."
+        },
+        "R9": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "背景已写明发布者为银行自有官网且无外部个人推广人，原文未涉及个人推广人持牌披露，按本条属于无问题情形。",
+          "quote": ""
+        },
+        "R10": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文将主要风险提示及“未经MAS审查”的推广标示放在页面下方 Important notes 第6段，未出现在文案前三行，不符合首选立场；F1 因图片未提供且首行无推广标示不成立，F2 不适用于静态图文。",
+          "quote": "This plan is not a bank deposit and 某银行 does not guarantee or have any obligations in connection with it. …… As buying a life insurance policy is a long-term commitment, an early termination of the policy usually involves high costs and the surrender value, if any, that is payable to you may be zero or less than the total premiums paid. …… If you are interested in the insurance policy, you should read the product summary and policy illustration (available from us) before deciding whether to buy this product. …… The 某保险公司 Limited reserves the right to amend 某储蓄计划’s policy term and rates payable for the survival benefit at any time without prior notice. Such amendments will not affect any applications which have been submitted or policies that are in-force. …… This advertisement has not been reviewed by the Monetary Authority of Singapore. Information presented as at 2 October 2026."
+        },
+        "R11": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文仅写保证到期回报，没有过往业绩、比较、奖项或排名表述，未触发本条。",
+          "quote": ""
+        }
+      },
+      "extraction_quotes_exact": true,
+      "extraction_items": 12
+    },
+    {
+      "id": "R03-bank-endowment",
+      "attempt": 2,
+      "run_status": "completed",
+      "error": null,
+      "seconds": 91.8,
+      "triage": {
+        "level": "red",
+        "label": "需要负责人决定",
+        "reasons": [
+          "阻断：R1 收益表述有依据",
+          "阻断：R3 风险提示在最终画面可读",
+          "R6 不暗示保本或稳赚",
+          "R7 单帖整体印象平衡"
+        ]
+      },
+      "gate_failed": [],
+      "rules": {
+        "R0": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "背景已写明产品为保险、非集合投资计划且不受发售限制、拟发布市场为新加坡，且未提及仅限认可投资者、机构投资者或私募，满足本条三项要求。",
+          "quote": ""
+        },
+        "R1": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在横幅、简介中多次出现 0.60% p.a. 的收益数字，但背景只说明该数字来自承保保险公司的保单条款，未提供口径、期间、费用前后及出具人等可追溯的计算依据。",
+          "quote": "Guaranteed return of 0.60% p.a. upon maturity in 24 months"
+        },
+        "R2": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "背景写明本条为银行在自有官网发布、没有外部推广人参与，属机构自有渠道，原文未提及推广关系，也没有“不是广告”“个人分享”“自发安利”等否认推广关系的表述。",
+          "quote": ""
+        },
+        "R3": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文文字稿中虽有“累计利率不保证”等风险提示，但本条要看的是风险提示在最终画面中是否清晰可读、位置是否显眼；现有材料只有页面文字，没有最终截图或横幅图片。",
+          "quote": "The figures used are only for illustrative purposes and may have been rounded up or down. The non-guaranteed payout is calculated based on an illustrated accumulation interest rate of 3.00% per annum. Based on an illustrated accumulation interest rate of 1.50% per annum, the total illustrated payout at the end of 24 months will be S$50,604. The accumulation interest rate is not guaranteed and can change from time to time."
+        },
+        "R4": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文只以“某银行”简称出现，未写明与背景已确认主体一致的“某银行 Corporation Limited”全称。",
+          "quote": "This plan is not a bank deposit and 某银行 does not guarantee or have any obligations in connection with it."
+        },
+        "R5": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次发布形式为“静态图文”，本条只适用于短视频或直播。",
+          "quote": ""
+        },
+        "R6": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文直接用“Guaranteed return”和“100% capital guaranteed”表述收益确定与本金安全，且只写了承保人，未写明担保人名称，与本条不得使用此类表述的要求不符。",
+          "quote": "Guaranteed return of 0.60% p.a. upon maturity in 24 months / 100% capital guaranteed upon maturity"
+        },
+        "R7": {
+          "expected": "no_issue",
+          "actual": "unverified",
+          "bucket": "routed",
+          "model_status": "no_issue",
+          "reason": "复核发现可能的差距：收益和保本卖点集中在横幅、“Why you will love this”及 Features and benefits，而提前退保成本高、退保价值可能为零或低于已缴保费仅出现在页面最下方 Important notes，位置和篇幅不相称，整体印象仍偏向收益。需人工确认。",
+          "quote": "As buying a life insurance policy is a long-term commitment, an early termination of the policy usually involves high costs and the surrender value, if any, that is payable to you may be zero or less than the total premiums paid."
+        },
+        "R8": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "背景已写明该产品是由集团内保险公司承保的24个月非分红型储蓄寿险，不是集合投资计划，因此本条要求的招股说明书类声明不适用，原文也未提及相关内容。",
+          "quote": ""
+        },
+        "R9": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文未提及外部个人推广人或其持牌状态，而背景写明由银行自有官网发布且没有外部推广人参与，属于本条所述机构自有账号的无问题情形。",
+          "quote": ""
+        },
+        "R10": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文首行只有产品名称和保证回报，推广标示及主要风险提示只见于页面下方 Important notes，未出现在前三行。",
+          "quote": "某储蓄计划 – Guaranteed return of 0.60% p.a. upon maturity in 24 months"
+        },
+        "R11": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文只有保证回报、保本和演示利率的表述，没有过往业绩、比较、奖项或排名的内容。",
+          "quote": ""
+        }
+      },
+      "extraction_quotes_exact": false,
+      "extraction_items": 12
+    }
+  ],
+  "totals": {
+    "correct": 64,
+    "routed": 5,
+    "silent": 3,
+    "expected": 72
+  },
+  "finished_at_utc": "2026-10-24T15:26:15+00:00"
+}

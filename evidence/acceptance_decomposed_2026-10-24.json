@@ -1,0 +1,857 @@
+{
+  "model": "qwen3:4b-instruct-2507-q4_K_M",
+  "provider": "ollama",
+  "repeats": 2,
+  "cases": {
+    "nda_discloser": {
+      "expected": {
+        "B1D": "issue",
+        "B2D": "acceptable_fallback|no_issue",
+        "B3D": "no_issue",
+        "B4": "issue",
+        "B5": "acceptable_fallback",
+        "B6": "issue",
+        "B7": "issue",
+        "B8": "issue",
+        "B1R": "not_applicable",
+        "B2R": "not_applicable",
+        "B3R": "not_applicable",
+        "uncovered_includes": [
+          "8"
+        ]
+      },
+      "runs": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "seconds": 62.5,
+          "triage": "red",
+          "statuses": {
+            "B1D": "issue",
+            "B2D": "unverified",
+            "B3D": "unverified",
+            "B4": "acceptable_fallback",
+            "B5": "acceptable_fallback",
+            "B6": "issue",
+            "B7": "no_issue",
+            "B8": "issue",
+            "B1R": "not_applicable",
+            "B2R": "not_applicable",
+            "B3R": "not_applicable"
+          },
+          "hits": {
+            "B1D": true,
+            "B2D": false,
+            "B3D": false,
+            "B4": false,
+            "B5": true,
+            "B6": true,
+            "B7": false,
+            "B8": true,
+            "B1R": true,
+            "B2R": true,
+            "B3R": true
+          },
+          "hit_rate": "7/11",
+          "uncovered": [
+            "8",
+            "9",
+            "5",
+            "3",
+            "6",
+            "7"
+          ],
+          "uncovered_found": true,
+          "owners_from_code": false,
+          "checks": [
+            {
+              "rule_id": "B1D",
+              "status": "issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文保密期限为2年，而团队底线首选立场为不少于3年，且要求商业秘密在其仍属商业秘密期间持续保密，原文未写明持续保密条款。",
+              "decision": "用团队批准文本回复对方；接受偏离需法务负责人决定",
+              "proposed_text_source": "团队批准文本（首选立场）"
+            },
+            {
+              "rule_id": "B2D",
+              "status": "unverified",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "模型的回答格式不完整（缺少首选或退让条件的逐项回答），需人工检查。",
+              "decision": "人工按依据和原文检查",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B3D",
+              "status": "unverified",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "模型的回答格式不完整（缺少首选或退让条件的逐项回答），需人工检查。",
+              "decision": "人工按依据和原文检查",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B4",
+              "status": "acceptable_fallback",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文约定禁止招揽员工，但团队底线首选立场为不约定禁止招揽，且原文中‘solicit for employment any employee’未限定为参与本项目的人员，超出可接受退让条件F2，故不符合首选立场。",
+              "decision": "在可接受退让内，经办人可接受或先争取首选立场",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "B5",
+              "status": "acceptable_fallback",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文规定适用法律为英格兰与威尔士法律，而团队首选立场为新加坡法律，不符合首选立场；可接受退让条件F1为香港法律，未出现；F2为英格兰与威尔士法律，原文完全匹配，因此满足F2但不满足首选立场。",
+              "decision": "在可接受退让内，经办人可接受或先争取首选立场",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "B6",
+              "status": "issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文规定争议解决由英格兰法院享有专属管辖权，与标准中首选的SIAC仲裁（新加坡）或新加坡法院不符，且未提及保留临时救济权利，不符合首选立场及可接受退让条件。",
+              "decision": "用团队批准文本回复对方；接受偏离需法务负责人决定",
+              "proposed_text_source": "团队批准文本（首选立场）"
+            },
+            {
+              "rule_id": "B7",
+              "status": "no_issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文中'Reciguous'为拼写错误，应为'Recipient'，且未明确说明为法律或自动备份保留的副本继续受保密义务约束，与标准中'为法律或自动备份保留的副本继续受保密义务约束'存在表述差异。",
+              "decision": "无需处理",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "B8",
+              "status": "issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文允许对方以‘记忆中保留的信息’为由使用我方保密信息，与我方首选立场‘不接受残留信息’不符，且标准中明确可接受退让为无。",
+              "decision": "用团队批准文本回复对方；接受偏离需法务负责人决定",
+              "proposed_text_source": "团队批准文本（首选立场）"
+            },
+            {
+              "rule_id": "B1R",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次我方角色为“我方主要披露信息”，本条只适用于我方主要接收信息。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B2R",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次我方角色为“我方主要披露信息”，本条只适用于我方主要接收信息。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B3R",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次我方角色为“我方主要披露信息”，本条只适用于我方主要接收信息。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "status": "completed",
+          "seconds": 55.9,
+          "triage": "red",
+          "statuses": {
+            "B1D": "issue",
+            "B2D": "unverified",
+            "B3D": "unverified",
+            "B4": "acceptable_fallback",
+            "B5": "acceptable_fallback",
+            "B6": "issue",
+            "B7": "no_issue",
+            "B8": "issue",
+            "B1R": "not_applicable",
+            "B2R": "not_applicable",
+            "B3R": "not_applicable"
+          },
+          "hits": {
+            "B1D": true,
+            "B2D": false,
+            "B3D": false,
+            "B4": false,
+            "B5": true,
+            "B6": true,
+            "B7": false,
+            "B8": true,
+            "B1R": true,
+            "B2R": true,
+            "B3R": true
+          },
+          "hit_rate": "7/11",
+          "uncovered": [
+            "8",
+            "9",
+            "5",
+            "3",
+            "7",
+            "6"
+          ],
+          "uncovered_found": true,
+          "owners_from_code": false,
+          "checks": [
+            {
+              "rule_id": "B1D",
+              "status": "issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文保密期限为2年，而团队底线首选立场为不少于3年，且要求商业秘密在其仍属商业秘密期间持续保密，原文未写明持续保密条款。",
+              "decision": "用团队批准文本回复对方；接受偏离需法务负责人决定",
+              "proposed_text_source": "团队批准文本（首选立场）"
+            },
+            {
+              "rule_id": "B2D",
+              "status": "unverified",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "模型的回答格式不完整（缺少首选或退让条件的逐项回答），需人工检查。",
+              "decision": "人工按依据和原文检查",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B3D",
+              "status": "unverified",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "模型的回答格式不完整（缺少首选或退让条件的逐项回答），需人工检查。",
+              "decision": "人工按依据和原文检查",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B4",
+              "status": "acceptable_fallback",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文包含禁止招揽员工条款，但团队底线首选立场为不约定禁止招揽，且条款中‘solicit for employment any employee’覆盖范围未限定为参与本项目的人员，违反了可接受退让条件F2；同时条款未排除一般性公开招聘，违反F4，因此不符合首选立场和可接受退让条件。",
+              "decision": "在可接受退让内，经办人可接受或先争取首选立场",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "B5",
+              "status": "acceptable_fallback",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文规定适用法律为英格兰与威尔士法律，而团队首选立场为新加坡法律，不符合首选立场；虽可接受退让条件为香港法律或英格兰与威尔士法律，但原文明确为英格兰与威尔士法律，满足F1（香港法律）的退让条件未被满足，F2（英格兰与威尔士法律）被满足，因此fallback_met中F2为true，F1为false。",
+              "decision": "在可接受退让内，经办人可接受或先争取首选立场",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "B6",
+              "status": "issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文规定争议解决由英格兰法院享有专属管辖权，与标准中首选的SIAC仲裁（新加坡）或新加坡法院不符，且未提及保留临时救济权利，不符合首选立场及可接受退让条件。",
+              "decision": "用团队批准文本回复对方；接受偏离需法务负责人决定",
+              "proposed_text_source": "团队批准文本（首选立场）"
+            },
+            {
+              "rule_id": "B7",
+              "status": "no_issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文中'Reciguous'为拼写错误，应为'Recipient'，且未明确说明为法律或自动备份保留的副本继续受保密义务约束，与标准中'为法律或自动备份保留的副本继续受保密义务约束'存在表述差异。",
+              "decision": "无需处理",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "B8",
+              "status": "issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文允许对方以‘记忆中保留的信息’为由使用我方保密信息，与我方首选立场‘不接受残留信息’不符，且标准中明确可接受退让为无。",
+              "decision": "用团队批准文本回复对方；接受偏离需法务负责人决定",
+              "proposed_text_source": "团队批准文本（首选立场）"
+            },
+            {
+              "rule_id": "B1R",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次我方角色为“我方主要披露信息”，本条只适用于我方主要接收信息。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B2R",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次我方角色为“我方主要披露信息”，本条只适用于我方主要接收信息。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B3R",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次我方角色为“我方主要披露信息”，本条只适用于我方主要接收信息。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            }
+          ]
+        }
+      ],
+      "per_item_hits": {
+        "B1D": 2,
+        "B2D": 0,
+        "B3D": 0,
+        "B4": 0,
+        "B5": 2,
+        "B6": 2,
+        "B7": 0,
+        "B8": 2,
+        "B1R": 2,
+        "B2R": 2,
+        "B3R": 2
+      }
+    },
+    "nda_recipient": {
+      "expected": {
+        "B1R": "no_issue",
+        "B2R": "issue",
+        "B3R": "issue",
+        "B4": "issue",
+        "B5": "acceptable_fallback",
+        "B6": "issue",
+        "B7": "issue",
+        "B1D": "not_applicable",
+        "B2D": "not_applicable",
+        "B3D": "not_applicable",
+        "B8": "not_applicable"
+      },
+      "runs": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "seconds": 55.5,
+          "triage": "red",
+          "statuses": {
+            "B1R": "unverified",
+            "B2R": "issue",
+            "B3R": "unverified",
+            "B4": "acceptable_fallback",
+            "B5": "acceptable_fallback",
+            "B6": "issue",
+            "B7": "no_issue",
+            "B1D": "not_applicable",
+            "B2D": "not_applicable",
+            "B3D": "not_applicable",
+            "B8": "not_applicable"
+          },
+          "hits": {
+            "B1R": false,
+            "B2R": true,
+            "B3R": false,
+            "B4": false,
+            "B5": true,
+            "B6": true,
+            "B7": false,
+            "B1D": true,
+            "B2D": true,
+            "B3D": true,
+            "B8": true
+          },
+          "hit_rate": "7/11",
+          "uncovered": [
+            "8",
+            "9",
+            "5",
+            "3",
+            "6"
+          ],
+          "uncovered_found": true,
+          "owners_from_code": false,
+          "checks": [
+            {
+              "rule_id": "B1R",
+              "status": "unverified",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "模型的回答格式不完整（缺少首选或退让条件的逐项回答），需人工检查。",
+              "decision": "人工按依据和原文检查",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B2R",
+              "status": "issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文仅包含‘通过接收方无过错而公开’和‘接收方事先合法知悉’两项例外，缺少‘自第三方合法获得’和‘独立开发’两项首选立场所要求的标准例外。",
+              "decision": "用团队批准文本回复对方；接受偏离需法务负责人决定",
+              "proposed_text_source": "团队批准文本（首选立场）"
+            },
+            {
+              "rule_id": "B3R",
+              "status": "unverified",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "模型的回答格式不完整（缺少首选或退让条件的逐项回答），需人工检查。",
+              "decision": "人工按依据和原文检查",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "B4",
+              "status": "acceptable_fallback",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文约定禁止招揽员工，但团队底线首选立场为不约定禁止招揽，且原文中‘solicit for employment any employee’覆盖范围未限定为参与本项目的人员，违反了‘只限参与本项目的人员’的可接受退让条件F2。",
+              "decision": "在可接受退让内，经办人可接受或先争取首选立场",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "B5",
+              "status": "acceptable_fallback",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文规定适用法律为英格兰与威尔士法律，而团队底线首选立场为新加坡法律，未满足首选立场，但符合可接受退让条件F1（香港法律）不成立，F2（英格兰与威尔士法律）成立，因此满足退让条件。",
+              "decision": "在可接受退让内，经办人可接受或先争取首选立场",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B6",
+              "status": "issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文规定争议解决由英格兰法院享有专属管辖权，与标准中首选的SIAC仲裁（新加坡）或新加坡法院不符，且未提及保留临时救济权利，不符合首选立场及可接受退让条件。",
+              "decision": "用团队批准文本回复对方；接受偏离需法务负责人决定",
+              "proposed_text_source": "团队批准文本（首选立场）"
+            },
+            {
+              "rule_id": "B7",
+              "status": "no_issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文中'Reciguous'为拼写错误，应为'Recipient'，且未明确说明为法律或自动备份保留的副本继续受保密义务约束，与标准中'为法律或自动备份保留的副本继续受保密义务约束'存在表述差异。",
+              "decision": "无需处理",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "B1D",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次我方角色为“我方主要接收信息”，本条只适用于我方主要披露信息、双方相互披露。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B2D",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次我方角色为“我方主要接收信息”，本条只适用于我方主要披露信息、双方相互披露。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B3D",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次我方角色为“我方主要接收信息”，本条只适用于我方主要披露信息、双方相互披露。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B8",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次我方角色为“我方主要接收信息”，本条只适用于我方主要披露信息、双方相互披露。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "status": "completed",
+          "seconds": 50.0,
+          "triage": "red",
+          "statuses": {
+            "B1R": "unverified",
+            "B2R": "issue",
+            "B3R": "unverified",
+            "B4": "acceptable_fallback",
+            "B5": "acceptable_fallback",
+            "B6": "issue",
+            "B7": "no_issue",
+            "B1D": "not_applicable",
+            "B2D": "not_applicable",
+            "B3D": "not_applicable",
+            "B8": "not_applicable"
+          },
+          "hits": {
+            "B1R": false,
+            "B2R": true,
+            "B3R": false,
+            "B4": false,
+            "B5": true,
+            "B6": true,
+            "B7": false,
+            "B1D": true,
+            "B2D": true,
+            "B3D": true,
+            "B8": true
+          },
+          "hit_rate": "7/11",
+          "uncovered": [
+            "8",
+            "9",
+            "5",
+            "3",
+            "6",
+            "7"
+          ],
+          "uncovered_found": true,
+          "owners_from_code": false,
+          "checks": [
+            {
+              "rule_id": "B1R",
+              "status": "unverified",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "模型的回答格式不完整（缺少首选或退让条件的逐项回答），需人工检查。",
+              "decision": "人工按依据和原文检查",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B2R",
+              "status": "issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文仅包含‘通过接收方无过错而公开’和‘接收方事先合法知悉’两项例外，缺失‘自第三方合法获得’和‘独立开发’两项首选立场所要求的标准例外，不符合首选立场。",
+              "decision": "用团队批准文本回复对方；接受偏离需法务负责人决定",
+              "proposed_text_source": "团队批准文本（首选立场）"
+            },
+            {
+              "rule_id": "B3R",
+              "status": "unverified",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "模型的回答格式不完整（缺少首选或退让条件的逐项回答），需人工检查。",
+              "decision": "人工按依据和原文检查",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "B4",
+              "status": "acceptable_fallback",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文约定禁止招揽员工，但团队底线首选立场为不约定禁止招揽，且原文虽满足F1-F4条件，但违反首选立场，故不满足首选立场。",
+              "decision": "在可接受退让内，经办人可接受或先争取首选立场",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B5",
+              "status": "acceptable_fallback",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文规定适用法律为英格兰与威尔士法律，而团队底线首选立场为新加坡法律，未满足首选立场，但符合可接受退让条件F1（香港法律）不成立，F2（英格兰与威尔士法律）成立，因此满足退让条件。",
+              "decision": "在可接受退让内，经办人可接受或先争取首选立场",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B6",
+              "status": "issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文规定争议解决由英格兰法院享有专属管辖权，与标准中首选的SIAC仲裁（新加坡）或新加坡法院不符，且未提及保留临时救济权利，不符合首选立场及可接受退让条件。",
+              "decision": "用团队批准文本回复对方；接受偏离需法务负责人决定",
+              "proposed_text_source": "团队批准文本（首选立场）"
+            },
+            {
+              "rule_id": "B7",
+              "status": "no_issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "原文中'Reciguous'为拼写错误，应为'Recipient'，且未明确说明为法律或自动备份保留的副本继续受保密义务约束，与标准中'为法律或自动备份保留的副本继续受保密义务约束'存在差异。",
+              "decision": "无需处理",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "B1D",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次我方角色为“我方主要接收信息”，本条只适用于我方主要披露信息、双方相互披露。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B2D",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次我方角色为“我方主要接收信息”，本条只适用于我方主要披露信息、双方相互披露。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B3D",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次我方角色为“我方主要接收信息”，本条只适用于我方主要披露信息、双方相互披露。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "B8",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次我方角色为“我方主要接收信息”，本条只适用于我方主要披露信息、双方相互披露。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            }
+          ]
+        }
+      ],
+      "per_item_hits": {
+        "B1R": 0,
+        "B2R": 2,
+        "B3R": 0,
+        "B4": 0,
+        "B5": 2,
+        "B6": 2,
+        "B7": 0,
+        "B1D": 2,
+        "B2D": 2,
+        "B3D": 2,
+        "B8": 2
+      }
+    },
+    "marketing": {
+      "expected": {
+        "R0": "no_issue",
+        "R1": "needs_material|issue",
+        "R2": "issue",
+        "R3": "needs_material",
+        "R4": "no_issue",
+        "R5": "not_applicable",
+        "R6": "issue"
+      },
+      "runs": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "seconds": 25.2,
+          "triage": "red",
+          "statuses": {
+            "R0": "needs_material",
+            "R1": "needs_material",
+            "R2": "needs_material",
+            "R3": "needs_material",
+            "R4": "no_issue",
+            "R6": "needs_material",
+            "R5": "not_applicable"
+          },
+          "hits": {
+            "R0": false,
+            "R1": true,
+            "R2": false,
+            "R3": true,
+            "R4": true,
+            "R5": true,
+            "R6": false
+          },
+          "hit_rate": "4/7",
+          "uncovered": [
+            ""
+          ],
+          "uncovered_found": true,
+          "owners_from_code": true,
+          "checks": [
+            {
+              "rule_id": "R0",
+              "status": "needs_material",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "文案中表述‘这不是广告，只是我的个人分享’与‘产品可以公开推广’的立场不一致，未明确说明产品面向零售投资者且已获认可。",
+              "decision": "补齐材料后重新检查；补齐前不要回复市场同事或发布",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "R1",
+              "status": "needs_material",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "文案中出现'最高可达8%'的收益表述，但未提供可追溯的计算依据、口径和期间，也未在同画面说明收益不保证",
+              "decision": "补齐材料后重新检查；补齐前不要回复市场同事或发布",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "R2",
+              "status": "needs_material",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "文案中称‘不是广告，只是我的个人分享’与‘付费或委托推广须标示为广告或合作推广’要求不符",
+              "decision": "补齐材料后重新检查；补齐前不要回复市场同事或发布",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "R3",
+              "status": "needs_material",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "文案中虽有风险提示，但未提供最终画面或截图，无法证明风险提示在最终画面中与收益表述同样醒目、可读",
+              "decision": "补齐材料后重新检查；补齐前不要回复市场同事或发布",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "R4",
+              "status": "no_issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "文案中明确提及发布主体为DEMO Finance Pte. Ltd.（虚构），与背景中已确认的主体一致。",
+              "decision": "无需处理",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "R6",
+              "status": "needs_material",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "文案中使用'稳稳增值'属于暗示本金安全或收益确定的表述，且未提供产品保本安排及法务确认的证明材料",
+              "decision": "补齐材料后重新检查；补齐前不要回复市场同事或发布",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "R5",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次发布形式为“静态图文”，本条只适用于短视频或直播。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "status": "completed",
+          "seconds": 25.2,
+          "triage": "red",
+          "statuses": {
+            "R0": "needs_material",
+            "R1": "needs_material",
+            "R2": "needs_material",
+            "R3": "needs_material",
+            "R4": "no_issue",
+            "R6": "needs_material",
+            "R5": "not_applicable"
+          },
+          "hits": {
+            "R0": false,
+            "R1": true,
+            "R2": false,
+            "R3": true,
+            "R4": true,
+            "R5": true,
+            "R6": false
+          },
+          "hit_rate": "4/7",
+          "uncovered": [
+            ""
+          ],
+          "uncovered_found": true,
+          "owners_from_code": true,
+          "checks": [
+            {
+              "rule_id": "R0",
+              "status": "needs_material",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "文案中表述‘这不是广告，只是我的个人分享’与‘产品可以公开推广’的首选立场不一致，未明确说明产品面向零售投资者且已获认可。",
+              "decision": "补齐材料后重新检查；补齐前不要回复市场同事或发布",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "R1",
+              "status": "needs_material",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "文案中出现'最高可达8%'的收益表述，但未提供可追溯的计算依据、口径和期间，也未在同画面说明收益不保证",
+              "decision": "补齐材料后重新检查；补齐前不要回复市场同事或发布",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "R2",
+              "status": "needs_material",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "文案中称‘不是广告，只是我的个人分享’与‘付费或委托推广须标示为广告或合作推广’不符",
+              "decision": "补齐材料后重新检查；补齐前不要回复市场同事或发布",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "R3",
+              "status": "needs_material",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "文案中虽包含风险提示，但未提供最终画面或截图，无法证明风险提示在最终画面中与收益表述同样醒目、可读",
+              "decision": "补齐材料后重新检查；补齐前不要回复市场同事或发布",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "R4",
+              "status": "no_issue",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "文案中明确提及发布主体为DEMO Finance Pte. Ltd.（虚构），与背景中已确认的主体一致。",
+              "decision": "无需处理",
+              "proposed_text_source": null
+            },
+            {
+              "rule_id": "R6",
+              "status": "needs_material",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "文案中使用'稳稳增值'属于暗示本金安全或收益确定的表述，且未提供产品保本安排及法务确认的证明材料",
+              "decision": "补齐材料后重新检查；补齐前不要回复市场同事或发布",
+              "proposed_text_source": "AI 起草，律师核对后才能发出"
+            },
+            {
+              "rule_id": "R5",
+              "status": "not_applicable",
+              "model_status": null,
+              "quote_found": null,
+              "reason": "本次发布形式为“静态图文”，本条只适用于短视频或直播。",
+              "decision": "不适用",
+              "proposed_text_source": null
+            }
+          ]
+        }
+      ],
+      "per_item_hits": {
+        "R0": 0,
+        "R1": 2,
+        "R2": 0,
+        "R3": 2,
+        "R4": 2,
+        "R5": 2,
+        "R6": 0
+      }
+    }
+  }
+}

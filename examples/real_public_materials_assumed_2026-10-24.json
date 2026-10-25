@@ -1,0 +1,45 @@
+{
+  "note": "与 real_public_materials_2026-10-24.json 相同，只在背景末尾加一句“测试设定”，说明前置条件已确认，用来看措辞层面的审阅。测试设定由作者添加，不是页面信息。",
+  "materials": [
+    {
+      "id": "P1-A",
+      "publisher_type": "platform：数字理财平台（robo-advisor）自有产品页",
+      "retrieved": "2026-10-24",
+      "channel": "静态图文",
+      "document": "第1段：Earn up to 10% p.a.* target monthly payouts. Celebrate another payday each month while your money stays invested.\n第2段：Receive monthly payouts targeting up to 10% p.a., or reinvest automatically to compound returns. Access passive income opportunities with some of the best-in-class income funds across global markets. Access your money anytime, with no lock-in periods or withdrawal penalties.\n第3段：X 收益组合 A：Moderately high risk. Target Monthly Payout: 8.0 - 10.0% p.a. X 收益组合 B：Moderately low risk. Target Monthly Payout: 5.5 - 6.0% p.a. X 收益组合 C：Low risk. Target Monthly Payout: 5 - 5.5% p.a.\n第4段（页面脚注）：*X 收益组合 portfolio is built with an objective to achieve a target monthly payout range, in current market environment. Target monthly payout is not guaranteed, and is subject to market movements. Past distributions are not necessarily indicative of future trends, which may be lower. A positive monthly payout or distribution yield does not imply a positive return. Source: 某投资平台, fund factsheets. As of October 2026.\n第5段（页面底部）：Investments involve risk and X 收益组合 does not provide any guarantee or assurance of returns. It is not a savings or deposit product at a bank. This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+      "context": "产品类型：投资平台的托管投资组合，页面称由全球收益型基金组成，并写明不是银行储蓄或存款产品、不保本；面向的投资者：页面按组合分档写明适合风险偏好较高、平衡和谨慎的投资者，是否面向零售投资者页面未说明；拟发布市场：新加坡；渠道：静态图文（平台官网产品落地页，脚注数据截至 2026 年 10 月）；推广关系：平台自有账号推广自家产品，页面写明发布方持有资本市场服务牌照；已提供的材料：文字稿；未提供的材料：页面截图或最终图片、各档目标月派息区间的计算依据与基金资料、产品说明文件。测试设定：产品为托管投资组合，已确认不受招股说明书发售限制，可向新加坡零售公众公开推广，相关文件已由法务留档。",
+      "what_it_tests": "标题“最高 10%”只对应最高风险档，测试收益表述、风险分档与不保证提示是否相称，以及“best-in-class”等最高级用语的举证。（加测试设定：前置条件已确认）",
+      "source": "新加坡某理财平台"
+    },
+    {
+      "id": "P2-A",
+      "publisher_type": "blogger：个人理财网站的基金公司合作文章（2026-01-20 发布）",
+      "retrieved": "2026-10-24",
+      "channel": "纯文字帖",
+      "document": "第1段（文首标示）：This post was created in partnership with 某基金公司. All views and opinions expressed in this article are 理财网站 A's objective and professional opinions.\n第2段：I’ve been thinking more about how to build passive income, especially as interest rates decline and market volatility remains. Like many investors in Singapore, most of my income exposure comes from Singapore REITs and blue-chip stocks. Recently, 某基金公司 launched the X 东盟股息指数 ETF, which has stated a target dividend of at least 6%* per annum in 2026 and 2027.\n第3段：As of 28 November 2025, according to 某指数公司, the target dividend index recorded a gross dividend yield of 8.6% p.a compared with 4.4% p.a. for the 某东盟基准指数. However, do note that while there is a dividend target, distributions (in SGD) are not guaranteed.\n第4段：Overall, I would take a closer look at the ETF if I’m looking to balance income and longer-term growth potential through regional diversification beyond Singapore.\n第5段（文末脚注与声明）：*Distributions (in SGD) are not guaranteed. Distributions may be made out of income, capital gains and/or capital. Investments in Units involve risks, including the possible loss of the principal amount invested. This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+      "context": "产品类型：交易所交易基金（ETF），页面称跟踪东盟目标股息指数，由某基金公司推出；面向的投资者：文章以新加坡个人投资者口吻写给想建立被动收入的读者，是否面向零售投资者页面未说明；拟发布市场：新加坡；渠道：纯文字帖（理财网站文章，署名博主 A，署名带 CFA 头衔）；推广关系：合作推广，文首写明与该基金公司合作制作，是否付费页面未说明；已提供的材料：文字稿；未提供的材料：8.6% 与 4.4% 股息率的数据出处文件、6% 目标股息的依据、招股说明书、合作协议或付款记录。测试设定：该 ETF 为已获 MAS 认可的集合投资计划，招股说明书已注册，可向新加坡零售公众公开推广，相关文件已由法务留档。",
+      "what_it_tests": "合作文章用博主第一人称推荐，测试合作标示位置、目标股息与指数历史股息率的举证，以及基金广告必备声明是否齐全。（加测试设定：前置条件已确认）",
+      "source": "新加坡某理财资讯网站（与基金公司合作的文章）"
+    },
+    {
+      "id": "P3-A",
+      "publisher_type": "bank：银行官网代销同集团保险公司的储蓄型保险",
+      "retrieved": "2026-10-24",
+      "channel": "静态图文",
+      "document": "第1段：X 储蓄计划 – Guaranteed return of 0.60% p.a. upon maturity in 24 months. 100% capital guaranteed upon maturity. Pay using cash or your SRS funds. Insurance coverage for Death and Total & Permanent Disability.\n第2段：X 储蓄计划 — A 24 months single premium insurance plan. No medical check-up required. This is not a fixed or savings deposit. It is a non-participating endowment insurance plan.\n第3段（页面下方重要提示）：As buying a life insurance policy is a long-term commitment, an early termination of the policy usually involves high costs and the surrender value, if any, that is payable to you may be zero or less than the total premiums paid. You may not receive all your money back if you cancel your policy before the end of the policy term. X 储蓄计划 (24-month) is underwritten by 某保险公司, a wholly owned subsidiary of 某保险控股公司, part of 某银行集团. This plan is not a bank deposit and 某银行 does not guarantee or have any obligations in connection with it.\n第4段：This policy is protected under the Policy Owners' Protection Scheme which is administered by the Singapore Deposit Insurance Corporation (SDIC). Coverage for your policy is automatic and no further action is required from you. This advertisement has not been reviewed by the Monetary Authority of Singapore. Information presented as at 2 October 2026.",
+      "context": "产品类型：24 个月单次缴费的非分红型储蓄（endowment）保险，页面写明不是定期或储蓄存款；面向的投资者：页面常见问题写明现金投保最低保费为 65 岁及以下 S$10,000、66 至 75 岁 S$20,000，其余页面未说明；拟发布市场：新加坡；渠道：静态图文（银行官网产品页，信息截至 2026 年 10 月 2 日）；推广关系：银行在自有网站推广同集团保险公司承保的产品，页面写明银行不为该计划提供担保；已提供的材料：文字稿；未提供的材料：页面截图或最终图片、0.60% 保证回报与 100% 保本的保单条款或产品摘要、利益说明书。测试设定：产品为人寿保险储蓄计划，不受招股说明书发售限制，可向新加坡零售公众公开推广，相关文件已由法务留档。",
+      "what_it_tests": "“保证回报”“100% 保本”与退保可能亏损的提示并存，测试保本暗示的举证要求和存款与保险的区分声明。（加测试设定：前置条件已确认）",
+      "source": "新加坡某银行销售的储蓄型保险"
+    },
+    {
+      "id": "P4-A",
+      "publisher_type": "platform：数字理财平台官网首页",
+      "retrieved": "2026-10-24",
+      "channel": "静态图文",
+      "document": "第1段：Invest better, to live better. Guided by experts, with low, fair fees. 300,000+ Clients. S$16B+ Client assets.\n第2段：96%* of our clients say we make investing less stressful. 94%* of our clients say we help them invest more confidently.\n第3段：Managed for you. Backed by science, with a track record of outperformance*. 收益组合：Receive monthly payouts of 3.5%-6.0% p.a. while growing or preserving your capital. 现金组合：Earn up to 2.3% p.a. on idle cash. Daily interest. No lock ups, no limits or tiers.\n第4段：Access 400+ mutual funds from leading global managers. At the lowest achievable fees — the same rates usually reserved for large institutions. Award-winning platform. Investing made simple.\n第5段（页面脚注）：*Data presented is derived from the 某理财平台 Client Satisfaction Survey 2025, based on a sample size of 264 clients. *Past performance is not indicative of future results. Outperformance refers to the 某理财平台核心 60/40 组合 vs the Global 60:40 Index, the 某理财平台收益组合 vs 某全球信用债指数, the 某理财平台现金组合 vs 某新元三个月存款基准 across 1Y, 3Y and 5Y annualised periods as of 31 May 2026. Portfolio returns are net of fund-level fees; index returns are without fees. This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+      "context": "产品类型：数字投资平台首页，同时推广专家管理的投资组合（含月派息收益组合、现金管理组合）和 400 多只共同基金；面向的投资者：页面写“从第一份薪水到退休”的个人投资者，并提及现金、CPF 和 SRS 资金，是否面向零售投资者页面未说明；拟发布市场：新加坡；渠道：静态图文（平台官网首页，页脚有无文字的桂冠徽章图片）；推广关系：平台自有账号推广自家服务，页面写明发布方持有新加坡金融管理局发出的资本市场服务牌照；已提供的材料：文字稿；未提供的材料：页面截图或最终图片、“Award-winning”对应的奖项名称与年份、跑赢基准的具体业绩数据、3.5%-6.0% 与 2.3% 的计算依据、客户满意度调查原始资料。测试设定：所推广的投资组合与基金均已获 MAS 认可或承认，招股说明书已注册，可向新加坡零售公众公开推广，相关文件已由法务留档。",
+      "what_it_tests": "未写颁奖方和年份的“Award-winning”、跑赢基准、“lowest achievable fees”和 264 人样本的满意度数字，测试获奖、比较、过往业绩和统计数字的举证需求。（加测试设定：前置条件已确认）",
+      "source": "新加坡某理财平台"
+    }
+  ]
+}

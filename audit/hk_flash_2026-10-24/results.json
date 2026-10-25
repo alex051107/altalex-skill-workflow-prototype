@@ -1,0 +1,874 @@
+{
+  "started_at_utc": "2026-10-24T14:59:10+00:00",
+  "model": "deepseek-flash",
+  "provider": "openai",
+  "fixture_sha256": "49a2314053149238e2a4caca1ceabd1d7fbd85e151bc3c2d0d1a8c87ddc8cf0e",
+  "example": "hk_announcement",
+  "example_sha256": "fbd06eeda7af5cda0bae4d9fe1fe364372431d656b99569de562c8368e7d3480",
+  "server_sha256": "8b7e004a714bbe8234df281e6d4cc38adc04fc8c1f9050441f497e940175a73e",
+  "repeats": 2,
+  "cases": [
+    {
+      "id": "H01-BFB-filed",
+      "attempt": 1,
+      "run_status": "completed",
+      "error": null,
+      "seconds": 99.4,
+      "triage": {
+        "level": "red",
+        "label": "需要负责人决定",
+        "reasons": [
+          "H2 港交所免责声明置于公告顶部",
+          "H4 发行人与交易对手的身份和主要业务",
+          "H7 标的资产简介、价值及两年净利润"
+        ]
+      },
+      "gate_failed": [],
+      "rules": {
+        "H1": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在“LISTING RULES IMPLICATIONS”一节写明本交易构成本公司的须予披露交易，并写明适用百分比率超过5%但低于25%，与问卷选定的交易分类及对应比率区间一致。",
+          "quote": "As the applicable percentage ratios under Chapter 14 of the Listing Rules in respect of the Disposal exceeds 5% but are below 25%, the Disposal constitutes a disclosable transaction for the Company and is therefore subject to the reporting and announcement requirements under Chapter 14 of the Listing Rules."
+        },
+        "H2": {
+          "expected": "no_issue",
+          "actual": "issue",
+          "bucket": "silent",
+          "model_status": null,
+          "reason": "原文的免责声明虽然已放在公告第一页最上方，但两处都写作 this announcement，与依据要求采用的 this document 版本存在差异。",
+          "quote": "Hong Kong Exchanges and Clearing Limited and The Stock Exchange of Hong Kong Limited take no responsibility for the contents of this announcement, make no representation as to its accuracy or completeness and expressly disclaim any liability whatsoever for any loss howsoever arising from or in reliance upon the whole or any part of the contents of this announcement."
+        },
+        "H3": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文首页标题下载有股份代号205，文末“As at the date of this announcement”一段列明公告日期全体董事姓名，两项均符合首选立场。",
+          "quote": "As at the date of this announcement, the executive Directors of the Company are Mr. Li Leong, Mr. Wu Mansheng, Mr. Li Zhen and Mr. Zhou Hongtao; and the independent non-executive Directors are Mr. Law Chi Hung, Mr. Guo Hui and Ms. Fang Ying."
+        },
+        "H4": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在“SHARE TRANSFER AGREEMENT”仅写明买方为一名个人及独立第三方，未载其姓名、职业或背景，未满足本条对个人交易对手身份及主要业务的写明要求。",
+          "quote": "The Purchaser is an individual, to the best of the Directors’ knowledge, information and belief having made all reasonable enquiries, the Purchaser is Independent Third Parties as at the date of this announcement."
+        },
+        "H5": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文写明买方为独立第三方，且释义中“Independent Third Party(ies)”的定义已包含最终实益拥有人及董事经合理查询后独立于本公司及关连人士的确认，与首选立场一致。",
+          "quote": "The Purchaser is an individual, to the best of the Directors’ knowledge, information and belief having made all reasonable enquiries, the Purchaser is Independent Third Parties as at the date of this announcement."
+        },
+        "H6": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在股份转让协议一节同时写明出售标的为出售公司100%已发行股本、交易日期为2026年9月28日、代价10,000港元由买方于同日以现金支付，并说明代价参考出售集团截至2026年6月30日止六个月未经审核管理账目及财务表现厘定，四项要素齐备。",
+          "quote": "Date: 28 September 2026\n\nParties: (1) the Company, as the Vendor;\n\nAnd\n\n(2) the Purchaser\n\nThe Purchaser is an individual, to the best of the Directors’ knowledge, information and belief having made all reasonable enquiries, the Purchaser is Independent Third Parties as at the date of this announcement.\n\nSubject matter: The Company conditionally agreed to sell and the Purchaser conditionally agreed to acquire the Sale Share, representing 100% of the issued share capital of the Disposal Company.\n\nConsideration: HK$10,000\n\nPayment terms: The sum of HK$10,000 shall be paid by the Purchaser to the Company on 28 September 2026.\n\nThe Consideration was determined after arm’s length negotiations between the parties with reference to the unaudited management account of the Disposal Group for the six months ended 30 June 2026 and the financial performance of the Disposal Group."
+        },
+        "H7": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文只列出出售集团截至2024年及2025年12月31日止年度的收入及经营亏损，未按除税及非经常项目前、后两个口径分别披露两个年度的净利润，与H7第③项要求不一致。",
+          "quote": "The Disposal Company is a limited liability company incorporated in the British Virgin Islands which is beneficially owned as to 100% by the Company as at the date of the Share Transfer Agreement.\n\nThe Disposal Company is an investment company. The Disposal Group is mainly engaged in the advertising and e-commerce business in the PRC.\n\nThe audited consolidated financial results of the Disposal Group for the two years ended 31 December 2025 and 2024 which are prepared in accordance with the accounting principles generally accepted in Hong Kong and its contribution to the Group are as follows:\n\nFor the year ended 31 December\n2025 | 2024\nHK$’000 | HK$’000\n\nRevenue | 3,162 | 11,546\nLoss from operations | 2,280 | 6,858\n\nThe Disposal Group recorded unaudited net liabilities (excluding intercompany loans) of approximately HK$33.3 million as at 30 June 2026."
+        },
+        "H8": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在“REASONS FOR AND BENEFITS OF THE DISPOSAL”一节中同时载明进行出售的理由、对集团现金流及流动性等方面的益处，以及董事认为条款公平合理并符合公司及股东整体利益的声明，三项内容齐备。",
+          "quote": "Considering the financial performance and after reviewing the business and operation status of the Disposal Group, the Board considers that it is appropriate for the Group to proceed with the Disposal. The Disposal will strengthen the cash flow of the Group allowing the Group to improve its liquidity and allow the Group to reallocate its resources to other existing opportunities.\n\nThe net proceeds from the Disposal will be used as the Group’s general working capital.\n\nBased on the above, the Directors are of the view that the terms of the Disposal are fair and reasonable and in the interests of the Company and the Shareholders as a whole."
+        },
+        "H9": {
+          "expected": "no_issue|not_applicable",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告及背景均未提及本交易涉及担保或抵押，符合本条无需披露的要求。",
+          "quote": ""
+        },
+        "H10": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在「FINANCIAL EFFECT OF THE DISPOSAL」一段同时载明按未经审核净负债（不包括公司间贷款）减代价计算的估计收益约3,330万港元、实际入账金额须经核数师审核，以及所得款项拟用作一般营运资金，并述明完成后出售公司不再作为附属公司入账，与本条三项要求一致。",
+          "quote": "Upon Completion, the Group will no longer have any interest in the Disposal Company and the Disposal Company will cease to be accounted as a subsidiary of the Group. Accordingly, the financial results of the Disposal Group will no longer be consolidated into the consolidated financial statement of the Group.\n\nThe estimated gain on the Disposal attributable to the owner of the Company based on the unaudited net liabilities of the Disposal Group (excluding intercompany loans) less the Consideration as at 30 June 2026 is approximately HK$33.3 million.\n\nThe actual amount of gain or loss as a result of the Disposal to be recorded by the Company will be subject to the review and final audit by the auditors of the Company. The proceeds from the Disposal are currently intended to be used by the Group as general working capital."
+        },
+        "H11": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易分类为“须予披露交易”，本条只适用于主要交易、非常重大收购或出售。",
+          "quote": ""
+        },
+        "H12": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        },
+        "H13": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        },
+        "H14": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        },
+        "H15": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        }
+      },
+      "extraction_quotes_exact": true,
+      "extraction_items": 0
+    },
+    {
+      "id": "H01-BFB-filed",
+      "attempt": 2,
+      "run_status": "completed",
+      "error": null,
+      "seconds": 86.8,
+      "triage": {
+        "level": "red",
+        "label": "需要负责人决定",
+        "reasons": [
+          "前置条件需人工确认：H1 交易分类与问卷一致（前置条件）",
+          "H2 港交所免责声明置于公告顶部",
+          "H4 发行人与交易对手的身份和主要业务",
+          "H7 标的资产简介、价值及两年净利润",
+          "H10 出售交易：预计损益、所得款项用途及附属公司地位"
+        ]
+      },
+      "gate_failed": [],
+      "rules": {
+        "H1": {
+          "expected": "no_issue",
+          "actual": "unverified",
+          "bucket": "routed",
+          "model_status": "no_issue",
+          "reason": "复核发现可能的差距：原文写的是“exceeds 5% but are below 25%”，即高于5%但低于25%，未写出“5%或以上”，遗漏比率恰好为5%的情形，与须予披露交易的阈值区间不完全一致。需人工确认。",
+          "quote": "As the applicable percentage ratios under Chapter 14 of the Listing Rules in respect of the Disposal exceeds 5% but are below 25%, the Disposal constitutes a disclosable transaction for the Company and is therefore subject to the reporting and announcement requirements under Chapter 14 of the Listing Rules."
+        },
+        "H2": {
+          "expected": "no_issue",
+          "actual": "issue",
+          "bucket": "silent",
+          "model_status": null,
+          "reason": "免责声明虽已置于第一页最上方、公司名称及标题之前，但其中三处采用“this announcement”，与 CF007M 第 13.52 条附注 5 所用“this document”的版本不一致。",
+          "quote": "Hong Kong Exchanges and Clearing Limited and The Stock Exchange of Hong Kong Limited take no responsibility for the contents of this announcement, make no representation as to its accuracy or completeness and expressly disclaim any liability whatsoever for any loss howsoever arising from or in reliance upon the whole or any part of the contents of this announcement."
+        },
+        "H3": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告首页已列明股份代号 205，并在结尾以“As at the date of this announcement”一段列明截至公告日期的全体执行董事及独立非执行董事姓名，两项要求均已具备。",
+          "quote": "As at the date of this announcement, the executive Directors of the Company are Mr. Li Leong, Mr. Wu Mansheng, Mr. Li Zhen and Mr. Zhou Hongtao; and the independent non-executive Directors are Mr. Law Chi Hung, Mr. Guo Hui and Ms. Fang Ying."
+        },
+        "H4": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文已写明集团主要业务，但仅称买方为一名个人，未写姓名，亦未写其职业或背景，与本条要求同时写明交易对手身份及主要业务不一致。",
+          "quote": "The Purchaser is an individual, to the best of the Directors’ knowledge, information and belief having made all reasonable enquiries, the Purchaser is Independent Third Parties as at the date of this announcement."
+        },
+        "H5": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告在「SHARE TRANSFER AGREEMENT」中称买方为独立第三方，且释义中「Independent Third Party(ies)」已涵盖最终实益拥有人及独立于公司及关连人士的确认语，符合本条首选立场。",
+          "quote": "The Purchaser is an individual, to the best of the Directors’ knowledge, information and belief having made all reasonable enquiries, the Purchaser is Independent Third Parties as at the date of this announcement."
+        },
+        "H6": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文载明出售待售股份的交易性质、协议日期、10,000港元总代价及于2026年9月28日支付（定义另载明以现金支付），并说明代价参考出售集团未经审核管理账目及财务表现厘定，与本条首选立场一致。",
+          "quote": "Date: 28 September 2026\n\nParties: (1) the Company, as the Vendor;\n\nAnd\n\n(2) the Purchaser\n\nThe Purchaser is an individual, to the best of the Directors’ knowledge, information and belief having made all reasonable enquiries, the Purchaser is Independent Third Parties as at the date of this announcement.\n\nSubject matter: The Company conditionally agreed to sell and the Purchaser conditionally agreed to acquire the Sale Share, representing 100% of the issued share capital of the Disposal Company.\n\nConsideration: HK$10,000\n\nPayment terms: The sum of HK$10,000 shall be paid by the Purchaser to the Company on 28 September 2026.\n\nThe Consideration was determined after arm’s length negotiations between the parties with reference to the unaudited management account of the Disposal Group for the six months ended 30 June 2026 and the financial performance of the Disposal Group."
+        },
+        "H7": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在「INFORMATION ON THE DISPOSAL GROUP」一项下只列出出售集团两个年度的收入及经营亏损，未按除税及非经常项目前、后两个口径分别披露各年度的溢利或亏损。",
+          "quote": "The audited consolidated financial results of the Disposal Group for the two years ended 31 December 2025 and 2024 which are prepared in accordance with the accounting principles generally accepted in Hong Kong and its contribution to the Group are as follows:\n\nFor the year ended 31 December\n2025 | 2024\nHK$’000 | HK$’000\n\nRevenue | 3,162 | 11,546\nLoss from operations | 2,280 | 6,858"
+        },
+        "H8": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在“REASONS FOR AND BENEFITS OF THE DISPOSAL”中同时载列进行交易的理由、预期益处及董事认为条款公平合理并符合公司及股东整体利益的声明，三项均已满足。",
+          "quote": "REASONS FOR AND BENEFITS OF THE DISPOSAL\n\nConsidering the financial performance and after reviewing the business and operation status of the Disposal Group, the Board considers that it is appropriate for the Group to proceed with the Disposal. The Disposal will strengthen the cash flow of the Group allowing the Group to improve its liquidity and allow the Group to reallocate its resources to other existing opportunities.\n\nThe net proceeds from the Disposal will be used as the Group’s general working capital.\n\nBased on the above, the Directors are of the view that the terms of the Disposal are fair and reasonable and in the interests of the Company and the Shareholders as a whole."
+        },
+        "H9": {
+          "expected": "no_issue|not_applicable",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告及背景均未提及本交易涉及提供或要求的担保或抵押，与依据所述“均未提到即为符合”的情形一致。",
+          "quote": ""
+        },
+        "H10": {
+          "expected": "no_issue",
+          "actual": "unverified",
+          "bucket": "routed",
+          "model_status": "no_issue",
+          "reason": "复核发现可能的差距：「FINANCIAL EFFECT OF THE DISPOSAL」一节只载明按出售集团于2026年6月30日未经审核净负债（不包括公司间贷款）减代价计算估计出售收益约3,330万港元，并未写明按资产账面值计算的方法，也未交代剔除公司间贷款对该计算的影响。需人工确认。",
+          "quote": "Upon Completion, the Group will no longer have any interest in the Disposal Company and the Disposal Company will cease to be accounted as a subsidiary of the Group. Accordingly, the financial results of the Disposal Group will no longer be consolidated into the consolidated financial statement of the Group.\n\nThe estimated gain on the Disposal attributable to the owner of the Company based on the unaudited net liabilities of the Disposal Group (excluding intercompany loans) less the Consideration as at 30 June 2026 is approximately HK$33.3 million.\n\nThe actual amount of gain or loss as a result of the Disposal to be recorded by the Company will be subject to the review and final audit by the auditors of the Company. The proceeds from the Disposal are currently intended to be used by the Group as general working capital."
+        },
+        "H11": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易分类为“须予披露交易”，本条只适用于主要交易、非常重大收购或出售。",
+          "quote": ""
+        },
+        "H12": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        },
+        "H13": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        },
+        "H14": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        },
+        "H15": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        }
+      },
+      "extraction_quotes_exact": true,
+      "extraction_items": 0
+    },
+    {
+      "id": "H02-AEON-filed",
+      "attempt": 1,
+      "run_status": "completed",
+      "error": null,
+      "seconds": 152.5,
+      "triage": {
+        "level": "red",
+        "label": "需要负责人决定",
+        "reasons": [
+          "H2 港交所免责声明置于公告顶部",
+          "H4 发行人与交易对手的身份和主要业务",
+          "H7 标的资产简介、价值及两年净利润",
+          "H12 关连交易：关连人士、最终实益拥有人及关连关系"
+        ]
+      },
+      "gate_failed": [],
+      "rules": {
+        "H1": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文明确将交易分类为须予披露交易，并写明一项或多项适用百分比率超过5%但全部低于25%，与适用情形一致。",
+          "quote": "As one or more of the applicable percentage ratios as defined under Rule 14.07 of the Listing Rules in respect of the Disposal exceed 5% but are all below 25%, the Disposal constitutes a discloseable transaction for the Company and is therefore subject to the notification and announcement requirements under Chapter 14 of the Listing Rules."
+        },
+        "H2": {
+          "expected": "no_issue",
+          "actual": "issue",
+          "bucket": "silent",
+          "model_status": null,
+          "reason": "免责声明虽已置于公告第一页最上方、公司名称及标题之前，但文中两处采用 “this announcement”，未采用批准文本第 13.52 条附注 5 版本中的 “this document”，文字与批准文本不一致。",
+          "quote": "Hong Kong Exchanges and Clearing Limited and The Stock Exchange of Hong Kong Limited take no responsibility for the contents of this announcement, make no representation as to its accuracy or completeness and expressly disclaim any liability whatsoever for any loss howsoever arising from or in reliance upon the whole or any part of the contents of this announcement."
+        },
+        "H3": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文首页以“(Stock code: 984)”列明股份代号，并于文末“As at the date of this announcement”一段列明截至公告日期的全体八名董事姓名及类别，两项均已具备。",
+          "quote": "As at the date of this announcement, the Executive Directors are Mr. Takenori Nagashima and Mr. Shinya Hisanaga; the Non-executive Directors are Mr. Tsukasa Konno, Mr. Wei Aiguo and Mr. Yasutoshi Yokochi; and the Independent Non-executive Directors are Mr. Hideto Mizuno, Ms. Shum Wing Ting and Ms. Wong Mei Ling."
+        },
+        "H4": {
+          "expected": "no_issue",
+          "actual": "unverified",
+          "bucket": "routed",
+          "model_status": "no_issue",
+          "reason": "复核发现可能的差距：原文只在“INFORMATION ABOUT THE PARTIES”项下写“The Purchaser group (including the Purchaser and AEON Credit) is principally engaged in the provision of consumer finance services…”，该句的主语是买方集团，涵盖买方及AEON Credit，只交代了两者的合并业务，没有单独写明交易对手AEON Financial Service (Hong Kong) Co., Limited本身的主要业务。需人工确认。",
+          "quote": "The Purchaser group (including the Purchaser and AEON Credit) is principally engaged in the provision of consumer finance services, which include the issuance of credit cards and the provision of personal loan financing, insurance agency and brokerage business, and microfinance business."
+        },
+        "H5": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“是”，本条只适用于否。",
+          "quote": ""
+        },
+        "H6": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在 THE SPA 一节已载明交易性质（出售上市证券）、交易日期（12 August 2026）、代价总额及以银行转账支付的方式，并写明代价厘定基础为参考待售股份现行市价及最后交易日收市价，四项要素齐备。",
+          "quote": "Consideration: The total Consideration is HK$6,035,305. The Consideration of HK$8.83 per Disposal Share represented the closing price of the Shares as quoted on the Stock Exchange on the Last Trading Day. The Consideration represented the market price of the Disposal Shares at the time of Disposal. The Consideration was determined with reference to, among others, (i) the prevailing market price of the Disposal Shares; and (ii) the factors set out in the section headed ‘‘Reason for and Benefits of the Disposal and Use of Proceeds’’."
+        },
+        "H7": {
+          "expected": "no_issue",
+          "actual": "unverified",
+          "bucket": "routed",
+          "model_status": "no_issue",
+          "reason": "复核发现可能的差距：原文“INFORMATION ABOUT THE PARTIES”一节只列出 AEON Credit 两个年度（截至2025年及2026年2月28日止）的“Net profit before tax”及“Net profit after tax”，并未写明“除税及非经常项目前”或“除税及非经常项目后”的口径，也没有披露这两年各有哪些非经常项目，因此未同时提供“除税及非经常项目前、后两个口径”的数据，只给出了除税前、除税后两个数字。需人工确认。",
+          "quote": "Certain key financial information of AEON Credit as extracted from its published audited financial statements for the years ended 28 February 2025 and 2026 are set out as follows:\n\nFor the years ended\n28 February\n2025 | 2026\nHK$’000 | HK$’000\n(audited) | (audited)\n\nNet profit before tax | 478,816 | 561,844\nNet profit after tax | 400,478 | 468,199"
+        },
+        "H8": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在“REASONS FOR AND BENEFITS OF THE DISPOSAL AND USE OF PROCEEDS”项下同时载明进行出售事项的理由、预期为集团带来的益处，以及董事认为交易条款公平合理并符合股东整体利益的声明。",
+          "quote": "Based on the recent market prices of AEON Credit, the Directors are of the view that the Disposal represented an opportunity to realise part of the Company’s investment in the Disposal Shares so as to strengthen the cash position of the Group and will allow the Group to reallocate more financial resources on the general working capital of the Group.\n\nThe Directors, including all the independent non-executive Directors, are of the view that notwithstanding the Disposal is not in the ordinary and usual course of business of the Group, the Group’s divestment in the Shares could generate general working capital for the Group and the terms of the Disposal set out in the SPA (including the Consideration) are on normal commercial terms or better, fair and reasonable and in the interests of the Company and its shareholders as a whole."
+        },
+        "H9": {
+          "expected": "no_issue|not_applicable",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告原文与背景均未提及本交易涉及提供或要求担保或抵押，符合本条“公告和背景都没有提到担保或抵押即为符合”的情形。",
+          "quote": ""
+        },
+        "H10": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在「FINANCIAL EFFECT OF THE DISPOSAL」一节已载列预计出售收益约239,225港元及按待售股份账面值约5,796,080港元与总代价6,035,305港元差额的计算方法，并载明所得款项拟用作本集团一般营运资金；本次出售的标的为上市证券（占AEON Credit已发行股份约0.16%），并非出售附属公司权益，故无须再声明该公司在交易后是否仍为附属公司。",
+          "quote": "Upon Completion, the Group expects to recognise an unaudited gain from the Disposal (before transaction costs) of approximately HK$239,225, which is calculated as the difference between (i) the carrying value of the Disposal Shares of approximately HK$5,796,080.00 and (ii) the total Consideration of HK$6,035,305.00."
+        },
+        "H11": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易分类为“须予披露交易”，本条只适用于主要交易、非常重大收购或出售。",
+          "quote": ""
+        },
+        "H12": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文只说明买方因属控股股东 AEON Co 的 30% 受控公司而成为关连人士，并列明双方主要业务，但未写明交易各方及其最终实益拥有人的身份与主要业务，也未明确关连人士在本交易中的利益。",
+          "quote": "As at the date of this announcement, the Purchaser is a connected person of the Company by virtue of it being a 30%-controlled company (as defined in the Listing Rules) of AEON Co, the controlling shareholder of the Company holding approximately 60.59% interest in the Company. Accordingly, the Disposal constitutes a connected transaction for the Company under Chapter 14A of the Listing Rules."
+        },
+        "H13": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文写明获豁免通函及股东批准，并同时载有独立非执行董事就条款公平合理、属正常商业条款或更佳、非集团日常业务及符合公司及股东整体利益的意见，以及各董事被视为拥有重大权益并放弃投票的声明，两部分内容齐备。",
+          "quote": "The Directors, including all the independent non-executive Directors, are of the view that notwithstanding the Disposal is not in the ordinary and usual course of business of the Group, the Group’s divestment in the Shares could generate general working capital for the Group and the terms of the Disposal set out in the SPA (including the Consideration) are on normal commercial terms or better, fair and reasonable and in the interests of the Company and its shareholders as a whole.\n\nAt the Board meeting convened to consider the Disposal and the SPA, Mr. Tsukasa Konno, Mr. Takenori Nagashima, Mr. Shinya Hisanaga, Mr. Wei Aiguo and Mr. Yasutoshi Yokochi were regarded as potentially having a material interest in the SPA and the Disposal and accordingly abstained from voting on the relevant resolutions."
+        },
+        "H14": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文说明本公司持有783,500股待售股份并载有账面值，但未说明本集团持有该等股份的期限，亦未载列本集团的原收购成本。",
+          "quote": "As at the date of this announcement, the Company holds 783,500 Shares, representing approximately 0.19% of the total issued shares of AEON Credit."
+        },
+        "H15": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文明确载明本交易仅须遵守申报及公告规定、获豁免通函及股东批准规定，与首选立场一致。",
+          "quote": "As all the applicable percentage ratios (other than the profits ratio) as defined under Rule 14.07 of the Listing Rules in respect of the Disposal are below 25% and the total Consideration is less than HK$10,000,000.00, pursuant to Rule 14A.76(2)(b), the Disposal is subject to the reporting and announcement requirements but is exempt from the circular and shareholders’ approval requirements under Chapter 14A of the Listing Rules."
+        }
+      },
+      "extraction_quotes_exact": true,
+      "extraction_items": 0
+    },
+    {
+      "id": "H02-AEON-filed",
+      "attempt": 2,
+      "run_status": "completed",
+      "error": null,
+      "seconds": 164.4,
+      "triage": {
+        "level": "red",
+        "label": "需要负责人决定",
+        "reasons": [
+          "H2 港交所免责声明置于公告顶部",
+          "H4 发行人与交易对手的身份和主要业务",
+          "H7 标的资产简介、价值及两年净利润",
+          "H12 关连交易：关连人士、最终实益拥有人及关连关系"
+        ]
+      },
+      "gate_failed": [],
+      "rules": {
+        "H1": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告在「LISTING RULES IMPLICATIONS」小标题下明确将交易分类为须予披露交易，并写明适用百分比率超过5%但全部低于25%，与问卷所选分类及对应比率区间一致。",
+          "quote": "As one or more of the applicable percentage ratios as defined under Rule 14.07 of the Listing Rules in respect of the Disposal exceed 5% but are all below 25%, the Disposal constitutes a discloseable transaction for the Company and is therefore subject to the notification and announcement requirements under Chapter 14 of the Listing Rules."
+        },
+        "H2": {
+          "expected": "no_issue",
+          "actual": "issue",
+          "bucket": "silent",
+          "model_status": null,
+          "reason": "原文免责声明虽位于公告第一页最上方，但两处均写作“this announcement”，未采用第13.52条附注5版本中的“this document”。",
+          "quote": "Hong Kong Exchanges and Clearing Limited and The Stock Exchange of Hong Kong Limited take no responsibility for the contents of this announcement, make no representation as to its accuracy or completeness and expressly disclaim any liability whatsoever for any loss howsoever arising from or in reliance upon the whole or any part of the contents of this announcement."
+        },
+        "H3": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文首页公司名称下方已列明股份代号984，文末亦以「As at the date of this announcement」一段列明截至公告日期的全体董事姓名，两项均已具备。",
+          "quote": "As at the date of this announcement, the Executive Directors are Mr. Takenori Nagashima and Mr. Shinya Hisanaga; the Non-executive Directors are Mr. Tsukasa Konno, Mr. Wei Aiguo and Mr. Yasutoshi Yokochi; and the Independent Non-executive Directors are Mr. Hideto Mizuno, Ms. Shum Wing Ting and Ms. Wong Mei Ling."
+        },
+        "H4": {
+          "expected": "no_issue",
+          "actual": "unverified",
+          "bucket": "routed",
+          "model_status": "no_issue",
+          "reason": "复核发现可能的差距：原文只在“INFORMATION ABOUT THE PARTIES”项下写“The Purchaser group (including the Purchaser and AEON Credit) is principally engaged in...”，描述的是买方所属集团整体的主要业务，未单独写明交易对手 AEON Financial Service (Hong Kong) Co., Limited 自身的主要业务。需人工确认。",
+          "quote": "The Purchaser group (including the Purchaser and AEON Credit) is principally engaged in the provision of consumer finance services, which include the issuance of credit cards and the provision of personal loan financing, insurance agency and brokerage business, and microfinance business."
+        },
+        "H5": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“是”，本条只适用于否。",
+          "quote": ""
+        },
+        "H6": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文已载明出售的交易性质、交易日期、总代价及以港元银行转账支付，并说明代价参考现行市价及“出售理由”一节所列因素厘定，与依据的首选立场一致。",
+          "quote": "Date: 12 August 2026\n\nParties: The Company, as vendor, and the Purchaser, as purchaser\n\nSubject Matter: The Company agrees to sell, and the Purchaser agrees to purchase, the Disposal Shares, comprising 683,500 Shares, representing approximately 0.16% of the total issued shares of AEON Credit as at the date of this announcement\n\nConsideration: The total Consideration is HK$6,035,305. The Consideration of HK$8.83 per Disposal Share represented the closing price of the Shares as quoted on the Stock Exchange on the Last Trading Day. The Consideration represented the market price of the Disposal Shares at the time of Disposal. The Consideration was determined with reference to, among others, (i) the prevailing market price of the Disposal Shares; and (ii) the factors set out in the section headed ‘‘Reason for and Benefits of the Disposal and Use of Proceeds’’."
+        },
+        "H7": {
+          "expected": "no_issue",
+          "actual": "unverified",
+          "bucket": "routed",
+          "model_status": "no_issue",
+          "reason": "复核发现可能的差距：原文在「INFORMATION ABOUT THE PARTIES」只列AEON Credit整体的「Net profit before tax」及「Net profit after tax」，是标的公司全部溢利，并未列待售股份（683,500股，约占0.16%）应占的两个年度净利润；原文只有「Net profit before tax」及「Net profit after tax」两个口径，没有提供剔除/说明非经常项目后的「除税及非经常项目前」溢利数字，故该口径在两个年度均缺失。需人工确认。",
+          "quote": "Certain key financial information of AEON Credit as extracted from its published audited financial statements for the years ended 28 February 2025 and 2026 are set out as follows:\n\nFor the years ended\n28 February\n2025 | 2026\nHK$’000 | HK$’000\n(audited) | (audited)\n\nNet profit before tax | 478,816 | 561,844\nNet profit after tax | 400,478 | 468,199"
+        },
+        "H8": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文同时载有出售理由、预期益处及董事认为条款公平合理并符合股东整体利益的声明，与H8首选立场一致。",
+          "quote": "Based on the recent market prices of AEON Credit, the Directors are of the view that the Disposal represented an opportunity to realise part of the Company’s investment in the Disposal Shares so as to strengthen the cash position of the Group and will allow the Group to reallocate more financial resources on the general working capital of the Group.\n\nThe Directors, including all the independent non-executive Directors, are of the view that notwithstanding the Disposal is not in the ordinary and usual course of business of the Group, the Group’s divestment in the Shares could generate general working capital for the Group and the terms of the Disposal set out in the SPA (including the Consideration) are on normal commercial terms or better, fair and reasonable and in the interests of the Company and its shareholders as a whole."
+        },
+        "H9": {
+          "expected": "no_issue|not_applicable",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告及背景均未提及本交易涉及提供或要求的担保或抵押，故无须披露担保或抵押的提供方、受益方、金额或范围及期限。",
+          "quote": ""
+        },
+        "H10": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告已载明预计出售收益约239,225港元，并说明该收益按待售股份账面值约5,796,080港元与总代价6,035,305港元的差额计算；同时载明所得款项用作一般营运资金。本次出售的是上市证券，并非出售附属公司权益，因此无须声明该公司的附属公司地位。",
+          "quote": "Upon Completion, the Group expects to recognise an unaudited gain from the Disposal (before transaction costs) of approximately HK$239,225, which is calculated as the difference between (i) the carrying value of the Disposal Shares of approximately HK$5,796,080.00 and (ii) the total Consideration of HK$6,035,305.00."
+        },
+        "H11": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易分类为“须予披露交易”，本条只适用于主要交易、非常重大收购或出售。",
+          "quote": ""
+        },
+        "H12": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告说明了买方因属AEON Co的30%受控公司而构成关连人士，但未写明买方最终实益拥有人的身份及主要业务，亦未明确关连人士在本交易中的利益。",
+          "quote": "As at the date of this announcement, the Purchaser is a connected person of the Company by virtue of it being a 30%-controlled company (as defined in the Listing Rules) of AEON Co, the controlling shareholder of the Company holding approximately 60.59% interest in the Company. Accordingly, the Disposal constitutes a connected transaction for the Company under Chapter 14A of the Listing Rules."
+        },
+        "H13": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告已写明获豁免通函及股东批准，并同时载有独立非执行董事（连同全体董事）就条款公平合理、属正常商业条款或更佳、并非本集团日常业务及符合公司及股东整体利益的意见，以及若干董事被视为拥有重大利益并已放弃投票的陈述，与本条两部分要求一致。",
+          "quote": "The Directors, including all the independent non-executive Directors, are of the view that notwithstanding the Disposal is not in the ordinary and usual course of business of the Group, the Group’s divestment in the Shares could generate general working capital for the Group and the terms of the Disposal set out in the SPA (including the Consideration) are on normal commercial terms or better, fair and reasonable and in the interests of the Company and its shareholders as a whole.\n\nAt the Board meeting convened to consider the Disposal and the SPA, Mr. Tsukasa Konno, Mr. Takenori Nagashima, Mr. Shinya Hisanaga, Mr. Wei Aiguo and Mr. Yasutoshi Yokochi were regarded as potentially having a material interest in the SPA and the Disposal and accordingly abstained from voting on the relevant resolutions."
+        },
+        "H14": {
+          "expected": "needs_material",
+          "actual": "needs_material",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在“FINANCIAL EFFECT OF THE DISPOSAL”一节只载列待售股份的账面值约5,796,080港元，并未载明本集团的原收购成本，也未说明本集团已持有该等股份多长时间。",
+          "quote": "Upon Completion, the Group expects to recognise an unaudited gain from the Disposal (before transaction costs) of approximately HK$239,225, which is calculated as the difference between (i) the carrying value of the Disposal Shares of approximately HK$5,796,080.00 and (ii) the total Consideration of HK$6,035,305.00."
+        },
+        "H15": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告在“LISTING RULES IMPLICATIONS”一节明确写明本交易获豁免遵守第14A章的通函及股东批准规定，符合本条首选立场。",
+          "quote": "the Disposal is subject to the reporting and announcement requirements but is exempt from the circular and shareholders’ approval requirements under Chapter 14A of the Listing Rules."
+        }
+      },
+      "extraction_quotes_exact": true,
+      "extraction_items": 0
+    },
+    {
+      "id": "H03-BFB-two-gaps",
+      "attempt": 1,
+      "run_status": "completed",
+      "error": null,
+      "seconds": 120.1,
+      "triage": {
+        "level": "red",
+        "label": "需要负责人决定",
+        "reasons": [
+          "前置条件需人工确认：H1 交易分类与问卷一致（前置条件）",
+          "H2 港交所免责声明置于公告顶部",
+          "H4 发行人与交易对手的身份和主要业务",
+          "H6 交易性质、日期、代价及厘定基础",
+          "H7 标的资产简介、价值及两年净利润",
+          "H10 出售交易：预计损益、所得款项用途及附属公司地位"
+        ]
+      },
+      "gate_failed": [],
+      "rules": {
+        "H1": {
+          "expected": "no_issue",
+          "actual": "unverified",
+          "bucket": "routed",
+          "model_status": "no_issue",
+          "reason": "复核发现可能的差距：原文「LISTING RULES IMPLICATIONS」将比率区间写成「exceeds 5% but are below 25%」，下限为「超过5%」，未覆盖「达5%或以上」中等于5%的情形。需人工确认。",
+          "quote": "As the applicable percentage ratios under Chapter 14 of the Listing Rules in respect of the Disposal exceeds 5% but are below 25%, the Disposal constitutes a discloseable transaction for the Company and is therefore subject to the reporting and announcement requirements under Chapter 14 of the Listing Rules."
+        },
+        "H2": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文第一页最上方、公司名称及标题之前没有港交所免责声明，直接以公司名称及标题开篇，因此未见与批准文本一致的免责声明。",
+          "quote": ""
+        },
+        "H3": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告封面载有股份代号205，文末亦以“As at the date of this announcement”列明截至公告日期的全体董事姓名，符合本条两项要求。",
+          "quote": "As at the date of this announcement, the executive Directors of the Company are Mr. Li Leong, Mr. Wu Mansheng, Mr. Li Zhen and Mr. Zhou Hongtao; and the independent non-executive Directors are Mr. Law Chi Hung, Mr. Guo Hui and Ms. Fang Ying."
+        },
+        "H4": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文写明了集团主要业务，但交易对手仅称为一名个人，未写姓名，亦未写其职业或背景。",
+          "quote": "The Purchaser is an individual, to the best of the Directors’ knowledge, information and belief having made all reasonable enquiries, the Purchaser is Independent Third Parties as at the date of this announcement."
+        },
+        "H5": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "正文以「Independent Third Parties」表述买方独立性，而释义已把最终实益拥有人及「据董事作出一切合理查询后所知、所悉及所信」的确认语纳入该词定义，与依据首选立场一致。",
+          "quote": "The Purchaser is an individual, to the best of the Directors’ knowledge, information and belief having made all reasonable enquiries, the Purchaser is Independent Third Parties as at the date of this announcement."
+        },
+        "H6": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告已写明交易性质（出售出售股份）、交易日期（2026年9月28日）、代价总额及支付方式，但未载列代价的厘定基础（参考因素），仅在理由部分表示条款公平合理。",
+          "quote": "Consideration: HK$10,000\n\nPayment terms: The sum of HK$10,000 shall be paid by the Purchaser to the Company on 28 September 2026."
+        },
+        "H7": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文的财务业绩表仅列出出售集团两个年度的收入及经营亏损，既没有列出除税及非经常项目前的净利润，也没有列出除税及非经常项目后的净利润，这两个口径均缺失。",
+          "quote": "The audited consolidated financial results of the Disposal Group for the two years ended 31 December 2025 and 2024 which are prepared in accordance with the accounting principles generally accepted in Hong Kong and its contribution to the Group are as follows:\n\nFor the year ended 31 December\n2025 | 2024\nHK$’000 | HK$’000\n\nRevenue | 3,162 | 11,546\nLoss from operations | 2,280 | 6,858"
+        },
+        "H8": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文“REASONS FOR AND BENEFITS OF THE DISPOSAL”一节同时载有进行交易的理由、预期益处，以及董事认为条款公平合理并符合股东整体利益的声明，三项要求齐备。",
+          "quote": "Considering the financial performance and after reviewing the business and operation status of the Disposal Group, the Board considers that it is appropriate for the Group to proceed with the Disposal. The Disposal will strengthen the cash flow of the Group allowing the Group to improve its liquidity and allow the Group to reallocate its resources to other existing opportunities.\n\nThe net proceeds from the Disposal will be used as the Group’s general working capital.\n\nBased on the above, the Directors are of the view that the terms of the Disposal are fair and reasonable and in the interests of the Company and the Shareholders as a whole."
+        },
+        "H9": {
+          "expected": "no_issue|not_applicable",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告原文及背景均未提及本交易涉及任何担保或抵押，本条没有需要披露的担保或抵押内容。",
+          "quote": ""
+        },
+        "H10": {
+          "expected": "no_issue",
+          "actual": "unverified",
+          "bucket": "routed",
+          "model_status": "no_issue",
+          "reason": "复核发现可能的差距：原文「FINANCIAL EFFECT OF THE DISPOSAL」一节只说明按未经审核净负债（不包括公司间贷款）减代价计算估计收益约3,330万港元，没有载明按出售资产账面值计算损益的方法，未满足首选立场①。需人工确认。",
+          "quote": "Upon Completion, the Group will no longer have any interest in the Disposal Company and the Disposal Company will cease to be accounted as a subsidiary of the Group. Accordingly, the financial results of the Disposal Group will no longer be consolidated into the consolidated financial statement of the Group.\n\nThe estimated gain on the Disposal attributable to the owner of the Company based on the unaudited net liabilities of the Disposal Group (excluding intercompany loans) less the Consideration as at 30 June 2026 is approximately HK$33.3 million.\n\nThe actual amount of gain or loss as a result of the Disposal to be recorded by the Company will be subject to the review and final audit by the auditors of the Company. The proceeds from the Disposal are currently intended to be used by the Group as general working capital."
+        },
+        "H11": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易分类为“须予披露交易”，本条只适用于主要交易、非常重大收购或出售。",
+          "quote": ""
+        },
+        "H12": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        },
+        "H13": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        },
+        "H14": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        },
+        "H15": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        }
+      },
+      "extraction_quotes_exact": true,
+      "extraction_items": 0
+    },
+    {
+      "id": "H03-BFB-two-gaps",
+      "attempt": 2,
+      "run_status": "completed",
+      "error": null,
+      "seconds": 98.4,
+      "triage": {
+        "level": "red",
+        "label": "需要负责人决定",
+        "reasons": [
+          "H2 港交所免责声明置于公告顶部",
+          "H4 发行人与交易对手的身份和主要业务",
+          "H6 交易性质、日期、代价及厘定基础",
+          "H7 标的资产简介、价值及两年净利润",
+          "H10 出售交易：预计损益、所得款项用途及附属公司地位"
+        ]
+      },
+      "gate_failed": [],
+      "rules": {
+        "H1": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告写明本交易为须予披露交易，且适用百分比率超过5%但低于25%，与问卷选定的交易分类及该分类的比率区间一致。",
+          "quote": "As the applicable percentage ratios under Chapter 14 of the Listing Rules in respect of the Disposal exceeds 5% but are below 25%, the Disposal constitutes a disclosable transaction for the Company and is therefore subject to the reporting and announcement requirements under Chapter 14 of the Listing Rules."
+        },
+        "H2": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告首页以公司名称“BFB HEALTH LIMITED”开篇，全文未见港交所免责声明，因此既未满足“置于首页最上方”，也未满足“逐字采用 CF007M 第 13.52 条附注 5 的版本”。",
+          "quote": ""
+        },
+        "H3": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告首页已以“(Stock Code: 205)”列明股份代号，文末亦载明公告日期全体董事姓名，两项要求均已满足。",
+          "quote": "As at the date of this announcement, the executive Directors of the Company are Mr. Li Leong, Mr. Wu Mansheng, Mr. Li Zhen and Mr. Zhou Hongtao; and the independent non-executive Directors are Mr. Law Chi Hung, Mr. Guo Hui and Ms. Fang Ying."
+        },
+        "H4": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文已在 INFORMATION OF THE GROUP 写明集团主要业务，但在 SHARE TRANSFER AGREEMENT 及 DEFINITIONS 中只写买方为一名个人，未载其姓名，也未载其职业或背景。",
+          "quote": "The Purchaser is an individual, to the best of the Directors’ knowledge, information and belief having made all reasonable enquiries, the Purchaser is Independent Third Parties as at the date of this announcement."
+        },
+        "H5": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文在“SHARE TRANSFER AGREEMENT”项下确认买方为独立第三方，并且释义中“Independent Third Party(ies)”的定义已涵盖其最终实益拥有人，以及董事在作出一切合理查询后认定其独立于公司及其关连人士的确认，因此符合本条首选立场。",
+          "quote": "The Purchaser is an individual, to the best of the Directors’ knowledge, information and belief having made all reasonable enquiries, the Purchaser is Independent Third Parties as at the date of this announcement."
+        },
+        "H6": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文载明交易性质、交易日期、代价总额及付款安排，但未载明代价的厘定基础或所参考的因素。",
+          "quote": "Date: 28 September 2026\n\nParties: (1) the Company, as the Vendor;\n\nAnd\n\n(2) the Purchaser\n\nThe Purchaser is an individual, to the best of the Directors’ knowledge, information and belief having made all reasonable enquiries, the Purchaser is Independent Third Parties as at the date of this announcement.\n\nSubject matter: The Company conditionally agreed to sell and the Purchaser conditionally agreed to acquire the Sale Share, representing 100% of the issued share capital of the Disposal Company.\n\nConsideration: HK$10,000\n\nPayment terms: The sum of HK$10,000 shall be paid by the Purchaser to the Company on 28 September 2026.\n\nCompletion of the Disposal took place immediately after signing of the Share Transfer Agreement."
+        },
+        "H7": {
+          "expected": "issue",
+          "actual": "issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "原文虽列明出售公司名称及业务，但财务资料仅列两个年度的收入及经营亏损，未列应占交易前最近两个财政年度除税及非经常项目前后两个口径的净利润（或净亏损）。",
+          "quote": "The Disposal Company is an investment company. The Disposal Group is mainly engaged in the advertising and e-commerce business in the PRC.\n\nThe audited consolidated financial results of the Disposal Group for the two years ended 31 December 2025 and 2024 which are prepared in accordance with the accounting principles generally accepted in Hong Kong and its contribution to the Group are as follows:\n\nFor the year ended 31 December\n2025 | 2024\nHK$’000 | HK$’000\n\nRevenue | 3,162 | 11,546\nLoss from operations | 2,280 | 6,858"
+        },
+        "H8": {
+          "expected": "no_issue",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告在「REASONS FOR AND BENEFITS OF THE DISPOSAL」中同时载有进行交易的理由、预期为集团带来的益处，以及董事认为条款公平合理并符合公司及股东整体利益的声明，三项均具备。",
+          "quote": "Considering the financial performance and after reviewing the business and operation status of the Disposal Group, the Board considers that it is appropriate for the Group to proceed with the Disposal. The Disposal will strengthen the cash flow of the Group allowing the Group to improve its liquidity and allow the Group to reallocate its resources to other existing opportunities.\n\nThe net proceeds from the Disposal will be used as the Group’s general working capital.\n\nBased on the above, the Directors are of the view that the terms of the Disposal are fair and reasonable and in the interests of the Company and the Shareholders as a whole."
+        },
+        "H9": {
+          "expected": "no_issue|not_applicable",
+          "actual": "no_issue",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "公告及背景均未提及本交易涉及担保或抵押，故公告无须披露担保或抵押的提供方、受益方、金额或范围及期限。",
+          "quote": ""
+        },
+        "H10": {
+          "expected": "no_issue",
+          "actual": "issue",
+          "bucket": "silent",
+          "model_status": null,
+          "reason": "原文虽已载明预计收益、所得款项用途及出售后不再为附属公司，但预计收益仅以未经审核净负债减代价表述，未明确按资产账面值说明计算方法。",
+          "quote": "The estimated gain on the Disposal attributable to the owner of the Company based on the unaudited net liabilities of the Disposal Group (excluding intercompany loans) less the Consideration as at 30 June 2026 is approximately HK$33.3 million."
+        },
+        "H11": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易分类为“须予披露交易”，本条只适用于主要交易、非常重大收购或出售。",
+          "quote": ""
+        },
+        "H12": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        },
+        "H13": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        },
+        "H14": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        },
+        "H15": {
+          "expected": "not_applicable",
+          "actual": "not_applicable",
+          "bucket": "correct",
+          "model_status": null,
+          "reason": "本次交易对手是否关连人士为“否”，本条只适用于是。",
+          "quote": ""
+        }
+      },
+      "extraction_quotes_exact": true,
+      "extraction_items": 0
+    }
+  ],
+  "totals": {
+    "correct": 77,
+    "routed": 8,
+    "silent": 5,
+    "expected": 90
+  },
+  "finished_at_utc": "2026-10-24T15:11:12+00:00"
+}

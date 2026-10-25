@@ -1,0 +1,284 @@
+{
+  "model": "qwen3:4b-instruct-2507-q4_K_M",
+  "provider": "ollama",
+  "runs": [
+    {
+      "case": "marketing",
+      "attempt": 1,
+      "status": "completed",
+      "error": null,
+      "statuses": {
+        "R1": "needs_material",
+        "R2": "issue",
+        "R3": "needs_material",
+        "R4": "no_issue",
+        "R5": "not_applicable"
+      },
+      "matches_expected": true,
+      "seconds": 8.2,
+      "final_output": {
+        "scope": "仅核对所提供材料及所选规则",
+        "checks": [
+          {
+            "rule_id": "R1",
+            "status": "needs_material",
+            "quote": "年度收益最高可达8%",
+            "reason": "文案中出现数字收益表述，但未提供8%收益的计算依据和口径",
+            "needed_material": "8%收益的计算依据和计算口径"
+          },
+          {
+            "rule_id": "R2",
+            "status": "issue",
+            "quote": "这不是广告，只是我的个人分享",
+            "reason": "文案声称‘不是广告，只是个人分享’，与公司付费委托推广的背景冲突",
+            "needed_material": ""
+          },
+          {
+            "rule_id": "R3",
+            "status": "needs_material",
+            "quote": "",
+            "reason": "发布为静态图片配文字，但未提供最终图片或截图以验证风险提示的可读性",
+            "needed_material": "最终静态图片或截图"
+          },
+          {
+            "rule_id": "R4",
+            "status": "no_issue",
+            "quote": "本信息由 DEMO Finance Pte. Ltd.（虚构）发布",
+            "reason": "文案中明确写出与context确认主体一致的名称",
+            "needed_material": ""
+          },
+          {
+            "rule_id": "R5",
+            "status": "not_applicable",
+            "quote": "",
+            "reason": "发布形式为静态图片配文字，不涉及口播视频",
+            "needed_material": ""
+          }
+        ],
+        "summary": "需补充8%收益的计算依据、最终图片或截图以验证风险提示可读性，且文案中‘个人分享’表述与委托推广背景冲突，需人工复核。"
+      }
+    },
+    {
+      "case": "marketing",
+      "attempt": 2,
+      "status": "completed",
+      "error": null,
+      "statuses": {
+        "R1": "needs_material",
+        "R2": "issue",
+        "R3": "needs_material",
+        "R4": "no_issue",
+        "R5": "not_applicable"
+      },
+      "matches_expected": true,
+      "seconds": 7.3,
+      "final_output": {
+        "scope": "仅核对所提供材料及所选规则",
+        "checks": [
+          {
+            "rule_id": "R1",
+            "status": "needs_material",
+            "quote": "年度收益最高可达8%",
+            "reason": "文案中出现数字收益表述，但未提供8%收益的计算依据和口径",
+            "needed_material": "8%收益的计算依据和计算口径"
+          },
+          {
+            "rule_id": "R2",
+            "status": "issue",
+            "quote": "这不是广告，只是我的个人分享",
+            "reason": "文案声称‘不是广告，只是个人分享’，与公司付费委托推广的背景冲突",
+            "needed_material": ""
+          },
+          {
+            "rule_id": "R3",
+            "status": "needs_material",
+            "quote": "",
+            "reason": "发布为静态图片配文字，但未提供最终图片或截图以验证风险提示的可读性",
+            "needed_material": "最终静态图片或截图"
+          },
+          {
+            "rule_id": "R4",
+            "status": "no_issue",
+            "quote": "本信息由 DEMO Finance Pte. Ltd.（虚构）发布",
+            "reason": "文案中明确写出与context已确认主体一致的名称",
+            "needed_material": ""
+          },
+          {
+            "rule_id": "R5",
+            "status": "not_applicable",
+            "quote": "",
+            "reason": "发布为静态图片配文字，不涉及口播内容",
+            "needed_material": ""
+          }
+        ],
+        "summary": "需补充8%收益的计算依据、最终图片或截图以验证风险提示可读性，且文案中‘个人分享’表述与委托推广背景冲突，需人工复核。"
+      }
+    },
+    {
+      "case": "nda",
+      "attempt": 1,
+      "status": "completed",
+      "error": null,
+      "statuses": {
+        "B1": "issue",
+        "B2": "issue",
+        "B3": "issue",
+        "B4": "issue",
+        "B5": "no_issue"
+      },
+      "matches_expected": true,
+      "seconds": 15.3,
+      "final_output": {
+        "scope": "仅对照所提供 NDA 与所选底线",
+        "checks": [
+          {
+            "rule_id": "B1",
+            "status": "issue",
+            "quote": "Each party shall keep the other's Confidential Information confidential for two (2) years from the date of disclosure.",
+            "reason": "底线要求我方主要披露信息时保密期限不少于3年，但文档中仅约定2年，低于底线要求。",
+            "suggested_action": "建议将保密期限修改为不少于三年。",
+            "decision_owner": "法务负责人决定",
+            "needed_material": ""
+          },
+          {
+            "rule_id": "B2",
+            "status": "issue",
+            "quote": "These obligations do not apply to information that is or becomes public through no fault of the Recipient, or that was lawfully known to the Recipient before disclosure.",
+            "reason": "底线要求包含四项例外（已公开、事先合法知悉、独立开发、自第三方合法获得），文档仅包含‘已公开’和‘事先合法知悉’两项，缺少‘独立开发’和‘自第三方合法获得’两项例外。",
+            "suggested_action": "建议补充‘独立开发’和‘自第三方合法获得’两项例外情形。",
+            "decision_owner": "经办人可直接提出",
+            "needed_material": ""
+          },
+          {
+            "rule_id": "B3",
+            "status": "issue",
+            "quote": "During the term of this Agreement and for twelve (12) months after, neither party shall solicit for employment any employee of the other party.",
+            "reason": "底线明确‘默认不接受’禁止招揽员工条款，该条款出现在文档中，违反底线要求。",
+            "suggested_action": "建议删除该禁止招揽员工条款。",
+            "decision_owner": "法务负责人决定",
+            "needed_material": ""
+          },
+          {
+            "rule_id": "B4",
+            "status": "issue",
+            "quote": "This Agreement is governed by the laws of England and Wales, and the courts of England have exclusive jurisdiction.",
+            "reason": "底线要求适用新加坡法律，文档约定为英格兰和威尔士法律，与底线不符。",
+            "suggested_action": "建议将适用法律修改为新加坡法律，或明确接受SIAC仲裁或新加坡法院管辖。",
+            "decision_owner": "法务负责人决定",
+            "needed_material": ""
+          },
+          {
+            "rule_id": "B5",
+            "status": "no_issue",
+            "quote": "On written request of the Disclosing Party, the Recipient shall promptly return or destroy all Confidential Information, except copies retained in automatic backup systems.",
+            "reason": "文档已约定在披露方请求下返还或销毁资料，且允许保留备份系统副本，符合底线要求。",
+            "suggested_action": "",
+            "decision_owner": "经办人可直接提出",
+            "needed_material": ""
+          }
+        ],
+        "summary": "需经办人和法务负责人处理的事项：保密期限、保密例外、禁止招揽员工条款及适用法律均不符合底线，其中禁止招揽员工条款因底线明确‘默认不接受’而构成严重不符，建议删除；其他条款需修改或补充，最终决策需法务负责人决定。"
+      }
+    },
+    {
+      "case": "nda",
+      "attempt": 2,
+      "status": "completed",
+      "error": null,
+      "statuses": {
+        "B1": "issue",
+        "B2": "issue",
+        "B3": "issue",
+        "B4": "issue",
+        "B5": "no_issue"
+      },
+      "matches_expected": true,
+      "seconds": 19.4,
+      "final_output": {
+        "scope": "仅对照所提供 NDA 与所选底线",
+        "checks": [
+          {
+            "rule_id": "B1",
+            "status": "issue",
+            "quote": "Each party shall keep the other's Confidential Information confidential for two (2) years from the date of disclosure.",
+            "reason": "底线要求我方主要披露信息时保密期限不少于3年，但文档中仅约定2年，低于底线要求。",
+            "suggested_action": "建议将保密期限修改为不少于3年。",
+            "decision_owner": "法务负责人决定",
+            "needed_material": ""
+          },
+          {
+            "rule_id": "B2",
+            "status": "issue",
+            "quote": "These obligations do not apply to information that is or becomes public through no fault of the Recipient, or that was lawfully known to the Recipient before disclosure.",
+            "reason": "底线要求包含四项例外（已公开、事先合法知悉、独立开发、自第三方合法获得），文档仅包含‘已公开’和‘事先合法知悉’两项，缺少‘独立开发’和‘自第三方合法获得’两项例外。",
+            "suggested_action": "建议补充‘独立开发’和‘自第三方合法获得’两项例外情形。",
+            "decision_owner": "经办人可直接提出",
+            "needed_material": ""
+          },
+          {
+            "rule_id": "B3",
+            "status": "issue",
+            "quote": "During the term of this Agreement and for twelve (12) months after, neither party shall solicit for employment any employee of the other party.",
+            "reason": "底线明确‘默认不接受’禁止招揽员工条款，该条款出现在文档中，违反底线要求。",
+            "suggested_action": "建议删除该禁止招揽员工条款。",
+            "decision_owner": "法务负责人决定",
+            "needed_material": ""
+          },
+          {
+            "rule_id": "B4",
+            "status": "issue",
+            "quote": "This Agreement is governed by the laws of England and Wales, and the courts of England have exclusive jurisdiction.",
+            "reason": "底线要求适用新加坡法律，文档约定为英格兰和威尔士法律，与底线不符。",
+            "suggested_action": "建议将适用法律修改为新加坡法律，或明确接受SIAC仲裁或新加坡法院管辖。",
+            "decision_owner": "法务负责人决定",
+            "needed_material": ""
+          },
+          {
+            "rule_id": "B5",
+            "status": "no_issue",
+            "quote": "On written request of the Disclosing Party, the Recipient shall promptly return or destroy all Confidential Information, except copies retained in automatic backup systems.",
+            "reason": "文档已约定在披露方请求下返还或销毁资料，且允许保留备份系统副本，符合底线要求。",
+            "suggested_action": "",
+            "decision_owner": "经办人可直接提出",
+            "needed_material": ""
+          }
+        ],
+        "summary": "需经办人和法务负责人处理的事项：保密期限、保密例外、禁止招揽员工条款及适用法律均不符合底线，其中禁止招揽员工条款因底线明确‘默认不接受’而构成严重不符，建议删除；其他条款需修改或补充，最终决策需法务负责人决定。"
+      }
+    }
+  ],
+  "expected": {
+    "marketing": {
+      "R1": "needs_material",
+      "R2": "issue",
+      "R3": "needs_material",
+      "R4": "no_issue",
+      "R5": "not_applicable"
+    },
+    "nda": {
+      "B1": "issue",
+      "B2": "issue",
+      "B3": "issue",
+      "B4": "issue",
+      "B5": "no_issue"
+    }
+  },
+  "contract": {
+    "status": "completed",
+    "error": null,
+    "step_outputs": [
+      "已收到的文件：  \n- Iowa_DiscountCell_NASPO_MA25206_Executed_2025.pdf（共23页）  \n  说明：该文件已完整收到，其中第1–4页为参与协议正文，第5–23页为附件1（Attachment 1），已明确收到。本次模型仅读取第1–4页内容，未读取第5–23页，但附件1作为整体文件已确认收到。\n\n原文明示引用但本次未提供的文件：  \n- Utah Master Agreement PD180-1  \n  原文短引：Master Agreement #: PD180-1  \n  位置：合同正文首段，“Master Agreement #: PD180-1”  \n\n- 招标文件及其响应  \n  原文短引：Contract Vendor’s response to the Solicitation.  \n  位置：第5段，“No other terms and conditions shall apply, including terms and conditions listed in the Contract Vendor’s response to the Solicitation, or terms listed or referenced on the Contract Vendor's website…”  \n\n- 价格清单（Pricing List）  \n  原文短引：The Contractor’s stated prices in the Lead Agency’s contract shall be discounted using the discounts and price lists approved and agreed to with the Contractor’s Pricing List.  \n  位置：第6段，“The Contractor’s stated prices...using the discounts and price lists approved and agreed to with the Contractor’s Pricing List.”  \n\n需要确认的事项：  \n- 是否存在对本合同的后续修订或修订版本（amendments / revisions）  \n  原文短引：The entire agreement between the parties concerning the subject matter of this Participating Addendum and replaces any prior oral or written communications between the parties, all of which are excluded. There are no conditions, understandings, agreements, representations or warranties, expressed or implied, that are not specified herein. This Participating Addendum may be modified only by a written document executed by the parties hereto.  \n  位置：第10条“Entire Agreement”条款  \n  说明：原文提及“all amendments and attachments thereto”构成整体协议，但未明确是否存在或当前适用的修订版本，因此无法判断修订是否存在或是否有效，需进一步确认。\n\n⚠️ 说明：  \n- “本次未提供”不等于文件不存在，仅表示当前未收到或未提供给本次核查。  \n- 原文未明确提及“all amendments / revisions”是否实际存在，因此不得假定存在或适用，仅作“需确认”处理。  \n- 本核查未推导公司政策、法域适用性或提出是否可签署的建议，仅依据输入文件与原文引用进行事实性核对。  \n\n（输出符合任务指令：逐项列出已收到、原文明示引用但未提供、需确认事项，每项附原文短引与位置，不补充未确认事实，不提供签署建议。）",
+      "以下是根据收件核对结果起草的中文沟通草稿，符合任务指令要求，未重复索取已收到文件，未新增事实或批准结论：\n\n---\n\n**致业务同事的沟通草稿**\n\n您好，\n\n为确保收件完整性，现就本次文件收件情况作如下核对说明，仅限于收件范围的事实性确认，不涉及是否可批准或签署的判断。\n\n**一、已收到文件（无需补充）**  \n- 《Iowa_DiscountCell_NASPO_MA25206_Executed_2025.pdf》（共23页）  \n  说明：该文件已完整收到，其中第1–4页为参与协议正文，第5–23页为附件1（Attachment 1），整体已确认接收。本次核查仅读取第1–4页内容，附件1作为整体文件已核实收到，无需再次索取。\n\n**二、原文明示引用但本次未提供的文件（需补充）**  \n1. **Utah Master Agreement PD180-1**  \n   原文引用位置：合同正文首段，“Master Agreement #: PD180--1”  \n   说明：该文件在原文中被明确引用，但本次未提供，需补充提供。\n\n2. **招标文件及其响应**  \n   原文引用位置：第5段，“No other terms and conditions shall apply, including terms and conditions listed in the Contract Vendor’s response to the Solicitation…”  \n   说明：原文提及“Contract Vendor’s response to the Solicitation”，但该文件本次未提供，需补充提供。\n\n3. **价格清单（Pricing List）**  \n   原文引用位置：第6段，“The Contractor’s stated prices...using the discounts and price lists approved and agreed to with the Contractor’s Pricing List.”  \n   说明：原文明确提及“Contractor’s Pricing List”，但该文件本次未提供，需补充提供。\n\n**三、需确认事项（非文件缺失，仅版本有效性待核实）**  \n- 是否存在对本合同的后续修订或修订版本（amendments / revisions）  \n  原文引用位置：第10条“Entire Agreement”条款，“This Participating Addendum may be modified only by a written document executed by the parties hereto.”  \n  说明：原文提及“all amendments and attachments thereto”构成整体协议，但未明确是否存在或当前适用的修订版本，因此无法判断其存在性或有效性，需由您确认是否存在或当前适用的修订版本。\n\n---\n\n请确认上述文件及事项的补充或确认情况。  \n本核查仅限于收件完整性与原文引用的匹配性，不构成对合同条款有效性或是否可签署的任何判断。\n\n感谢支持！\n\n--- \n\n（本草稿可直接用于内部沟通）"
+    ],
+    "mentions_attachment_1": [
+      true,
+      true
+    ]
+  },
+  "scope": "2026-10-23 评审修改后的真实本机模型复跑：营销示例 2 次、NDA 示例 2 次、公开合同收件案例 1 次。预期状态由编写者在运行前写定；不是律师验收，不是统计准确率。",
+  "manual_notes": [
+    "NDA B1/B4 的 decision_owner 写成法务负责人决定；底线下只要求对方改回底线时，经办人即可提出，模型偏保守。",
+    "公开合同案例：Attachment 1 已列为已收到，未再索取，此前失败项本次未复现；第二步引文出现 PD180--1 等非逐字字符，引用保真问题仍在。",
+    "单次与两次运行只能说明这些材料上的表现，不推断其他材料。"
+  ]
+}

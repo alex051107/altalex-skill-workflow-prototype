@@ -1,0 +1,13 @@
+# Local model settings and keys
+.env
+.env.*
+!.env.example
+
+# Local databases and run data
+data/
+*.sqlite3*
+
+# Caches and OS files
+__pycache__/
+*.py[cod]
+.DS_Store

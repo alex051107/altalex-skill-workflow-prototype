@@ -1,0 +1,126 @@
+{
+  "fixture_version": "real-2026-10-24",
+  "frozen": true,
+  "author": "independent agent (did not design the checklist; saw no model output on these cases)",
+  "checklist": "营销审查清单 DEMO-MKT v3（虚构）",
+  "note": "真实公开推广文案摘录，已去标识；清单是示例公司的审查标准，结论不代表原广告违规。",
+  "cases": [
+    {
+      "id": "R01-fund-etf-page",
+      "title": "基金经理官网 ETF 产品页：稳定派息与“全球首只”",
+      "source": "新加坡某基金公司官网产品页（去标识）",
+      "inputs": {
+        "document": "第1段（页面横幅）：某亚太金融股息 ETF / Earn stable dividends. Invest in APAC's financial strengths. / The world's first APAC Financials ETF / Watch our video here >\n第2段（Fund Overview › Introduction；横幅与本段之间的行情数据栏略）：The 某亚太金融股息 ETF is the world's first APAC Financials ETF, riding on APAC's financial strengths while providing investors with 5% p.a. quarterly payouts¹.\n第3段（紧接上段的脚注 1）：¹We intend to declare quarterly distributions of around 5% per annum of the Net Asset Value per Unit of the Class. Distributions are not guaranteed. Please refer to 某基金公司 website for more information on the income disclosures.\n第4段（Key Features；其前的 Investment Objective 段略）：Focus on 30 largest and most tradable APAC financial institutions² by Free-Float Market Capitalisation³ / Stable quarterly distribution⁴ (around 5% p.a. of the Net Asset Value per Unit of the Class) / Potential capital appreciation in the APAC Financials Sector\n第5段（紧接上段的脚注 4，页面原文末句止于“net asset”；脚注 2、3 为成分股行业分类与指数说明，略）：⁴As set out in the prospectus, distribution payments shall, at the sole discretion of the Manager, be made out of either (a) distributable income; or (b) capital gains; or (c) capital of the Deposited Property or a combination of (a) and/or (b) and/or (c). Distributions are not guaranteed and may fluctuate. Past performance, yields, and payments are not necessarily indicative of future or likely performance, yields, and payments. Distribution payouts and its frequency might be changed at the Manager's discretion and can be made out of distributable income, capital or both. Any payment of distributions by the fund may result in an immediate reduction of the net asset\n第6段（Within Your Reach）：Excluded Investment Product (EIP) / Start investing from as little as S$1⁵ in a single trade of 1 unit. / Trade in SGD or USD / Invest using cash or Supplementary Retirement Scheme / Listed on SGX / ⁵Assumes issue price S$1 per unit, excluding fees and charges.\n第7段（页面下方“Disclaimer – 某基金公司 Limited”节选；与上段之间的价格、业绩、基金资料、常见问题等板块略）：This advertisement or publication has not been reviewed by the Monetary Authority of Singapore. …… You should read the prospectus and Product Highlights Sheet of the 某亚太金融股息 ETF (“ETF”), which is available and may be obtained from 某基金公司 Limited (“某基金公司”) or any of the its distributors and appointed Participating Dealers (“PDs”), for further details including the risk factors and consider if the ETF is suitable for you and seek such advice from a financial adviser if necessary, before deciding whether to purchase units in the ETF. Investments in the ETF are not obligations of, deposits in, guaranteed or insured by 某基金公司 or any of its affiliates and are subject to investment risks including the possible loss of the principal amount invested. The performance of the ETF is not guaranteed and, the value of its units and the income accruing to the units, if any, may rise or fall. Past performance, payout yields and payments, as well as, any prediction, projection, or forecast are not necessarily indicative of the future or likely performance, payout yields and payments of the ETF. ……",
+        "channel": "静态图文",
+        "context": "产品类型：集合投资计划，交易所交易基金（某亚太金融股息 ETF），为新加坡单位信托，依《证券及期货法》2001 第 286 条获 MAS 认可（来源：招股说明书封面）。招股说明书：2026 年 3 月 20 日在 MAS 注册，有效至 2027 年 3 月 19 日（来源：招股说明书封面及第 2 段）。目标投资者：2024 年 5 月 13 日起在 SGX 上市交易，单位属除外投资产品（EIP），面向新加坡公众投资者；产品页和招股说明书封面都没写仅限认可投资者、机构投资者或私募（来源：基金经理官网产品页、招股说明书封面）。拟发布市场：新加坡。发布形式：基金经理官网产品页（静态图文）。推广关系：基金经理在自有官网推广自家基金，没有外部推广人参与。发布者身份：基金经理本身（机构自有账号）。已确认主体名称：某基金公司 Limited（基金经理，来源：招股说明书目录页）。已提供材料：页面文字；收益数字依据为招股说明书第 21 段派息政策——自首次派息日起前两年，每季度派息，合计每年至少为首次发售期发行价（每单位 S$1.000）的 5%；第三年起拟每季度派息，合计每年约为每单位资产净值的 5%，扣除该类别费用；派息不保证，可从资本中支付；出具人为基金经理某基金公司 Limited。未提供材料：页面最终截图或横幅图片；“The world's first APAC Financials ETF”的出处；页面链接的视频（不在本次提交范围）。"
+      },
+      "expected": {
+        "R0": "no_issue",
+        "R1": "issue",
+        "R2": "no_issue",
+        "R3": "needs_material",
+        "R4": "no_issue|issue",
+        "R5": "not_applicable",
+        "R6": "issue",
+        "R7": "no_issue",
+        "R8": "no_issue",
+        "R9": "no_issue",
+        "R10": "issue",
+        "R11": "needs_material"
+      },
+      "rationale": {
+        "R0": "背景写明集合投资计划、已获 MAS 认可、招股说明书 2026-03-20 已注册、拟在新加坡发布，且没有提到仅限认可投资者或私募，符合“三项齐全、且背景没有提到仅限认可投资者、机构投资者或私募，为无问题”。",
+        "R1": "背景已给出派息政策的口径、期间、费用前后和出具人，但第2段“5% p.a. quarterly payouts”所在段既没写“前两年按发行价、此后约按资产净值 5%”这一条件，也没写不保证（不保证只在另起一段的脚注里），适用“背景有依据但文案缺少条件或不保证说明为不一致”。",
+        "R2": "背景写明基金经理在自有官网发布、没有外部推广人，适用“背景写明机构自有账号发布、没有外部推广人时为无问题”。",
+        "R3": "渠道为静态图文，背景未提供页面截图或横幅图片，适用“背景未提供最终图片、截图或成片为需补材料”。",
+        "R4": "第7段写出与背景一致的全称“某基金公司 Limited”，满足“文案须写明……机构全称”；但第3段在全称出现之前先用简称“某基金公司”，若按“简称……为不一致”逐处核对则为不一致，条文没说是至少一处写全称即可还是每处都须全称，两种结论都成立。",
+        "R5": "渠道为静态图文，不在 applies_when 的“短视频或直播”之内，代码直接设为 not_applicable。",
+        "R6": "第1段“Earn stable dividends”和第4段“Stable quarterly distribution”把不保证的派息说成稳定，属于条文所说“弱化风险的说法同样算”，背景也没有经法务确认的担保安排。",
+        "R7": "派息不保证、可从资本支付、可能损失本金、单位价值可升可跌等内容以脚注紧跟收益表述出现，篇幅不少于好处部分，不属于“通篇只讲好处、风险只剩一句套话或没有”；“stable”“world's first”是单句问题，按“不重复其他条目已经处理的单句问题”交给 R6、R11。",
+        "R8": "背景写明为集合投资计划且招股说明书已注册；第7段写明招股说明书可获取、可向某基金公司 Limited 及其分销商和参与交易商索取、购买前应阅读、单位价值与收益可升可跌，并有英文原句“This advertisement or publication has not been reviewed by the Monetary Authority of Singapore.”，五项齐全。",
+        "R9": "背景写明机构自有账号发布、没有外部个人推广人，适用“背景写明机构自有账号发布、没有外部个人推广人时为无问题”。",
+        "R10": "图片未提供，按“只按文案中的位置判断”，前三行（第1段横幅）只有“stable dividends”和“world's first”，主要风险提示在后面的脚注和页面底部，不符合“推广标示和主要风险提示须出现在文案前三行或图片内”。",
+        "R11": "文案出现“The world's first APAC Financials ETF”这一“第一”类表述，背景写明出处未提供，适用“背景没有出处为需补材料”。"
+      },
+      "notes": "测试：基金经理自有官网的标题式卖点（stable dividends、world's first、5% p.a.）与紧随其后的脚注风险提示并存时，R1 能否看出“依据已给、但同段缺条件与不保证”，R6 能否把“stable”算作弱化风险，R7 能否不重复扣分，R8 能否在披露齐全时判无问题。摘录方式：第1–6段为页面上部的连续原文（中间的行情数据栏、Investment Objective 段和脚注 2、3 已标明略去），第7段为页面底部免责声明的原文节选，省略处用“……”标出；脚注上标按页面位置还原（页面抓取文本中“S$15”实为“S$1”加脚注 5）。"
+    },
+    {
+      "id": "R02-partnership-article",
+      "title": "理财网站与基金公司合作文章：东盟股息 ETF",
+      "source": "新加坡某理财资讯网站与基金公司合作的文章（去标识）",
+      "inputs": {
+        "document": "第1段（标题与署名）：A simple way to diversify passive income beyond Singapore stocks / By 博主 A, CFA • 20 Jan 2026\n第2段（导语）：Looking beyond Singapore for passive income? Learn how the 某东盟股息指数 ETF offers ASEAN diversification and dividend potential.\n第3段（文首标示，位于正文之前）：This post was created in partnership with 某基金公司. All views and opinions expressed in this article are 某理财网站's objective and professional opinions.\n第4段（“What happened?”，原文约 200 词；叙述句为压缩转述，含 6% 的句子为原文）：With interest rates declining, I have been looking beyond my Singapore REITs and blue-chip stocks for passive income, and ASEAN is on my radar for regional diversification. Recently, 某基金公司 launched the 某东盟股息指数 ETF, which has stated a target dividend of at least 6%* per annum in 2026 and 2027.\n第5段（“Introducing …”与“#1 – Strong dividend income potential”，原文约 370 词并配 2 张图表；叙述句为压缩转述，含数字、比较和不保证提示的句子为原文）：The ETF is listed on SGX and tracks 某东盟目标股息指数, which aims to deliver approximately double the dividend yield of the broader 某东盟基准指数. As of 28 November 2025, according to 某指数公司, the target dividend index recorded a gross dividend yield of 8.6% p.a*, compared with 4.4% p.a. for the 某东盟基准指数. As shown in the chart above, the target dividend index offers a meaningfully higher yield than major indices such as 某新加坡股票指数, 某全球股票指数 and 某美国股票指数, which may appeal to investors who are finding it harder to generate income from traditional equity markets. The ETF has also stated a target to pay dividends of at least 6%* per annum in 2026 and 2027. However, do note that while there is a dividend target, distributions (in SGD) are not guaranteed.\n第6段（“#2–#4”三个好处小节，原文合计约 1,300 词并配 12 张图表；此处只保留小标题）：#2 – Capture ASEAN’s mid-to-long-term growth / #3 – Diversification across markets / #4 – Backed by ASEAN investment expertise\n第7段（“Considerations and key risks”，原文约 175 词；叙述句为压缩转述，含数字和比较的句子为原文）：#1 – Sensitivity to global demand and commodity cycles: ASEAN economies are sensitive to global demand, commodity prices and market sentiment, which can cause short-term swings in earnings and returns. The financials sector makes up about 61.5% of the index as of 28 November 2025, so a sharp downturn in the sector could weigh on earnings across the index. That said, dividend-focused ASEAN strategies have historically been less volatile than several major global equity benchmarks over longer periods, as income can help cushion returns over time*. #2 – Currency fluctuations: because the ETF invests across regional markets, its returns in SGD can rise or fall with ASEAN currency movements against the Singapore dollar. #3 – Management fee: The ETF charges a management fee of 0.45% per annum, which investors should factor into overall return expectations, particularly for longer holding periods.\n第8段（“What would 某理财网站 do?”，原文约 175 词；叙述句为压缩转述，含 6% 的句子和最后两句为原文）：I see the ETF as a way to broaden my income beyond Singapore REITs, local banks and cash. The ETF’s stated target to pay dividends of at least 6%* per annum in 2026 and 2027 is especially relevant in an environment where yields are coming down. It is still an equity investment, so it remains exposed to cyclicality and currency moves. Also, I would be mindful that the distributions are not guaranteed. Overall, I would take a closer look at the ETF if I’m looking to balance income and longer-term growth potential through regional diversification beyond Singapore.\n第9段（文末星号脚注，原文；其前的分销商名单略）：*Distributions (in SGD) are not guaranteed. Distributions may be made out of income, capital gains and/or capital. This relates to the disclosed distribution policy as set out in the Fund's prospectus.\n第10段（文末“Important Notice and Disclaimers”节选，原文；全段约 950 词，按页面顺序摘取，省略处用“……”标出）：…… The information contained in this document, including any data, projections and underlying assumptions, are based upon certain assumptions, management forecasts and analysis of information available and reflects prevailing conditions and 某基金公司 Ltd’s (“某基金公司”) views as of the date of the document, all of which are subject to change at any time without notice. …… Past performance of the Fund or 某基金公司 and any past performance or prediction, projection or forecast of the economic trends or securities market are not necessarily indicative of the future or likely performance of the Fund or 某基金公司. The value of Units and the income from them, if any, may fall as well as rise, and is likely to have high volatility due to the investment policies and/or portfolio management techniques employed by the Fund. Investments in Units involve risks, including the possible loss of the principal amount invested, and are not obligations of, deposits in, or guaranteed or insured by 某银行 Limited (“某银行”), 某基金公司, or any of their subsidiary, associate or affiliate (“某银行集团”) or distributors of the Fund. …… Investors should read the Fund's prospectus and product highlights sheet, which are available and may be obtained from 某基金公司 or any of its appointed agents or distributors, before deciding whether to subscribe for or purchase any Units. …… This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+        "channel": "静态图文",
+        "context": "产品类型：集合投资计划，交易所交易基金（某东盟股息指数 ETF），为新加坡单位信托某 ETF 系列 2 的子基金，依《证券及期货法》2001 第 286 条获 MAS 认可（来源：招股说明书封面）。招股说明书：2025 年 12 月 15 日在 MAS 注册（来源：招股说明书封面）；2026 年 1 月 29 日在 SGX 上市（来源：基金经理官网产品页）。目标投资者：新加坡公众投资者；招股说明书封面和基金经理产品页都没写仅限认可投资者、机构投资者或私募。拟发布市场：新加坡。发布形式：某理财网站文章页（静态图文：正文文字，另有题图和约 16 张数据图表），2026 年 1 月 20 日发布。推广关系：合作推广，文章开头写明与某基金公司合作制作；是否付费、合作协议内容背景未写明。发布者身份：某理财网站（公司网站，不是个人账号），署名作者博主 A（署名带 CFA 头衔），正文用第一人称。持牌情况：网站页脚写明，网站上的投资研究由关联公司甲发布，关联公司甲是受 MAS 监管的持牌财务顾问；非投资研究内容不受监管，由关联公司乙发布（来源：网站页脚）。本文属于哪一类、博主 A 本人是否为持牌代表，均未确认。已确认主体名称：某基金公司 Ltd（基金经理，来源：招股说明书封面与目录页）。已提供材料：文章文字（节选，略去部分已在段落标注中说明）。未提供材料：6% 目标派息的计算口径（以发行价还是资产净值为基数、费用前后）——基金经理官网只写了“at least 6.0 per cent per annum in 2026 and 2027”的目标；8.6% 与 4.4% 股息率、与其他指数收益率比较、“historically been less volatile”三处数据的出处和口径；文章题图与数据图表；合作协议或付款记录。"
+      },
+      "expected": {
+        "R0": "no_issue",
+        "R1": "needs_material",
+        "R2": "issue",
+        "R3": "needs_material",
+        "R4": "no_issue|issue",
+        "R5": "not_applicable",
+        "R6": "issue|no_issue",
+        "R7": "no_issue|issue",
+        "R8": "issue",
+        "R9": "needs_material",
+        "R10": "issue",
+        "R11": "needs_material"
+      },
+      "rationale": {
+        "R0": "背景写明集合投资计划（获 MAS 认可的单位信托子基金）、招股说明书 2025-12-15 已注册、拟在新加坡发布，没有提到认可投资者或私募限制，三项齐全。",
+        "R1": "文案有“target dividend of at least 6%*”和“8.6% p.a*”等收益表述，背景写明 6% 目标的计算口径和股息率数据出处都未提供，适用“背景没有计算依据为需补材料”。",
+        "R2": "背景写明合作推广这一商业安排，第3段开头有“created in partnership with 某基金公司”，但没写委托方全称“某基金公司 Ltd”，不符合“文案开头须有清楚的推广标示并写明委托方全称”。",
+        "R3": "渠道为静态图文（题图和数据图表），背景未提供页面截图或图表，适用“背景未提供最终图片、截图或成片为需补材料”。",
+        "R4": "第10段写出全称“某基金公司 Ltd”，满足“文案须写明……机构全称”；但第3、4段用的是简称“某基金公司”，若按“简称……为不一致”逐处核对则为不一致，条文没说是至少一处还是每处，两种结论都成立。",
+        "R5": "渠道为静态图文，不在 applies_when 的“短视频或直播”之内，代码直接设为 not_applicable。",
+        "R6": "文案没有“保本”“保证”类肯定表述（“not guaranteed”是否定提示），但第7段在风险小节里写“historically been less volatile than several major global equity benchmarks… as income can help cushion returns”，可读作条文所说“弱化风险的说法同样算”，也可读作带期间限定的历史比较（归 R11）；条文没界定相对比较算不算弱化风险，两种结论都成立。",
+        "R7": "文中有独立风险小节（行业集中、汇率、0.45% 管理费）和两处“不保证”提示，不属于“风险只剩一句套话或没有”；但原文好处部分约 1,600 词、风险部分约 175 词，并以第一人称推荐收尾，按“篇幅和位置大致相称”也可判不一致，条文没给比例标准，两种结论都成立。",
+        "R8": "背景写明集合投资计划且招股说明书已注册；第10段具备招股说明书可获取、获取方式、投资前阅读、可升可跌四项，但 MAS 声明写作“This advertisement has not been reviewed by the Monetary Authority of Singapore.”，与条文指定的英文原句（含“or publication”）不同，按“缺任何一项为不一致”判为不一致。",
+        "R9": "背景写明发布者是公司网站、署名博主 A，但本文是否属于持牌关联公司发布的投资研究、博主 A 本人是否持牌都未确认，适用“背景没有写明发布者身份或持牌状态为需补材料”。",
+        "R10": "图片未提供，按“只按文案中的位置判断”：推广标示在第3段，位于前三行内，但主要风险提示最早出现在第5段末，不符合“推广标示和主要风险提示须出现在文案前三行或图片内”。",
+        "R11": "文案有过往股息率比较（8.6% 对 4.4%）、“meaningfully higher yield than major indices”和“historically been less volatile than several major global equity benchmarks”，背景写明出处和口径未提供，适用“背景没有出处为需补材料”。"
+      },
+      "notes": "测试：第三方理财网站与基金公司的合作文章——合作标示在开头但缺委托方全称（R2），发布者是公司网站而非个人账号、持牌状态只在页脚泛称（R9 适用范围），MAS 未审阅声明用了不含“or publication”的写法（R8 原句要求），以及风险小节里的“历史上波动较低”说法（R6/R11 边界）。摘录方式：标题、导语、文首标示、星号脚注和免责声明节选为原文；正文叙述句为同顺序的压缩转述，含数字、比较、目标派息、不保证提示和推荐语的句子保留原文；被指数名替换的比较对象保留了“major indices such as …”的结构。原文 2026-01-20 发布；该 ETF 的比较基准指数已于 2026-09-21 更换，文中 2025-11-28 的数据在本次复核日已过期，但清单条目不涉及数据时效，预期结论不受影响。"
+    },
+    {
+      "id": "R03-bank-endowment",
+      "title": "银行官网储蓄型保险产品页：保证回报与到期保本",
+      "source": "新加坡某银行官网保险产品页（去标识）",
+      "inputs": {
+        "document": "第1段（页面横幅）：某储蓄计划 – Guaranteed return of 0.60% p.a. upon maturity in 24 months\n第2段（横幅下“Why you will love this”标签）：100% capital guaranteed upon maturity / Pay using cash or your SRS funds / Insurance coverage for Death and Total & Permanent Disability\n第3段（产品简介与 Features and benefits）：某储蓄计划 — A 24 months single premium insurance plan. / Guaranteed return of 0.60% p.a. upon maturity in 24 months / 100% capital guaranteed upon maturity / Cash or Supplementary Retirement Scheme (SRS) funds can be used / No medical check-up required / Insurance coverage for Death and Total & Permanent Disability / This is not a fixed or savings deposit. It is a non-participating endowment insurance plan.\n第4段（How it works）：You have the option to receive a one-time payout or yearly payouts. The one-time payout option includes additional non-guaranteed accumulation interest at the end of the policy term, while the yearly payout option will not include additional non-guaranteed accumulation interest.\n第5段（派付图示下方的注释；图示本身是图片，未随文字提交）：The figures used are only for illustrative purposes and may have been rounded up or down. The non-guaranteed payout is calculated based on an illustrated accumulation interest rate of 3.00% per annum. Based on an illustrated accumulation interest rate of 1.50% per annum, the total illustrated payout at the end of 24 months will be S$50,604. The accumulation interest rate is not guaranteed and can change from time to time.\n第6段（页面下方 Important notes 节选；与上段之间的常见问题、投保方式等板块略，省略处用“……”标出）：某储蓄计划 (24-month) is underwritten by 某保险公司 Limited, a wholly owned subsidiary of 某保险控股公司 Limited, part of the 某银行集团. This plan is not a bank deposit and 某银行 does not guarantee or have any obligations in connection with it. …… As buying a life insurance policy is a long-term commitment, an early termination of the policy usually involves high costs and the surrender value, if any, that is payable to you may be zero or less than the total premiums paid. …… If you are interested in the insurance policy, you should read the product summary and policy illustration (available from us) before deciding whether to buy this product. …… The 某保险公司 Limited reserves the right to amend 某储蓄计划’s policy term and rates payable for the survival benefit at any time without prior notice. Such amendments will not affect any applications which have been submitted or policies that are in-force. …… This advertisement has not been reviewed by the Monetary Authority of Singapore. Information presented as at 2 October 2026.\n第7段（Policy Owners' Protection Scheme）：This policy is protected under the Policy Owners' Protection Scheme which is administered by the Singapore Deposit Insurance Corporation (SDIC). Coverage for your policy is automatic and no further action is required from you. For more information on the types of benefits that are covered under the scheme as well as the limits of coverage, where applicable, please contact us or visit the Life Insurance Association (LIA) or SDIC websites (www.lia.org.sg or www.sdic.org.sg).",
+        "channel": "静态图文",
+        "context": "产品类型：保险——24 个月单次缴费的非分红型储蓄（endowment）寿险，由同集团的某保险公司承保；不是集合投资计划，也不是定期或储蓄存款（来源：产品页）。可公开推广依据：产品不是集合投资计划，不涉及 MAS 认可或招股说明书注册；不受发售限制——产品页写明网上投保面向 19 至 75 岁（下次生日年龄）的新加坡公民和永久居民，分行投保面向 1 至 75 岁人士，可用现金或 SRS 资金缴费，没有认可投资者、机构投资者或私募限制（来源：产品页“Who is eligible”与常见问题）。拟发布市场：新加坡。发布形式：银行官网产品页（静态图文），页面信息截至 2026 年 10 月 2 日。推广关系：某银行在自有官网推广同集团保险公司承保的保险计划，银行是销售渠道；没有外部推广人参与。发布者身份：某银行（机构自有官网）。已确认主体名称（发布方）：某银行 Corporation Limited（来源：银行年报封面与交易所公司资料）。保证安排：0.60% 保证回报与到期 100% 保本来自承保保险公司的保单条款（来源：产品页）；页面写明银行不提供担保；法务是否已确认该担保安排，背景未写明。已提供材料：页面文字。未提供材料：页面最终截图或横幅图片；产品摘要（product summary）与利益说明书（policy illustration）；派付图示图片，以及 S$50,604 所用的保费金额和计算依据。"
+      },
+      "expected": {
+        "R0": "no_issue",
+        "R1": "needs_material",
+        "R2": "no_issue",
+        "R3": "needs_material",
+        "R4": "issue",
+        "R5": "not_applicable",
+        "R6": "issue",
+        "R7": "no_issue",
+        "R8": "no_issue",
+        "R9": "no_issue",
+        "R10": "issue",
+        "R11": "no_issue"
+      },
+      "rationale": {
+        "R0": "背景写明产品为保险（不是集合投资计划）、写明不受发售限制并给出产品页的投保条件、拟在新加坡发布，三项齐全且没有认可投资者或私募限制，适用“三项齐全……为无问题”。",
+        "R1": "文案有 0.60% 保证回报、3.00% 与 1.50% 演示利率和 S$50,604 演示派付，背景写明产品摘要、利益说明书和保费假设都未提供，适用“背景没有计算依据为需补材料”。",
+        "R2": "背景写明银行在自有官网发布、没有外部推广人，适用“背景写明机构自有账号发布、没有外部推广人时为无问题”。",
+        "R3": "渠道为静态图文，背景未提供页面截图或横幅图片，适用“背景未提供最终图片、截图或成片为需补材料”。",
+        "R4": "背景确认的发布主体是“某银行 Corporation Limited”，文案只写“某银行”和“某银行集团”，属于条文所列“简称”，为不一致。",
+        "R5": "渠道为静态图文，不在 applies_when 的“短视频或直播”之内，代码直接设为 not_applicable。",
+        "R6": "文案用了“Guaranteed return”“100% capital guaranteed”，背景没写法务已确认担保安排，文案也没以担保人身份写明担保方（只写承保方，并声明银行不担保），适用“背景确认产品确有保本或担保安排并经法务确认时，文案须写明担保人名称，否则仍为不一致”。",
+        "R7": "页面写明提前退保可能拿回少于已缴保费、演示利率不保证、条款利率可调整、不是银行存款，风险和条件不止一句套话；“保证”措辞由 R6 处理，按“不重复其他条目已经处理的单句问题”为无问题。",
+        "R8": "背景写明产品不是集合投资计划，适用“背景写明产品不是集合投资计划为无问题”。",
+        "R9": "背景写明机构自有账号发布、没有外部个人推广人，适用“为无问题”。",
+        "R10": "图片未提供，按“只按文案中的位置判断”：前三行是横幅和“Why you will love this”里的保证回报、保本与缴费方式，主要风险提示（提前退保的损失）只在页面底部 Important notes，不符合“推广标示和主要风险提示须出现在文案前三行或图片内”。",
+        "R11": "文案没有过往收益率、“跑赢”“第一”“最佳”“唯一”、奖项或排名，适用“文案没有此类表述为无问题”。"
+      },
+      "notes": "测试：真实存在的保证回报与保本（保险公司保单条款）遇上 R6 的“须经法务确认并写明担保人”要求；发布方是银行、承保方是保险公司时，R4 核对哪个主体名称；非集合投资计划时 R8 应判无问题，不能照搬基金声明。摘录方式：第1–5段为页面上部的连续原文，第6段为页面底部 Important notes 的原文节选（省略处用“……”标出），第7段为保单持有人保障计划说明原文。页面原文同时出现承保方名称的两种写法（有无冠词“The”），去标识后均为“某保险公司 Limited”，不影响 R4，因为 R4 核对的是发布方银行。"
+    }
+  ]
+}
